@@ -27,7 +27,8 @@ Transportamos cargas perigosas com conta previamente aprovada e rota liberada.
 
 📌 Exemplo comum: **baterias de lítio** acopladas ou acompanhadas de equipamento (Classe 9)
 
-📎 Compartilhe com o cliente o arquivo interno de serviços DG.
+📎 Para entender as classes que podemos atender, acesse o arquivo a seguir:  
+[👉 Clique aqui para abrir a apresentação de serviços DG](DHL%20EXPRESS%20-%20DGR.pptx)
 
 ---
 
@@ -42,7 +43,7 @@ São mercadorias com materiais perigosos **não declarados**. Exemplos:
 - Equipamentos médicos
 - Geladeiras com gás
 
-⚠️ Sempre valide com o time DG antes do envio.
+⚠️ Sempre valide com o seu contato comercial DHL antes do envio.
 
 ---
 
@@ -57,5 +58,5 @@ Documentos que detalham riscos químicos de produtos:
 
 ---
 
-Dúvidas adicionais? Acesse [Contato](contato.md)
+Dúvidas adicionais? Entre em contato com o seu contato comercial.
 
