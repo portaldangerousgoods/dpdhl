@@ -1,0 +1,9 @@
+site_name: Portal DG DHL
+theme:
+  name: material
+nav:
+  - Início: index.md
+  - Como aprovar uma conta: aprovacao.md
+  - Documentos exigidos: documentos.md
+  - FAQ Técnico: faq.md
+  - Contato: contato.md
