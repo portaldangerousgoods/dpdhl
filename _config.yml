@@ -2,3 +2,16 @@ title: Portal DG DHL
 description: Tudo sobre aprovação de contas e documentos para carga perigosa
 theme: just-the-docs
 color_scheme: dark
+
+# Menu lateral
+nav:
+  - title: Início
+    url: /
+  - title: Como aprovar uma conta
+    url: /aprovacao
+  - title: Documentos exigidos
+    url: /documentos
+  - title: FAQ Técnico
+    url: /faq
+  - title: Contato
+    url: /contato
