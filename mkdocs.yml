@@ -1,0 +1,19 @@
+site_name: Portal DG DHL
+site_url: https://portaldangerousgoods.github.io/dpdhl/
+repo_url: https://github.com/portaldangerousgoods/dpdhl
+repo_name: GitHub
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: red
+      accent: amber
+
+nav:
+  - Início: index.md
+  - Como aprovar uma conta: aprovacao.md
+  - Documentos exigidos: documentos.md
+  - FAQ Técnico: faq.md
+  - Contato: contato.md
