@@ -14,7 +14,7 @@ theme:
 
   logo: docslogo.png
 
-  font: 
+  font:
     text: "Barlow"
     code: "Fira Code"
 
@@ -22,4 +22,4 @@ nav:
   - Início: index.md
   - Como aprovar uma conta: aprovacao.md
   - Documentos exigidos: documentos.md
-  - FAQ Técnico: faq.md 
+  - FAQ Técnico: faq.md
