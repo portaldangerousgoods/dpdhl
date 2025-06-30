@@ -6,10 +6,20 @@ repo_name: GitHub
 theme:
   name: material
   language: pt-BR
+
+  # Estilo visual com identidade DHL
   palette:
     - scheme: default
-      primary: red
-      accent: amber
+      primary: yellow
+      accent: red
+
+  # Logo personalizado (imagem salva como docslogo.png)
+  logo: docslogo.png
+
+  # Fonte moderna e forte estilo delivery/logística
+  font:
+    text: "Barlow"
+    code: "Fira Code"
 
 nav:
   - Início: index.md
