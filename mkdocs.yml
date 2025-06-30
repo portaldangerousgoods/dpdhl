@@ -14,7 +14,7 @@ theme:
 
   logo: docslogo.png
 
-  font:
+  font: 
     text: "Barlow"
     code: "Fira Code"
 
