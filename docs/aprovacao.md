@@ -1,6 +1,6 @@
 # Como aprovar uma conta
 
-Para que um cliente esteja autorizado a enviar cargas perigosas com a DHL Express, é necessário seguir o processo de aprovação de conta. Isso garante que a empresa esteja em conformidade com as normas da IATA e com as políticas internas da DHL.
+Para que um cliente esteja autorizado a enviar cargas perigosas com a DHL Express, é necessário seguir o processo de aprovação de conta. Isso garante que a empresa esteja em conformidade com as normas da IATA e com as políticas internas da DHL..
 
 ## Passos para aprovação
 
