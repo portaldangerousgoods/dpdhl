@@ -35,4 +35,4 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 
 ## 📞 Suporte
 
-Em caso de dúvidas, entre em contato com o **seu contato comercial** via seu canal interno da DHL ou entre em contato com **suportecs@dhl.com**.
+Em caso de dúvidas, entre em contato com o **seu contato comercial** ou entre em contato com **suportecs@dhl.com**.
