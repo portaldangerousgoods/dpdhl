@@ -12,7 +12,7 @@ theme:
       primary: yellow
       accent: red
 
-  logo: docslogo.png
+  logo: logo-dhl.png
 
   font:
     text: "Barlow"
