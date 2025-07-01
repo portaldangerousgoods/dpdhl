@@ -4,62 +4,54 @@ Se você deseja enviar **Mercadorias Perigosas (DG)** com a DHL Express, é nece
 
 ---
 
-## Formulários obrigatórios
+## Documentação obrigatória
 
-Para iniciar o processo de aprovação da sua conta, é necessário preencher corretamente os seguintes documentos:
+Para dar início ao processo de aprovação, você deve reunir e enviar a seguinte documentação:
 
-**Formulários para download:**
+### 1. Formulários
+
+Faça o download e preencha:
 
 - 👉 [Formulário de Solicitação de Aprovação – Form1.docx](Form1.docx)
 - 👉 [Declaração de Produto – Form2.pdf](Form2.pdf)
-- 👉 [Guia de Preenchimento dos Formulários – GuiaForms.pptx](GuiaForms.pptx)
+- 👉 [Guia de Preenchimento – GuiaForms.pptx](GuiaForms.pptx)
 
-Após preencher os formulários corretamente, envie-os ao seu **responsável comercial DHL**. Ele será o ponto de contato para encaminhar sua solicitação ao **time de Mercadorias Perigosas (DGR)** para análise e validação.
+### 2. Certificado de Treinamento DG IATA (se aplicável)
+
+Se o seu produto **não estiver na lista de exceções**, será necessário anexar também o **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
+
+> **Importante:** essa exigência **não é uma escolha da DHL Express**. É uma obrigação definida pela norma IATA (Seção 1), e garante a segurança e conformidade no transporte de mercadorias perigosas.
 
 ---
 
-## Quando o certificado DG IATA **não é necessário**
+## Casos em que o certificado **não é exigido**
 
-O certificado de treinamento DG IATA **não é exigido** nas seguintes situações:
+Você não precisa enviar o certificado DG IATA se estiver solicitando aprovação para:
 
-- **Baterias de Lítio Seção II**, quando:
-  - A bateria está **acoplada ao equipamento** ou **acompanha o equipamento**
-  - A bateria **ion lítio tem até 100Wh** ou **metal lítio tem até 2g**
+- **Baterias de Lítio Seção II**:
+  - Acopladas ou acompanhando equipamento
+  - Até **100Wh (íon de lítio)** ou **2g (metal de lítio)**
 - **UN3373** (Substância Biológica Categoria B)
-- **UN3245** (Material geneticamente modificado)
+- **UN3245** (Material Geneticamente Modificado)
 
-Nesses casos, basta enviar os formulários preenchidos corretamente para aprovação.
-
----
-
-## Quando o certificado DG IATA **é obrigatório**
-
-Para qualquer outro tipo de Mercadoria Perigosa, será necessário apresentar um **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
-
-### Por que isso é importante?
-
-A DHL Express tem o compromisso de garantir **segurança e conformidade** em todas as remessas. Por isso, somente contas com equipe treinada pela **IATA** estarão autorizadas a enviar DG.
-
-> ❗ **Importante:** essa exigência **não é uma escolha da DHL Express**, tampouco um excesso de zelo. O treinamento é uma exigência **formal das normas da IATA**, conforme descrito na **Seção 1** do manual. Estamos seguindo padrões internacionais para garantir segurança em cada etapa da cadeia logística.
-
-### O que você precisa garantir:
-
-1. Sua equipe é responsável por **declarar, embalar e rotular** as mercadorias perigosas.
-2. Sua equipe deve possuir um **certificado DG IATA válido**, comprovando que recebeu o treinamento adequado exigido pelas regulamentações internacionais.
+Nestes casos, basta enviar os formulários preenchidos corretamente.
 
 ---
 
-## ❗Se você não possui esse treinamento:
+## Se você **não tem o treinamento**
 
-- Não será possível enviar Mercadorias Perigosas conosco.
-- A DHL Express segue **rigorosamente os padrões internacionais de segurança**.
-- **Não há exceções** para essa exigência.
+- A conta não poderá ser aprovada para envio de DG.
+- A DHL Express **não faz exceções** a essa exigência.
+- Essa é uma **regra da IATA**, e não uma diretriz exclusiva da DHL.
+
+Se você observar que outra transportadora aceita sem essa exigência, entenda que seguimos padrões **mais rigorosos de segurança internacional**.
 
 ---
 
-## ✅ Etapas do processo de aprovação
+## Envio da documentação
 
-1. Preencha os formulários obrigatórios.
-2. Envie os documentos para o seu responsável comercial DHL.
-3. Sua solicitação será encaminhada ao time de Mercadorias Perigosas.
-4. Após análise e aprovação, sua conta estará habilitada para o envio de DG com a DHL Express - Este processo dura, em torno, **5 dias úteis**.
+Após reunir a documentação necessária:
+
+1. Envie tudo para seu **responsável comercial DHL**.
+2. Ele encaminhará ao nosso **time de Mercadorias Perigosas** para análise.
+3. Após aprovação, sua conta estará habilitada para envio de DG com a DHL Express (processo leva em torno de **5 dias úteis**).
