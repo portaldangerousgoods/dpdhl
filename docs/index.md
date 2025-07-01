@@ -1,10 +1,5 @@
 # **Bem-vindo ao Portal DG DHL**
 
-<!-- GIF abaixo do índice lateral -->
-<div style="position: absolute; right: 30px; top: 400px; width: 140px;">
-  <img src="avião-dhl.gif" alt="Avião DHL" style="width: 100%; background: #fff; border-radius: 10px; padding: 4px;">
-</div>
-
 Este é o centro oficial de informações para **clientes e parceiros** sobre o envio de **mercadorias perigosas** com a DHL Express.
 
 ---
@@ -41,3 +36,7 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 ## 📞 Suporte
 
 Em caso de dúvidas, entre em contato com o **seu contato comercial** ou entre em contato com **suportecs@dhl.com**.
+
+<div style="text-align: center; margin-top: 40px;">
+  <img src="avião-dhl.gif" alt="Avião DHL" style="max-width: 120px; background: #fff; border-radius: 10px; padding: 4px;">
+</div>
