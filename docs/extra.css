@@ -1,0 +1,9 @@
+/* Define a nova cor de fundo */
+.md-content {
+  background-color: #FBFDFC;
+}
+
+/* Também ajusta o fundo do topo e rodapé para manter consistência */
+.md-header, .md-footer {
+  background-color: #FBFDFC;
+}
