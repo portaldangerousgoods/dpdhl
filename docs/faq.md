@@ -24,6 +24,8 @@ Artigos perigosos, abreviadamente DG (Dangerous Goods), são substâncias que, q
 A DHL Express BR transporta DG mediante análise e aprovação da conta.  
 Exemplo comum: baterias de lítio acopladas ao produto (classe 9).
 
+👉 Para entender as classes que podemos atender, acesse o arquivo a seguir:  
+**[DHL EXPRESS - DGR.pptx](DHL%20EXPRESS%20-%20DGR.pptx)**
 ---
 
 ## 4. O que são DGs Ocultos?
