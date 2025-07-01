@@ -1,16 +1,16 @@
-# Bem-vindo ao Portal DG DHL
+# **Bem-vindo ao Portal DG DHL**
 
 Este é o centro oficial de informações para **clientes e parceiros** sobre o envio de **mercadorias perigosas** com a DHL Express.
 
 ---
 
-## 🚀 Nosso propósito
+## **Nosso propósito**
 
 Garantir que nossos clientes tenham mais **autonomia e acesso rápido às informações sobre os envios de cargas perigosas** com a DHL Express.
 
 ---
 
-## 📌 O que você encontra aqui:
+## **O que você encontra aqui:**
 
 - ✅ Como solicitar **aprovação de conta**
 - 📄 Lista completa de **documentos exigidos**
@@ -19,7 +19,7 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 
 ---
 
-## 📥 Comece por aqui:
+## **Comece por aqui:**
 
 - 👉 [Como aprovar uma conta](aprovacao.md)
 - 🧾 [Documentos exigidos](documentos.md)
@@ -27,7 +27,7 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 
 ---
 
-## 📎 Materiais importantes
+## **Materiais importantes**
 
 - 🔗 [Manual de Serviços DG (PPT)](DHL%20EXPRESS%20-%20DGR.pptx)
 
