@@ -1,5 +1,9 @@
 # **Bem-vindo ao Portal DG DHL**
 
+<div style="float: right; margin-left: 20px;">
+  <img src="avião-dhl.gif" alt="Avião DHL" width="250">
+</div>
+
 Este é o centro oficial de informações para **clientes e parceiros** sobre o envio de **mercadorias perigosas** com a DHL Express.
 
 ---
