@@ -1,9 +1,45 @@
-/* Define a nova cor de fundo */
-.md-content {
+/* Fundo geral claro */
+.md-content,
+.md-footer,
+.md-header,
+.md-sidebar,
+.md-main {
   background-color: #FBFDFC;
 }
 
-/* Também ajusta o fundo do topo e rodapé para manter consistência */
-.md-header, .md-footer {
-  background-color: #FBFDFC;
+/* Links e destaques com amarelo DHL */
+a, a:visited {
+  color: #FFD700; /* Amarelo */
+}
+
+a:hover {
+  color: #EAAA00;
+  text-decoration: underline;
+}
+
+/* Caixas e divisores personalizados */
+.md-typeset h2 {
+  border-left: 6px solid #FFD700;
+  padding-left: 12px;
+  background-color: #fffde7;
+  margin-top: 2em;
+}
+
+/* Botões e ênfase */
+strong {
+  color: #222;
+}
+
+/* Aplica amarelo em títulos específicos */
+h1, h2, h3 {
+  color: #DAA520;
+}
+
+/* Torna o GIF visível em todas as páginas, fixado no topo da barra lateral */
+.gif-dhl {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 100px;
+  z-index: 10;
 }
