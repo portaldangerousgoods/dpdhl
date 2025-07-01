@@ -36,7 +36,3 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 ## **Suporte**
 
 Em caso de dúvidas, entre em contato com o **seu contato comercial** ou entre em contato com **suportecs@dhl.com**.
-
-<div style="position: absolute; top: 140px; right: 40px; z-index: 0;">
-  <img src="avião-dhl.gif" alt="avião DHL" width="160px" />
-</div>
