@@ -29,6 +29,9 @@ theme:
     text: "Barlow"
     code: "Fira Code"
 
+extra_css:
+  - overrides/stylesheets/extra.css
+
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
@@ -42,6 +45,3 @@ extra_javascript:
 
 extra_css:
   - extra.css
-
-extra_css:
-  - overrides/stylesheets/extra.css
