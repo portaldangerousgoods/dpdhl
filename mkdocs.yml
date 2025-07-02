@@ -8,28 +8,15 @@ extra_css:
 theme:
   name: material
   language: pt-BR
-
   logo: logo-dhl.png
-
+  font:
+    text: "Barlow"
+    code: "Fira Code"
   palette:
     - scheme: default
       primary: yellow
       accent: red
-      toggle:
-        icon: material/weather-sunny
-        name: Claro
-        color: '#FFCC00'
-    - scheme: slate
-      primary: yellow
-      accent: red
-      toggle:
-        icon: material/weather-night
-        name: Escuro
-        color: '#FFCC00'
-
-  font:
-    text: "Barlow"
-    code: "Fira Code"
+  custom_dir: docs/overrides
 
 nav:
   - Início: index.md
