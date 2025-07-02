@@ -28,5 +28,5 @@ extra_javascript:
   - extra.js
 
 extra_css:
-  - extra.css
   - stylesheets/menu-lateral.css
+  - stylesheets/extra.css
