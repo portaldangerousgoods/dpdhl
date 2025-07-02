@@ -35,7 +35,7 @@ Para que o envio de remessas com gelo seco seja autorizado, é necessário que o
 
 ---
 
-## 📄 Guia para embalagem
+## Guia para embalagem
 📥 Acesse o passo a passo:
 👉 [Como Embalar uma Remessa com Gelo Seco (PDF)](DryIce.pdf)
 
