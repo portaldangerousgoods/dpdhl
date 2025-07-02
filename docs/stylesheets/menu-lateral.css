@@ -1,0 +1,10 @@
+/* Coluna lateral esquerda com cinza #F1F3F4 */
+.md-sidebar--primary {
+  background-color: #F1F3F4;
+}
+
+/* Links na lateral com cor escura para contraste */
+.md-sidebar--primary .md-nav__link,
+.md-sidebar--primary .md-nav__link--active {
+  color: #111 !important;
+}
