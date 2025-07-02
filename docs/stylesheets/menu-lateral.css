@@ -1,9 +1,15 @@
-/* Aplica fundo cinza #F1F3F4 somente na navegação lateral esquerda */
+/* Deixa a lateral inteira com fundo cinza #F1F3F4 */
 .md-sidebar--primary {
   background-color: #F1F3F4;
+  height: 100%;
 }
 
-/* Cor da fonte para contraste */
-.md-sidebar--primary .md-nav__link {
+/* Remove o fundo branco do título que estava cortando */
+.md-sidebar__scrollwrap {
+  background-color: transparent;
+}
+
+/* Opcional: melhora o contraste do texto */
+.md-nav__link {
   color: #111 !important;
 }
