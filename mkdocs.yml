@@ -2,8 +2,6 @@ site_name: Portal DG DHL
 site_url: https://portaldangerousgoods.github.io/dpdhl/
 repo_url: https://github.com/portaldangerousgoods/dpdhl
 repo_name: GitHub
-extra_css:
-  - overrides/stylesheets/extra.css
 
 theme:
   name: material
@@ -31,3 +29,4 @@ extra_javascript:
 
 extra_css:
   - extra.css
+  - stylesheets/menu-lateral.css
