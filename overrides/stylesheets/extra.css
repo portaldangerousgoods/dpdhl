@@ -1,2 +1,6 @@
-extra_css:
-  - stylesheets/extra.css
+.md-sidebar {
+  background-color: #2e2e2e; /* Cinza escuro */
+}
+.md-nav__title, .md-nav__link {
+  color: #ffffff !important;
+}
