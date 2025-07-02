@@ -49,7 +49,7 @@ Eles informam se o produto é perigoso e ajudam a equipe DG a decidir se pode se
 
 ---
 
-## 6. A DHL transporta DG refrigerado ou que exige controle de temperatura?
+## 6. A DHL transporta DG que exige controle de temperatura?
 
 Não. Remessas que exigem controle térmico (como substâncias auto-reativas da classe 4.1, peróxidos orgânicos da classe 5.2 ou materiais biológicos) não são aceitas.
 
