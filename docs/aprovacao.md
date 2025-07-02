@@ -18,7 +18,7 @@ Faça o download e preencha:
 
 ### 2. Certificado de Treinamento DG IATA (se aplicável)
 
-Se o seu produto **não estiver na lista de exceções**, será necessário anexar também o **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
+Se o seu produto **não estiver na lista de casos em que o certificado não é exigido**, será necessário anexar também o **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
 
 > **Importante:** essa exigência **não é uma escolha da DHL Express**. É uma obrigação definida pela norma IATA (Seção 1), e garante a segurança e conformidade no transporte de mercadorias perigosas.
 
