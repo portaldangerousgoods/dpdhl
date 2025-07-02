@@ -31,3 +31,6 @@ extra_javascript:
 
 extra_css:
   - extra.css
+
+extra_css:
+  - overrides/stylesheets/extra.css
