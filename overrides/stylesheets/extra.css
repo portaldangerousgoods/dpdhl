@@ -1,9 +1,9 @@
 /* Aplica fundo cinza #F1F3F4 somente na navegação lateral esquerda */
 .md-sidebar--primary {
-  background-color: #F1F3F4;
+  background-color: #F1F3F4 !important;
 }
 
-/* Opcional: cor da fonte para manter contraste */
+/* Opcional: mantém a fonte mais escura no menu lateral */
 .md-sidebar--primary .md-nav__link {
   color: #111 !important;
 }
