@@ -7,12 +7,23 @@ theme:
   name: material
   language: pt-BR
 
+  logo: logo-dhl.png
+
   palette:
     - scheme: default
       primary: yellow
       accent: red
-
-  logo: logo-dhl.png
+      toggle:
+        icon: material/weather-sunny
+        name: Claro
+        color: '#FFCC00'
+    - scheme: slate
+      primary: yellow
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Escuro
+        color: '#FFCC00'
 
   font:
     text: "Barlow"
