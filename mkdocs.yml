@@ -14,7 +14,6 @@ theme:
     - scheme: default
       primary: yellow
       accent: red
-  custom_dir: docs/overrides
 
 nav:
   - Início: index.md
