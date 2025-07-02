@@ -1,6 +1,15 @@
+/* Escurecer apenas o menu lateral */
 .md-sidebar {
-  background-color: #2e2e2e; /* Cinza escuro */
+  background-color: #2d2d2d; /* Cinza escuro */
 }
+
+/* Cor do texto no menu lateral */
 .md-nav__title, .md-nav__link {
   color: #ffffff !important;
+}
+
+/* Cor do item ativo no menu lateral */
+.md-nav__link--active {
+  background-color: #444444;
+  color: #ffcc00 !important; /* Amarelo DHL */
 }
