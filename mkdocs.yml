@@ -20,9 +20,10 @@ theme:
 
 nav:
   - Início: index.md
+  - FAQ Técnico: faq.md
   - Como aprovar uma conta: aprovacao.md
   - Documentos exigidos: documentos.md
-  - FAQ Técnico: faq.md
+  - Produtos Biológicos: biologicos.md
 
 extra_javascript:
   - extra.js
