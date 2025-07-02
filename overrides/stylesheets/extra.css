@@ -1,9 +1,0 @@
-/* Aplica o fundo cinza claro #F1F3F4 APENAS na navegação lateral esquerda */
-.md-sidebar--primary {
-  background-color: #F1F3F4 !important;
-}
-
-/* Garante que o fundo da página permaneça branco */
-.md-main {
-  background-color: #ffffff !important;
-}
