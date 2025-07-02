@@ -1,6 +1,11 @@
-/* Escurecer apenas o menu lateral */
-.md-sidebar {
-  background-color: #2d2d2d; /* Cinza escuro */
+/* Escurece apenas o menu lateral esquerdo */
+.md-sidebar--primary {
+  background-color: #2d2d2d;
+}
+
+/* Garante que a página principal continue clara */
+.md-main {
+  background-color: #FBFDFC;
 }
 
 /* Cor do texto no menu lateral */
@@ -8,8 +13,8 @@
   color: #ffffff !important;
 }
 
-/* Cor do item ativo no menu lateral */
+/* Item ativo com destaque em amarelo DHL */
 .md-nav__link--active {
   background-color: #444444;
-  color: #ffcc00 !important; /* Amarelo DHL */
+  color: #ffcc00 !important;
 }
