@@ -6,24 +6,17 @@ repo_name: GitHub
 theme:
   name: material
   language: pt-BR
+
   palette:
     - scheme: default
       primary: yellow
       accent: red
-      toggle:
-        icon: material/weather-night
-        name: Modo escuro
-    - scheme: slate
-      primary: yellow
-      accent: red
+
+  logo: logo-dhl.png
+
   font:
     text: "Barlow"
     code: "Fira Code"
-  logo: docslogo.png
-  features:
-    - navigation.sections
-    - navigation.top
-  custom_dir: overrides
 
 nav:
   - Início: index.md
