@@ -6,7 +6,7 @@ Veja os requisitos para envio de materiais biológicos com a DHL Express, garant
 
 ## Classificação dos Materiais Biológicos
 
-O transporte é regulado pelas normas da OMS e IATA. A DHL Express transporta materiais classificados como:
+A DHL Express transporta materiais classificados como:
 
 ### Categoria B:
 - **UN3373**
