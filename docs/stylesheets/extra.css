@@ -1,0 +1,55 @@
+/* Fundo base e estrutura */
+body,
+.md-content,
+.md-main {
+  background: #ffffff;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Header em amarelo DHL */
+.md-header {
+  background-color: #FFD700;
+  color: black;
+  font-weight: 600;
+}
+
+/* Links e navegação */
+a, a:visited {
+  color: #C4001A;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Destaques em cartões */
+.card-dhl {
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Títulos amarelos como na DHL */
+h2 {
+  color: #D40511;
+  font-weight: bold;
+}
+
+/* Botões estilo DHL */
+.btn-dhl {
+  background-color: #C4001A;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  margin-top: 1rem;
+}
+.btn-dhl:hover {
+  background-color: #a00015;
+}
