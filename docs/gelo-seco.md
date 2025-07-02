@@ -39,4 +39,4 @@ Para que o envio de remessas com gelo seco seja autorizado, é necessário que o
 📥 Acesse o passo a passo:
 👉 [Como Embalar uma Remessa com Gelo Seco (PDF)](DryIce.pdf)
 
-Caso tenha dúvidas, entre em contato com a equipe DGR ou seu ponto de atendimento DHL.
+Caso tenha dúvidas, entre em contato com o seu ponto de atendimento DHL.
