@@ -1,9 +1,0 @@
-/* Aplica fundo cinza #F1F3F4 somente na navegação lateral esquerda */
-.md-sidebar--primary {
-  background-color: #F1F3F4;
-}
-
-/* Cor do texto para garantir legibilidade */
-.md-sidebar--primary .md-nav__link {
-  color: #111 !important;
-}
