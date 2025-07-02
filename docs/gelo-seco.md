@@ -18,7 +18,7 @@ O gelo seco, também conhecido como dióxido de carbono (CO₂) no estado sólid
 - A embalagem **precisa permitir a liberação do gás** (conforme item 5.0.2 da IATA).
 
 ### Rotulagem obrigatória
-- Marcações externas:
+Marcações externas:
   - **UN 1845 / DRY ICE**
   - **Peso líquido (em kg) do gelo seco presente**
   - **Etiqueta Classe 9 - Diversos**
