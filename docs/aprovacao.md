@@ -14,23 +14,23 @@ Faça o download e preencha:
 
 - 👉 [Formulário de Solicitação de Aprovação – Form1.docx](Form1.docx)
 - 👉 [Declaração de Produto – Form2.pdf](Form2.pdf)
-- 👉 [Guia de Preenchimento – GuiaForms.pptx](GuiaForms.pptx) - este material orienta o correto preenchimento dos formulários acima.
+- 👉 [Guia de Preenchimento – GuiaForms.pptx](GuiaForms.pptx) — este material orienta o correto preenchimento dos formulários acima.
 
-### 2. Certificado de Treinamento DG IATA (se aplicável)
+### 2. Certificado de Treinamento DG IATA (quando aplicável)
 
-Se o seu produto **não estiver na lista de casos em que o certificado não é exigido**, será necessário anexar também o **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
+Se o seu produto **não estiver na lista de exceções**, será necessário anexar também o **certificado válido de treinamento DG IATA** da equipe responsável pela preparação da carga.
 
-> **Importante:** essa exigência **não é uma escolha da DHL Express**. É uma obrigação definida pela norma IATA (Seção 1), e garante a segurança e conformidade no transporte de mercadorias perigosas.
+> **Importante:** essa exigência **não é uma escolha da DHL Express**.  
+> É uma obrigação definida pela norma IATA (Seção 1), que garante a segurança e conformidade no transporte de mercadorias perigosas.
 
 ---
 
 ## Onde obter o treinamento DG IATA?
 
-Recomendamos que você busque o treinamento com a **Cross Racer**, uma escola reconhecida e confiável:
-
+Recomendamos a escola **Cross Racer**, reconhecida pela IATA e com experiência em DG:  
 👉 [https://crossracer.com.br/treinamentos/](https://crossracer.com.br/treinamentos/)
 
-A Cross Racer é uma das instituições de formação aprovadas pela IATA, com conhecimento específico sobre os requisitos da DHL Express. No entanto, você pode optar por qualquer outro centro de treinamento que seja **oficialmente vinculado à IATA**.
+Você também pode optar por qualquer outro centro de treinamento **oficialmente vinculado à IATA**.
 
 ---
 
@@ -38,7 +38,7 @@ A Cross Racer é uma das instituições de formação aprovadas pela IATA, com c
 
 Você não precisa enviar o certificado DG IATA se estiver solicitando aprovação para:
 
-- **Baterias de Lítio Seção II**: Acopladas ou acompanhando equipamento - Até **100Wh (íon de lítio)** ou **2g (metal de lítio)**
+- **Baterias de Lítio Seção II**: Acopladas ou acompanhando equipamento — até **100Wh (íon de lítio)** ou **2g (metal de lítio)**
 - **UN3373** (Substância Biológica Categoria B)
 - **UN3245** (Material Geneticamente Modificado)
 
@@ -48,30 +48,32 @@ Nestes casos, basta enviar os formulários preenchidos corretamente.
 
 ## Restrições para contas de importação
 
-É importante destacar que remessas que exigem o documento **Shipper's Declaration for Dangerous Goods** **só podem ser enviadas por contas de exportação** no país de origem.
+Remessas que exigem o documento **Shipper's Declaration for Dangerous Goods** **só podem ser enviadas por contas de exportação** no país de origem.
 
-- Contas de **importação** **não são permitidas** para esse tipo de envio.
+- Contas de **importação** não são permitidas para este tipo de envio.  
 - Essa é uma medida de segurança e rastreabilidade adotada globalmente pela DHL Express.
 
 ---
 
 ## Se você **não tem o treinamento**
 
-- A conta não poderá ser aprovada para envio de DG.
-- A DHL Express **não faz exceções** a essa exigência.
-- Essa é uma **regra da IATA**, e não uma diretriz exclusiva da DHL.
-
-Se você observar que outra transportadora aceita sem essa exigência, entenda que seguimos padrões **mais rigorosos de segurança internacional**.
+- A conta não poderá ser aprovada para envio de DG.  
+- A DHL Express **não faz exceções** a essa exigência.  
+- Essa é uma **regra da IATA**, não uma diretriz exclusiva da DHL.
 
 ---
 
-## Envio da documentação
+## Envio da documentação (novo processo)
 
-Após reunir a documentação necessária:
+Toda a documentação deve ser submetida pelo próprio cliente através do formulário oficial:  
+👉 [Clique aqui para acessar o formulário de aprovação de conta](https://form.jotform.com/252466235987066)
 
-1. Envie tudo para seu **responsável comercial DHL**.
-2. Ele encaminhará ao nosso **time de Mercadorias Perigosas** para análise.
-3. Após aprovação, sua conta estará habilitada para envio de DG com a DHL Express (processo leva em torno de **5 dias úteis**).
+### Como funciona:
+1. O cliente preenche e envia o formulário com todos os arquivos aplicáveis.  
+2. Assim que o envio for recebido, o **time de Mercadorias Perigosas** inicia a análise.  
+3. O cliente recebe um **e-mail automático** confirmando a submissão.  
+4. Caso a documentação seja **recusada**, o cliente será notificado por e-mail com todas as instruções e ajustes necessários. 
+5. Se a conta for **aprovada**, o cliente receberá o e-mail de aprovação, em **português** com todas as diretrizes aplicáveis para iniciar os seus envios com a DHL Express.  
 
 ---
 
