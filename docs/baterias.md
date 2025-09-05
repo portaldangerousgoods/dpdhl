@@ -8,14 +8,14 @@
 
 ## Regras Gerais
 
-- **DHL NÃO aceita**:
+**DHL NÃO aceita**:
   - Baterias **defeituosas ou danificadas** (identificadas pelo fabricante).
   - Baterias para **descarte/reciclagem** (qualquer condição).
 
-- **Logística reversa (equipamento para reparo)**:
+**Logística reversa (equipamento para reparo)**:
   - Remova a bateria **antes do envio**, **ou**
   - Anexe a **Declaração de Aparelhos Usados** devidamente preenchida.  
-    **Baixar modelo**: [AparelhosUsados.docx](AparelhosUsados.docx)
+**Baixar modelo**: [AparelhosUsados.docx](AparelhosUsados.docx)
 
 ---
 
