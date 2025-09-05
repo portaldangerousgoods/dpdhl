@@ -1,6 +1,6 @@
 # Transporte de Bebidas Alcoólicas
 
-## 📌 Regras Gerais
+## Regras Gerais
 
 - **Bebidas alcoólicas contendo 24% ou menos de álcool por volume**  
   ➡️ Não são classificadas como materiais perigosos e **não possuem restrições** de transporte.
@@ -10,7 +10,7 @@
 
 ---
 
-## 🔑 Provisão Especial A9
+## Provisão Especial A9
 
 De acordo com a IATA:
 
@@ -27,7 +27,7 @@ De acordo com a IATA:
 
 ---
 
-## 📦 Requisitos de Embalagem
+## Requisitos de Embalagem
 
 Todas as garrafas devem estar protegidas de forma a evitar danos durante o transporte:
 
