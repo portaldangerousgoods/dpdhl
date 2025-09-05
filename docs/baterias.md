@@ -2,11 +2,11 @@
 
 > Centro oficial de orientações para envio de baterias com a DHL Express.  
 > **Atenção**: Sempre confirme **aprovação de conta** e **rota permitida** antes de qualquer remessa:  
-> 👉 https://portaldangerousgoods.github.io/dpdhl/aprovacao/
+> https://portaldangerousgoods.github.io/dpdhl/aprovacao/
 
 ---
 
-## ⚠️ Regras Gerais
+## Regras Gerais
 
 - **DHL NÃO aceita**:
   - Baterias **defeituosas ou danificadas** (identificadas pelo fabricante).
@@ -15,11 +15,11 @@
 - **Logística reversa (equipamento para reparo)**:
   - Remova a bateria **antes do envio**, **ou**
   - Anexe a **Declaração de Aparelhos Usados** devidamente preenchida.  
-    👉 **Baixar modelo**: [AparelhosUsados.docx](AparelhosUsados.docx)
+    **Baixar modelo**: [AparelhosUsados.docx](AparelhosUsados.docx)
 
 ---
 
-## 🔋 Tipos de Bateria
+## Tipos de Bateria
 
 1. **Lítio Íon (Li-ion / Li-poly)**  
    Recarregáveis. Comuns em laptops, celulares, ferramentas, etc.
@@ -32,7 +32,7 @@
 
 ---
 
-## 📦 Formas de envio
+## Formas de envio
 
 - **Apenas células/baterias**  
 - **Embaladas junto com o equipamento** (separadas)  
@@ -40,7 +40,7 @@
 
 ---
 
-## 🔑 Classificação Sódio
+## Classificação Sódio
 
 - **UN3551** – Sódio íon (células/baterias)  
 - **UN3552** – Sódio íon **contidas** em ou **embaladas com** equipamento  
@@ -48,7 +48,7 @@
 
 ---
 
-## 📐 Limites Técnicos
+## Limites Técnicos
 
 ### Capacidade (Wh) — Li-ion
 - **Células ≤ 20 Wh** ou **Baterias ≤ 100 Wh**  
@@ -59,19 +59,33 @@
 - **Células ≤ 1 g** / **Baterias ≤ 2 g**  
 - Acima disso: **> 1 g** ou **> 2 g**
 
-### Quantidade por embalagem (Seção II – quando aplicável)
-- **Li-ion / Li-metal**: até **4 células** ou **2 baterias**  
-  (acima disso muda a classificação/regra)
-- **Sódio íon**: **mesmo critério** (≤ 4 células ou ≤ 2 baterias)
-- **Número de pacotes por consignação**: até **2**; acima disso, regras adicionais se aplicam
+### Quantidade por Embalagem (Seção II)  
+*(Acima disso, muda a classificação/regra).*  
+
+**(UN3481, PI967 / UN3091, PI970)**  
+
+Até **duas baterias acopladas em uma caixa** (e até duas caixas por AWB): a remessa **não é considerada mercadoria perigosa** e pode ser transportada como frete regular.  
+
+**Requisitos:**  
+- **Embalagem**: deve ser resistente, não excedendo as dimensões da **Caixa 7** (48 × 39 × 37 cm).  
+- **Etiquetas**: a embalagem não pode conter nenhuma marca ou etiqueta de mercadorias perigosas.  
+- **Descrição no WB (Content):**  
+  `LiBat Sec II not requiring a lithium battery marking`  
+- **Se a origem for China (Shipment Reference):**  
+  `PI967 SEC II (4C/2B)` ou `PI970 SEC II (4C/2B)`  
+
+**Importante:**  
+- Dentro desses limites, **não é necessário conta aprovada** para envio.  
+- Se houver **mais de quatro baterias acopladas por AWB** ou **mais de duas instaladas por caixa**, será necessária **conta aprovada** e rota permitida.  
+
 
 > **Importante**: “Seção II” não se aplica a todas as combinações. Sempre valide a **PI** correta e a **rota** antes de embarcar.
 
 ---
 
-## 📑 Regras por PI (Packing Instruction)
+## Regras por PI (Packing Instruction)
 
-### 🔹 Lítio Íon
+### Lítio Íon
 
 **UN3480 – PI965**
 - **Seção IA**: até **35 kg**, **CAO** (carga), **DGD obrigatório**, **SoC ≤ 30%**, embalagem homologada (PG II)  
@@ -88,7 +102,7 @@
 
 ---
 
-### 🔹 Lítio Metal
+### Lítio Metal
 
 **UN3090 – PI968**
 - **Seção IA**: até **35 kg**, **CAO**, **DGD obrigatório**, embalagem homologada (PG II)  
@@ -104,7 +118,7 @@
 
 ---
 
-### 🔹 Sódio Íon
+### Sódio Íon
 
 **UN3551 – PI976**
 - Até **35 kg**, **CAO**, **DGD obrigatório**, embalagem homologada (PG II), **SoC ≤ 30%**
@@ -120,17 +134,20 @@
 
 ---
 
-## 🚚 Exigências DHL (Serviços TDI)
+## Exigências DHL 
 
 - **Aprovação da conta** obrigatória e **rota precisa ser permitida**.  
-  👉 Ver **processo de aprovação** e **validação de rota**:  
+  Ver **processo de aprovação** e **validação de rota**:  
   https://portaldangerousgoods.github.io/dpdhl/aprovacao/
 
 ---
 
-## 📎 Modelos e Apoio
+## Guia Completo de Preparação
 
-- **Declaração de Aparelhos Usados** (para logística reversa quando a bateria **não** puder ser removida):  
-  👉 [AparelhosUsados.docx](AparelhosUsados.docx)
+Para entender em detalhe **como uma remessa deve ser preparada**, acesse o documento oficial:  
+[Tool2025.pdf](Tool2025.pdf)
 
-> Dúvidas sobre **formulários**, **limites** ou **PI** aplicável? Encaminhe a **SDS**/dados técnicos e descreva o cenário de envio (produto, quantidade, configuração) para análise do time DGR.
+---
+
+> Dúvidas sobre **formulários**, **limites** ou **PI** aplicável?  
+> Encaminhe a **SDS**/dados técnicos e descreva o cenário de envio (produto, quantidade, configuração) ao seu contato comercial para a análise do time DGR.
