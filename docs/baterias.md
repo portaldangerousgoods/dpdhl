@@ -2,7 +2,8 @@
 
 > Centro oficial de orientações para envio de baterias com a DHL Express.  
 > **Atenção**: Sempre confirme **aprovação de conta** e **rota permitida** antes de qualquer remessa:  
-> https://portaldangerousgoods.github.io/dpdhl/aprovacao/
+> Ver [processo de aprovação e validação de rota](https://portaldangerousgoods.github.io/dpdhl/aprovacao/)
+
 
 ---
 
@@ -135,8 +136,8 @@ Até **duas baterias acopladas em uma caixa** (e até duas caixas por AWB): a re
 ## Exigências DHL 
 
 - **Aprovação da conta** obrigatória e **rota precisa ser permitida**.  
-  Ver **processo de aprovação** e **validação de rota**:  
-  https://portaldangerousgoods.github.io/dpdhl/aprovacao/
+ [processo de aprovação e validação de rota](https://portaldangerousgoods.github.io/dpdhl/aprovacao/)
+
 
 ---
 
