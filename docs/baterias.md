@@ -150,7 +150,7 @@ Para entender em detalhe **como uma remessa deve ser preparada**, acesse o docum
 
 ## Exigências Específicas para Argentina, Paraguai e Uruguai
 
-Para remessas destinadas a **Argentina, Paraguai e Uruguai**, é **obrigatório** apresentar documentos adicionais, devidamente **preenchidos e assinados**, no momento da coleta.
+Para remessas destinadas a **Argentina, Paraguai e Uruguai**, é **obrigatório** apresentar os três documentos adicionais abaixo, devidamente **preenchidos e assinados**, no momento da coleta.
 
 ⚠️ **Atenção**: Essa exigência vale para baterias de lítio **acopladas ou não ao equipamento**.
 
