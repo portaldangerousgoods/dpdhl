@@ -148,5 +148,21 @@ Para entender em detalhe **como uma remessa deve ser preparada**, acesse o docum
 
 ---
 
+## Exigências Específicas para Argentina, Paraguai e Uruguai
+
+Para remessas destinadas a **Argentina, Paraguai e Uruguai**, é **obrigatório** apresentar documentos adicionais, devidamente **preenchidos e assinados**, no momento da coleta.
+
+⚠️ **Atenção**: Essa exigência vale para baterias de lítio **acopladas ou não ao equipamento**.
+
+📄 Documentos necessários:
+- 👉 [Dangerous Goods Acceptance Confirmation Letter](DANGEROUS%20GOODS%20ACCEPTANCE%20CONFIRMATION%20LETTER%20ETHIOPIAN.docx)  
+- 👉 [Shipper's Authorization](SHIPPER'S%20AUTHORIZATION%20ETHIOPIAN.docx)  
+- 👉 [Shipper's Declaration for Section II Lithium Cells and Batteries](SHIPPER'S%20DECLARATION%20%20FOR%20SECTION%20II%20LITHIUM%20CELLS,%20BATTERIES%20ETHIOPIAN.docx)
+
+📘 Para apoio no preenchimento, consulte o guia:  
+👉 [FormsCIA.pdf](FormsCIA.pdf)
+
+---
+
 > Dúvidas sobre **formulários**, **limites** ou **PI** aplicável?  
 > Encaminhe a **SDS**/dados técnicos e descreva o cenário de envio (produto, quantidade, configuração) ao seu contato comercial para a análise do time DGR.
