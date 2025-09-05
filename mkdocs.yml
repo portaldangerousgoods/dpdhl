@@ -18,6 +18,7 @@ theme:
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
+  - Baterias de Lítio: baterias.md
   - Como aprovar uma conta: aprovacao.md
   - Documentos exigidos: documentos.md
   - Produtos Biológicos: biologicos.md
