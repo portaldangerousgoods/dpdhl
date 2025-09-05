@@ -9,12 +9,10 @@
 ## Regras Gerais
 
 **DHL NÃO aceita**:
-  - Baterias **defeituosas ou danificadas** (identificadas pelo fabricante).
-  - Baterias para **descarte/reciclagem** (qualquer condição).
+  - Baterias **defeituosas ou danificadas** (identificadas pelo fabricante) & Baterias para **descarte/reciclagem** (qualquer condição).
 
 **Logística reversa (equipamento para reparo)**:
-  - Remova a bateria **antes do envio**, **ou**
-  - Anexe a **Declaração de Aparelhos Usados** devidamente preenchida.  
+  - Remova a bateria **antes do envio**, **ou** Anexe a **Declaração de Aparelhos Usados** devidamente preenchida.  
 **Baixar modelo**: [AparelhosUsados.docx](AparelhosUsados.docx)
 
 ---
@@ -59,7 +57,7 @@
 - **Células ≤ 1 g** / **Baterias ≤ 2 g**  
 - Acima disso: **> 1 g** ou **> 2 g**
 
-### Quantidade por Embalagem (Seção II)  
+### Enviar sem Classificar como Carga Perigosa - Quantidade por Embalagem (Seção II)  
 *(Acima disso, muda a classificação/regra).*  
 
 **(UN3481, PI967 / UN3091, PI970)**  
