@@ -22,9 +22,10 @@ nav:
   - Bebidas Alcoólicas: bebidas.md
   - Como aprovar uma conta: aprovacao.md
   - Documentos exigidos: documentos.md
+  - Gelo Seco: gelo-seco.md
+  - Perfumes: perfumes.md
   - Produtos Biológicos: biologicos.md
-  - Transporte de Gelo Seco: gelo-seco.md
-  
+   
 extra_javascript:
   - extra.js
 
