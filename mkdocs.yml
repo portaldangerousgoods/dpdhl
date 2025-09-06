@@ -18,9 +18,9 @@ theme:
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
+  - Aprovação de Conta: aprovacao.md
   - Baterias de Lítio: baterias.md
   - Bebidas Alcoólicas: bebidas.md
-  - Como aprovar uma conta: aprovacao.md
   - Documentos exigidos: documentos.md
   - Gelo Seco: gelo-seco.md
   - Perfumes: perfumes.md
