@@ -1,4 +1,4 @@
-# **Bem-vindo ao Portal DG DHL ⚗️🔥☣️☢️**
+# **Bem-vindo ao Portal DG DHL🔥**
 
 Este é o centro oficial de informações para **clientes e parceiros** sobre o envio de **mercadorias perigosas** com a DHL Express.
 
