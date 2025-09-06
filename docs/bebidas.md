@@ -20,7 +20,6 @@ De acordo com a IATA:
 - Embalagens de **varejo fechadas** (⚠️ bebidas artesanais não são permitidas);
 - Máximo de **5 L por embalagem interna**;
 - A remessa deve seguir em **embalagem apropriada**, sem nenhuma marca de artigo perigoso;
-- Deve ser apresentada a **Declaração de Produto Não Perigoso** informando que as bebidas não ultrapassam 70% de álcool;
 - As palavras **"Not Restricted"** e a referência à **Provisão Especial A9** devem constar:
   - **Na declaração de produto não perigoso** (campo “Contents” do WB);  
   - **Na caixa externa**, junto à provisão A9.
