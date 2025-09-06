@@ -6,7 +6,7 @@ A maioria dos perfumes contém **álcool** e, portanto, são potencialmente infl
 Por isso, são classificados como **Mercadorias Perigosas** e seguem regulamentos rígidos da **IATA**.
 
 - Classificação IATA: **UN1266 – Produtos de perfumaria com solventes inflamáveis**  
-- Alternativamente, podem ser enviados sob a designação de **Consumer Commodity – ID8000 (Quantidade Limitada)**
+- Alternativamente, podem ser enviados sob a designação de **Consumer Commodity – ID8000 (Quantidade Limitada)** 
 
 ---
 
