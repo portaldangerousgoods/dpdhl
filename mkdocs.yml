@@ -25,10 +25,10 @@ nav:
   - Gelo Seco: gelo-seco.md
   - Perfumes: perfumes.md
   - Produtos Biológicos: biologicos.md
+  - Cargas em Quantidades Excetuadas (EQ): eq.md
    
 extra_javascript:
   - extra.js
-
 
 extra_css:
   - stylesheets/menu-lateral.css
