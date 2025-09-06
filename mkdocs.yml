@@ -26,6 +26,7 @@ nav:
   - Perfumes: perfumes.md
   - Produtos Biológicos: biologicos.md
   - Cargas em Quantidades Excetuadas (EQ): eq.md
+  - Cargas Perigosas Totais (Full DG): full-dg.md
    
 extra_javascript:
   - extra.js
