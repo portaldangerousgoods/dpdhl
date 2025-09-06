@@ -31,9 +31,9 @@ De acordo com a IATA:
 Todas as garrafas devem estar protegidas de forma a evitar danos durante o transporte:
 
 1. **Plástico bolha** em cada garrafa (Figura 1).  
-2. **Caixa colmeia** para evitar atrito e movimentação (Figura 2).  
-3. **Marcação FRÁGIL** + **etiquetas de setas** em **dois lados opostos** da caixa externa (Figura 3).  
-   - Se estiver sob a **Provisão A9**, a informação deve constar também na caixa externa.
+2. **Marcação FRÁGIL** + **etiquetas de setas** em **dois lados opostos** da caixa externa  (Figura 2).  
+3. **Caixa colmeia** para evitar atrito e movimentação (Figura 3).  
+   - Se estiver sob a **Provisão A9**, a informação deve constar também na caixa externa (Figura 4).
 
 📷 **Exemplo de preparação**:  
 ![Exemplo de embalagem para bebidas alcoólicas](FotosBeb.jpg)  
