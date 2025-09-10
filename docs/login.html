@@ -3,92 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - Portal DG DHL</title>
+  <link rel="stylesheet" href="stylesheets/menu-lateral.css">
   <style>
     @font-face {
       font-family: 'Delivery';
       src: url('Delivery_Lt.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
     }
+
     body {
       font-family: 'Delivery', sans-serif;
-      background: #ffffff;
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      flex-direction: column;
     }
-    .login-box {
-      width: 340px;
+
+    .login-container {
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
       padding: 30px;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     }
-    .login-box img {
-      width: 160px;
+
+    .login-container img {
+      max-width: 160px;
       margin-bottom: 15px;
     }
-    h2 {
-      margin-bottom: 20px;
+
+    .login-container h2 {
       color: #D40511; /* DHL Red */
+      font-size: 22px;
+      margin-bottom: 25px;
     }
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
+
+    .login-container input {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      font-size: 16px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 15px;
-      font-family: 'Delivery', sans-serif;
+      border-radius: 6px;
+      text-align: center;
     }
-    button {
-      background-color: #FFCC00; /* DHL Yellow */
+
+    .login-container button {
+      background: #FFCC00; /* DHL Yellow */
+      color: black;
+      font-weight: bold;
       border: none;
       padding: 12px;
       width: 100%;
-      border-radius: 4px;
-      font-weight: bold;
       cursor: pointer;
-      font-family: 'Delivery', sans-serif;
-      color: #000;
-      font-size: 15px;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 10px;
     }
-    button:hover {
-      background-color: #e6b800;
+
+    .login-container button:hover {
+      background: #e6b800;
     }
+
     .error {
       color: red;
-      margin-top: 10px;
       display: none;
-      font-size: 13px;
+      margin-top: 10px;
+      font-size: 14px;
     }
+
     footer {
       margin-top: 20px;
       font-size: 12px;
-      color: #666;
-      text-align: center;
-      font-family: 'Delivery', sans-serif;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
-    <img src="logo-dhl.png" alt="DHL Logo">
-    <h2>Portal DG DHL</h2>
+  <div class="login-container">
+    <img src="logo-dhl.png" alt="Logo DHL">
+    <h2>🔒 Exclusivo para Clientes</h2>
     <form id="dg-login-form">
-      <input id="dg-account" type="text" maxlength="9" placeholder="Conta (9 dígitos)" required>
-      <input id="dg-pass" type="password" placeholder="Senha" required>
+      <input type="text" id="dg-account" maxlength="9" placeholder="Conta (9 dígitos)">
+      <input type="password" id="dg-pass" placeholder="Senha">
       <button type="submit">Entrar</button>
       <p id="dg-login-error" class="error"></p>
     </form>
+    <footer>Exclusivo para Clientes · DHL Express · Mercadorias Perigosas</footer>
   </div>
 
-  <footer>
-    Exclusivo para Clientes · DHL Express · Mercadorias Perigosas
-  </footer>
+  <script>
+    (function () {
+      function basePath() {
+        const parts = location.pathname.split('/').filter(Boolean);
+        return parts.length ? `/${parts[0]}/` : '/';
+      }
+      function setAuthOk() {
+        const exp = Date.now() + 8 * 60 * 60 * 1000; // 8h
+        localStorage.setItem('dg_auth', JSON.stringify({ ok: true, exp }));
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('dg-login-form');
+        const accountInput = document.getElementById('dg-account');
+        const passInput = document.getElementById('dg-pass');
+        const errorBox = document.getElementById('dg-login-error');
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const account = (accountInput.value || '').trim();
+          const pass = (passInput.value || '').trim();
+
+          const isNineDigits = /^[0-9]{9}$/.test(account);
+          const okPass = pass === 'dhl1234!';
+
+          if (!isNineDigits) {
+            errorBox.textContent = 'A conta deve ter exatamente 9 dígitos numéricos.';
+            errorBox.style.display = 'block';
+            return;
+          }
+          if (!okPass) {
+            errorBox.textContent = 'Senha inválida.';
+            errorBox.style.display = 'block';
+            return;
+          }
+
+          setAuthOk();
+          window.location.replace(basePath());
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
