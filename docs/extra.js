@@ -27,12 +27,10 @@
   // ====== Guarda de rotas ======
   function guard() {
     const base = basePath();
-    // Sem login -> manda para login (exceto se já está no login)
     if (!hasAuth() && !isLoginPage()) {
       window.location.replace(base + 'login.html');
       return false;
     }
-    // Já logado e abriu login -> manda para home
     if (hasAuth() && isLoginPage()) {
       window.location.replace(base);
       return false;
@@ -59,92 +57,38 @@
     header.appendChild(a);
   }
 
-  // ====== Seu GIF do avião no índice (TOC) ======
+  // ====== GIF no índice (TOC) ======
   function injectGif() {
-    // Não mostra GIF na página de login
-    if (isLoginPage()) return;
-
+    if (isLoginPage()) return; // não mostra GIF no login
     const toc = document.querySelector('.md-sidebar--secondary nav');
     if (!toc) return;
-
-    // evita duplicação
     if (document.getElementById('gif-aviao-dhl')) return;
 
     const img = document.createElement('img');
     img.id = 'gif-aviao-dhl';
-    img.src = basePath() + 'avião-dhl.gif'; // caminho relativo ao base do site
+    img.src = basePath() + 'avião-dhl.gif';
     img.alt = 'Avião DHL';
     img.style.width = '100px';
     img.style.display = 'block';
     img.style.margin = '16px auto';
-
     toc.parentElement.appendChild(img);
   }
 
-  // ====== Tela de login embutida (opcional) ======
-  // Se você estiver usando login.html dedicado, não precisa deste overlay inline.
-  // Mantive um "modo overlay" opcional caso queira forçar login numa única página.
-  // Por padrão, deixei DESATIVADO.
-  const USE_INLINE_OVERLAY = false;
-  function maybeShowInlineOverlay() {
-    if (!USE_INLINE_OVERLAY || isLoginPage() || hasAuth()) return;
-
-    const overlay = document.createElement('div');
-    overlay.innerHTML = `
-      <div style="position:fixed;top:0;left:0;width:100%;height:100%;
-                  background:white;z-index:9999;display:flex;flex-direction:column;
-                  justify-content:center;align-items:center;font-family:sans-serif;">
-        <h2>🔒 Acesso Restrito</h2>
-        <input id="usuario-inline" type="text" maxlength="9" placeholder="Digite o código de 9 dígitos"
-               style="margin:8px;padding:8px;width:220px;text-align:center;font-size:16px"/>
-        <input id="senha-inline" type="password" placeholder="Senha"
-               style="margin:8px;padding:8px;width:220px;text-align:center;font-size:16px"/>
-        <button id="entrar-inline"
-                style="padding:10px 20px;background:#FFCC00;color:#000;border:none;font-weight:bold;cursor:pointer;">
-          Entrar
-        </button>
-        <p id="erro-inline" style="color:red;margin-top:10px;display:none;">Usuário ou senha incorretos</p>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-
-    const senhaCorreta = 'dhl2025!';
-    document.getElementById('entrar-inline').addEventListener('click', () => {
-      const u = document.getElementById('usuario-inline').value;
-      const s = document.getElementById('senha-inline').value;
-      if (/^\d{9}$/.test(u) && s === senhaCorreta) {
-        setAuth();
-        overlay.remove();
-        // Reaplica elementos pós-login
-        injectLogout();
-        injectGif();
-      } else {
-        document.getElementById('erro-inline').style.display = 'block';
-      }
-    });
-  }
-
   // ====== Execução inicial ======
-  if (!guard()) return;        // bloqueia/ajusta rota se necessário
-  injectLogout();              // mostra "Sair" se logado
-  injectGif();                 // mantém seu GIF no ToC
-  maybeShowInlineOverlay();    // geralmente desativado
+  if (!guard()) return;
+  injectLogout();
+  injectGif();
 
-  // ====== Reexecuta após navegações internas (SPA do MkDocs Material) ======
   if (window.document$) {
     document$.subscribe(() => {
       if (!guard()) return;
       injectLogout();
       injectGif();
-      // overlay inline só se ativado
-      maybeShowInlineOverlay();
     });
   }
 })();
 
-/* ====== [ACRESCENTE A PARTIR DAQUI NO FINAL DO ARQUIVO EXISTENTE] ====== */
-
-// Validação de login para login.html (sem interferir nas demais páginas)
+/* ====== BLOCO DE LOGIN (login.html) ====== */
 (function () {
   function basePath() {
     const parts = location.pathname.split('/').filter(Boolean);
@@ -159,7 +103,6 @@
     localStorage.setItem('dg_auth', JSON.stringify({ ok: true, exp }));
   }
 
-  // Só roda este bloco na página de login
   if (!isLoginPage()) return;
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -190,10 +133,9 @@
         return;
       }
 
-      // Autenticação ok
+      // Autenticação OK
       setAuthOk();
       window.location.replace(basePath());
     });
   });
 })();
-
