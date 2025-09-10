@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Portal DG DHL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --dhl-yellow:#FFCC00; --dhl-red:#D40511; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f4;
+      display: grid; place-items: center;
+      min-height: 100dvh; margin: 0;
+    }
+    .box {
+      width: min(360px, 92vw);
+      background: #fff; border-radius: 12px;
+      padding: 28px; box-shadow: 0 8px 28px rgba(0,0,0,.08);
+    }
+    h1 { font-size: 20px; margin: 0 0 12px; color: var(--dhl-red); }
+    p { margin: 0 0 18px; color: #333; }
+    input {
+      width: 100%; height: 42px; padding: 0 12px;
+      border: 1px solid #ddd; border-radius: 8px; outline: none;
+      margin-bottom: 12px; font-size: 16px;
+    }
+    button {
+      width: 100%; height: 44px; border: 0; border-radius: 8px;
+      background: var(--dhl-yellow); color: #000; font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(.95); }
+    .error { color: #c00; margin-top: 10px; min-height: 20px; }
+    .brand { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .dot { width:12px; height:12px; border-radius:50%; background:var(--dhl-red); }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="brand"><div class="dot"></div><strong>Portal DG DHL</strong></div>
+    <h1>Acesso restrito</h1>
+    <p>Informe seu <strong>código (9 dígitos)</strong> e a senha.</p>
+
+    <input id="username" type="text" inputmode="numeric" placeholder="Código (somente números)" maxlength="9" />
+    <input id="password" type="password" placeholder="Senha" />
+    <button id="btn">Entrar</button>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    function basePath() {
+      const parts = location.pathname.split('/').filter(Boolean);
+      // GitHub Pages (projeto): /<repo>/
+      return parts.length ? `/${parts[0]}/` : '/';
+    }
+    function setAuth() {
+      const token = { ok:true, ts: Date.now(), exp: Date.now() + 12*60*60*1000 }; // 12h
+      localStorage.setItem('dg_auth', JSON.stringify(token));
+    }
+    function isValidUser(u) { return /^\d{9}$/.test(u); }
+    function isValidPass(p) { return p === 'dhl2025!'; }
+
+    function goHome() { window.location.href = basePath(); }
+
+    function login() {
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      const err = document.getElementById('error');
+
+      if (!isValidUser(u)) {
+        err.textContent = 'Informe um código numérico válido (9 dígitos).';
+        return;
+      }
+      if (!isValidPass(p)) {
+        err.textContent = 'Senha inválida.';
+        return;
+      }
+      setAuth();
+      goHome();
+    }
+
+    document.getElementById('btn').addEventListener('click', login);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') login();
+    });
+
+    // Se já estiver logado, redireciona para a home
+    try {
+      const t = JSON.parse(localStorage.getItem('dg_auth') || '{}');
+      if (t.ok && Date.now() < t.exp) goHome();
+    } catch {}
+  </script>
+</body>
+</html>
