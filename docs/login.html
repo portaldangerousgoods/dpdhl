@@ -1,197 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Login • Portal DG DHL</title>
-
+  <meta charset="UTF-8">
+  <title>Login - Portal DG DHL</title>
   <style>
-    /* Fonte DELIVERY (usa o arquivo já existente) */
     @font-face {
       font-family: 'Delivery';
       src: url('Delivery_Lt.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
-      font-display: swap;
     }
-
-    :root {
-      --dhl-yellow: #FFCC00;
-      --dhl-red: #D40511;
-      --ink: #000000;
-      --panel: #ffffff;
-      --muted: #666;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: #FBFDFC;
-      color: var(--ink);
-      font-family: 'Delivery', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    .wrap {
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 460px;
-      background: var(--panel);
-      border: 1px solid #eee;
-      border-radius: 14px;
-      box-shadow: 0 8px 28px rgba(0,0,0,.06);
-      overflow: hidden;
-    }
-
-    .brand {
-      background: var(--dhl-yellow);
-      padding: 16px 20px;
+    body {
+      font-family: 'Delivery', sans-serif;
+      background: #ffffff;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
-    }
-    .brand img {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-    .brand h1 {
+      height: 100vh;
       margin: 0;
-      font-size: 18px;
-      letter-spacing: .4px;
-      color: var(--ink);
+      flex-direction: column;
     }
-
-    .hero {
-      padding: 20px 20px 0 20px;
-    }
-    .hero h2 {
-      font-size: 28px;
-      line-height: 1.15;
-      margin: 0 0 6px 0;
-      letter-spacing: .3px;
-    }
-    .hero p {
-      margin: 0 0 16px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    form {
-      padding: 16px 20px 24px 20px;
-      display: grid;
-      gap: 14px;
-    }
-
-    label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 6px;
-      display: inline-block;
-    }
-
-    .field {
-      display: grid;
-      gap: 6px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px 12px;
-      font-size: 15px;
+    .login-box {
+      width: 340px;
+      padding: 30px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      outline: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-      border-color: var(--dhl-red);
-      box-shadow: 0 0 0 3px rgba(212,5,17,.12);
+    .login-box img {
+      width: 160px;
+      margin-bottom: 15px;
     }
-
-    .hint {
-      font-size: 12px;
-      color: var(--muted);
+    h2 {
+      margin-bottom: 20px;
+      color: #D40511; /* DHL Red */
     }
-
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: 'Delivery', sans-serif;
+    }
+    button {
+      background-color: #FFCC00; /* DHL Yellow */
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Delivery', sans-serif;
+      color: #000;
+      font-size: 15px;
+    }
+    button:hover {
+      background-color: #e6b800;
+    }
     .error {
+      color: red;
+      margin-top: 10px;
       display: none;
-      background: #fff3f3;
-      color: var(--dhl-red);
-      border: 1px solid #ffd4d4;
-      padding: 10px 12px;
-      border-radius: 8px;
       font-size: 13px;
     }
-
-    button[type="submit"] {
-      margin-top: 6px;
-      background: var(--dhl-red);
-      color: #fff;
-      border: 0;
-      border-radius: 10px;
-      font-weight: 700;
-      padding: 12px 14px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-    button[type="submit"]:hover {
-      filter: brightness(.96);
-    }
-
-    .foot {
-      padding: 0 20px 18px 20px;
+    footer {
+      margin-top: 20px;
       font-size: 12px;
-      color: var(--muted);
+      color: #666;
       text-align: center;
+      font-family: 'Delivery', sans-serif;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-
-      <div class="brand">
-        <img src="logo-dhl.png" alt="DHL" />
-        <h1>Portal DG DHL</h1>
-      </div>
-
-      <div class="hero">
-        <h2>Acesso ao Portal</h2>
-        <p>Digite sua <strong>Conta</strong> (9 dígitos) e a senha para continuar.</p>
-      </div>
-
-      <form id="dg-login-form" autocomplete="off" novalidate>
-        <div id="dg-login-error" class="error"></div>
-
-        <div class="field">
-          <label for="dg-account">Conta</label>
-          <input id="dg-account" name="account" type="text" inputmode="numeric" pattern="[0-9]{9}" maxlength="9" placeholder="Somente números (9 dígitos)" required />
-          <div class="hint">Ex.: 123456789</div>
-        </div>
-
-        <div class="field">
-          <label for="dg-pass">Senha</label>
-          <input id="dg-pass" name="password" type="password" placeholder="dhl1234!" required />
-          <div class="hint">Senha padrão: <strong>dhl1234!</strong></div>
-        </div>
-
-        <button type="submit">Entrar</button>
-      </form>
-
-      <div class="foot">
-        Acesso interno • DHL Express • Mercadorias Perigosas
-      </div>
-    </div>
+  <div class="login-box">
+    <img src="logo-dhl.png" alt="DHL Logo">
+    <h2>Portal DG DHL</h2>
+    <form id="dg-login-form">
+      <input id="dg-account" type="text" maxlength="9" placeholder="Conta (9 dígitos)" required>
+      <input id="dg-pass" type="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+      <p id="dg-login-error" class="error"></p>
+    </form>
   </div>
 
-  <!-- O comportamento do login é controlado pelo extra.js já existente -->
+  <footer>
+    Exclusivo para Clientes · DHL Express · Mercadorias Perigosas
+  </footer>
 </body>
 </html>
