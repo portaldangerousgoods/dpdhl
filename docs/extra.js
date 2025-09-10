@@ -141,3 +141,59 @@
     });
   }
 })();
+
+/* ====== [ACRESCENTE A PARTIR DAQUI NO FINAL DO ARQUIVO EXISTENTE] ====== */
+
+// Validação de login para login.html (sem interferir nas demais páginas)
+(function () {
+  function basePath() {
+    const parts = location.pathname.split('/').filter(Boolean);
+    return parts.length ? `/${parts[0]}/` : '/';
+  }
+  function isLoginPage() {
+    const p = location.pathname;
+    return p.endsWith('/login.html') || p.endsWith('/login');
+  }
+  function setAuthOk() {
+    const exp = Date.now() + 8 * 60 * 60 * 1000; // 8h
+    localStorage.setItem('dg_auth', JSON.stringify({ ok: true, exp }));
+  }
+
+  // Só roda este bloco na página de login
+  if (!isLoginPage()) return;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('dg-login-form');
+    if (!form) return;
+
+    const accountInput = document.getElementById('dg-account');
+    const passInput = document.getElementById('dg-pass');
+    const errorBox = document.getElementById('dg-login-error');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const account = (accountInput.value || '').trim();
+      const pass = (passInput.value || '').trim();
+
+      const isNineDigits = /^[0-9]{9}$/.test(account);
+      const okPass = pass === 'dhl1234!';
+
+      if (!isNineDigits) {
+        errorBox.textContent = 'A conta deve ter exatamente 9 dígitos numéricos.';
+        errorBox.style.display = 'block';
+        return;
+      }
+      if (!okPass) {
+        errorBox.textContent = 'Senha inválida.';
+        errorBox.style.display = 'block';
+        return;
+      }
+
+      // Autenticação ok
+      setAuthOk();
+      window.location.replace(basePath());
+    });
+  });
+})();
+
