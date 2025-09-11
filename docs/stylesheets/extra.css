@@ -1,3 +1,26 @@
+/* ====== Ajuste de links ====== */
+
+/* Links normais (cor cinza escuro #666666) */
+a,
+a:visited {
+  color: #666666 !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mantém o índice (menu lateral direita) em vermelho */
+.md-sidebar--secondary .md-nav__link,
+.md-sidebar--secondary .md-nav__link:visited {
+  color: #C4001A !important; /* Vermelho DHL */
+}
+.md-sidebar--secondary .md-nav__link:hover {
+  color: #a00015 !important; /* Tom mais escuro no hover */
+}
+
+/* ====== Restante do tema já aplicado ====== */
+
 /* Fundo base e estrutura */
 body,
 .md-content,
@@ -11,17 +34,6 @@ body,
   background-color: #FFD700;
   color: black;
   font-weight: 600;
-}
-
-/* Links e navegação – atualizado para Light Blue */
-a,
-a:visited {
-  color: #B2DEF3 !important;
-  text-decoration: none;
-}
-a:hover {
-  color: #7fc1e6 !important; /* tom um pouco mais escuro no hover */
-  text-decoration: underline;
 }
 
 /* Destaques em cartões */
@@ -54,28 +66,4 @@ h2 {
 }
 .btn-dhl:hover {
   background-color: #a00015;
-}
-
-/* Menu lateral com fundo cinza */
-.md-sidebar--primary {
-  background-color: #F1F3F4;
-  height: 100%;
-}
-.md-sidebar__scrollwrap {
-  background-color: transparent;
-}
-
-/* Ajuste do botão "Sair" */
-#dg-logout {
-  margin-left: 20px;
-  padding: 5px 12px;
-  background-color: #D40511;
-  color: #fff !important;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-#dg-logout:hover {
-  background-color: #000;
 }
