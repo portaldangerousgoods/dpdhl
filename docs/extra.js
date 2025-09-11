@@ -36,36 +36,42 @@
     return true;
   }
 
-  // ====== Botão "Sair" no header (estilo chamativo, seta ➡️) ======
-  function injectLogout() {
-    if (!hasAuth()) return;
-    if (document.getElementById('dg-logout')) return;
+  // ====== Botão "Sair" no header ======
+function injectLogout() {
+  if (!hasAuth()) return;
+  if (document.getElementById('dg-logout')) return;
 
-    const header = document.querySelector('.md-header__inner');
-    if (!header) return;
+  const header = document.querySelector('.md-header__inner');
+  if (!header) return;
 
-    const a = document.createElement('a');
-    a.id = 'dg-logout';
-    a.innerHTML = '⇨ Sair';
-    a.style.marginLeft = 'auto';
-    a.style.cursor = 'pointer';
-    a.style.fontWeight = '700';
-    a.style.padding = '8px 16px';
-    a.style.backgroundColor = '#C4001A'; // DHL Red
-    a.style.color = '#fff';
-    a.style.borderRadius = '6px';
-    a.style.textDecoration = 'none';
-    a.style.fontSize = '15px';
-    a.style.transition = 'background 0.2s ease-in-out';
-    a.onmouseover = () => { a.style.backgroundColor = '#a00015'; };
-    a.onmouseout  = () => { a.style.backgroundColor = '#C4001A'; };
-    a.onclick = () => {
-      clearAuth();
-      window.location.href = basePath() + 'login.html';
-    };
+  const a = document.createElement('a');
+  a.id = 'dg-logout';
+  a.innerHTML = '⇨ Sair'; // Ícone + texto
+  a.style.marginLeft = 'auto';
+  a.style.cursor = 'pointer';
+  a.style.fontWeight = '600';
+  a.style.fontSize = '14px';   // 🔹 menor que antes
+  a.style.padding = '4px 10px'; // 🔹 mais compacto
+  a.style.background = '#FFCC00';
+  a.style.color = '#000';
+  a.style.borderRadius = '4px';
+  a.style.textDecoration = 'none';
+  a.style.display = 'inline-block';
 
-    header.appendChild(a);
-  }
+  a.onmouseover = () => {
+    a.style.background = '#e6b800';
+  };
+  a.onmouseout = () => {
+    a.style.background = '#FFCC00';
+  };
+
+  a.onclick = () => {
+    clearAuth();
+    window.location.href = basePath() + 'login.html';
+  };
+
+  header.appendChild(a);
+}
 
   // ====== Oculta o link do GitHub no header ======
   function hideGitHubLink() {
