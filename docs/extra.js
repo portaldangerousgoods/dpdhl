@@ -36,46 +36,70 @@
     return true;
   }
 
-  // ====== Botão "Sair" no header ======
+ // ====== Botão "Sair" no header (cria ou reestiliza) ======
 function injectLogout() {
   if (!hasAuth()) return;
-  if (document.getElementById('dg-logout')) return;
 
   const header = document.querySelector('.md-header__inner');
   if (!header) return;
 
-  const a = document.createElement('a');
-  a.id = 'dg-logout';
-  a.innerHTML = '⇨ Sair';   // <-- texto com a seta
+  // Função para aplicar estilo e eventos (serve para criar ou atualizar)
+  const styleLogoutBtn = (btn) => {
+    btn.id = 'dg-logout';
+    btn.innerHTML = '➡️ Sair';
+    btn.setAttribute('aria-label', 'Sair');
+    btn.style.marginLeft = '24px';          // espaço da barra de busca
+    btn.style.marginRight = '12px';
+    btn.style.padding = '4px 10px';         // menor
+    btn.style.borderRadius = '9999px';      // bem arredondado
+    btn.style.backgroundColor = '#C4001A';  // vermelho DHL
+    btn.style.color = '#fff';
+    btn.style.fontWeight = '600';
+    btn.style.fontSize = '13px';
+    btn.style.cursor = 'pointer';
+    btn.style.transition = 'background-color 0.2s ease, transform 0.05s ease';
+    btn.style.textDecoration = 'none';
+    btn.style.display = 'inline-block';
+    btn.style.userSelect = 'none';
+    btn.style.lineHeight = '1.2';
 
-  // estilo do botão (menor, mas visível)
-  a.style.marginLeft = 'auto';
-  a.style.cursor = 'pointer';
-  a.style.fontWeight = '600';
-  a.style.fontSize = '14px';        // tamanho reduzido
-  a.style.padding = '4px 10px';     // menos espaçamento
-  a.style.backgroundColor = '#FFCC00'; // amarelo DHL
-  a.style.color = '#000';           // preto
-  a.style.borderRadius = '4px';     // cantos arredondados
-  a.style.textDecoration = 'none';
-  a.style.transition = 'all 0.2s ease-in-out';
+    // limpa handlers antigos para evitar empilhamento
+    btn.onmouseenter = null;
+    btn.onmouseleave = null;
+    btn.onmousedown  = null;
+    btn.onmouseup    = null;
+    btn.onclick      = null;
 
-  // efeito hover
-  a.onmouseenter = () => {
-    a.style.backgroundColor = '#D40511'; // vermelho DHL
-    a.style.color = '#fff';
+    // Hover / active
+    btn.addEventListener('mouseenter', () => {
+      btn.style.backgroundColor = '#000';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.backgroundColor = '#C4001A';
+    });
+    btn.addEventListener('mousedown', () => {
+      btn.style.transform = 'scale(0.98)';
+    });
+    btn.addEventListener('mouseup', () => {
+      btn.style.transform = 'scale(1)';
+    });
+
+    // Ação
+    btn.onclick = () => {
+      clearAuth();
+      window.location.href = basePath() + 'login.html';
+    };
   };
-  a.onmouseleave = () => {
-    a.style.backgroundColor = '#FFCC00';
-    a.style.color = '#000';
-  };
 
-  a.onclick = () => {
-    clearAuth();
-    window.location.href = basePath() + 'login.html';
-  };
-
-  header.appendChild(a);
+  // Se já existe, apenas reestiliza. Senão, cria novo.
+  let a = document.getElementById('dg-logout');
+  if (!a) {
+    a = document.createElement('a');
+    styleLogoutBtn(a);
+    header.appendChild(a);
+  } else {
+    styleLogoutBtn(a);
+  }
 }
 
   // ====== Oculta o link do GitHub no header ======
