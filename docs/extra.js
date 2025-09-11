@@ -46,23 +46,28 @@ function injectLogout() {
 
   const a = document.createElement('a');
   a.id = 'dg-logout';
-  a.innerHTML = '⇨ Sair'; // Ícone + texto
+  a.innerHTML = '⇨ Sair';   // <-- texto com a seta
+
+  // estilo do botão (menor, mas visível)
   a.style.marginLeft = 'auto';
   a.style.cursor = 'pointer';
   a.style.fontWeight = '600';
-  a.style.fontSize = '14px';   // 🔹 menor que antes
-  a.style.padding = '4px 10px'; // 🔹 mais compacto
-  a.style.background = '#FFCC00';
-  a.style.color = '#000';
-  a.style.borderRadius = '4px';
+  a.style.fontSize = '14px';        // tamanho reduzido
+  a.style.padding = '4px 10px';     // menos espaçamento
+  a.style.backgroundColor = '#FFCC00'; // amarelo DHL
+  a.style.color = '#000';           // preto
+  a.style.borderRadius = '4px';     // cantos arredondados
   a.style.textDecoration = 'none';
-  a.style.display = 'inline-block';
+  a.style.transition = 'all 0.2s ease-in-out';
 
-  a.onmouseover = () => {
-    a.style.background = '#e6b800';
+  // efeito hover
+  a.onmouseenter = () => {
+    a.style.backgroundColor = '#D40511'; // vermelho DHL
+    a.style.color = '#fff';
   };
-  a.onmouseout = () => {
-    a.style.background = '#FFCC00';
+  a.onmouseleave = () => {
+    a.style.backgroundColor = '#FFCC00';
+    a.style.color = '#000';
   };
 
   a.onclick = () => {
