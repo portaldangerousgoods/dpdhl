@@ -1,8 +1,6 @@
 (function () {
   // ====== Helpers de rota/base ======
   function basePath() {
-    // Em GitHub Pages de projeto (portaldangerousgoods.github.io/dpdhl/),
-    // o base é "/dpdhl/". Se publicar como user/org page, será "/".
     const parts = location.pathname.split('/').filter(Boolean);
     return parts.length ? `/${parts[0]}/` : '/';
   }
@@ -38,18 +36,26 @@
     return true;
   }
 
-  // ====== Botão "Sair" no header ======
+  // ====== Botão "Sair" mais chamativo ======
   function injectLogout() {
     if (!hasAuth()) return;
     if (document.getElementById('dg-logout')) return;
     const header = document.querySelector('.md-header__inner');
     if (!header) return;
+
     const a = document.createElement('a');
     a.id = 'dg-logout';
-    a.textContent = 'Sair';
-    a.style.marginLeft = 'auto';
+    a.textContent = '🚪 Sair';
+    a.style.marginLeft = '20px';
     a.style.cursor = 'pointer';
-    a.style.fontWeight = '600';
+    a.style.fontWeight = 'bold';
+    a.style.padding = '6px 14px';
+    a.style.borderRadius = '6px';
+    a.style.backgroundColor = '#D40511'; // vermelho DHL
+    a.style.color = 'white';
+    a.style.textDecoration = 'none';
+    a.onmouseenter = () => { a.style.backgroundColor = '#a00015'; };
+    a.onmouseleave = () => { a.style.backgroundColor = '#D40511'; };
     a.onclick = () => {
       clearAuth();
       window.location.href = basePath() + 'login.html';
@@ -57,9 +63,9 @@
     header.appendChild(a);
   }
 
-  // ====== GIF no índice (TOC) ======
+  // ====== GIF do avião ======
   function injectGif() {
-    if (isLoginPage()) return; // não mostra GIF no login
+    if (isLoginPage()) return;
     const toc = document.querySelector('.md-sidebar--secondary nav');
     if (!toc) return;
     if (document.getElementById('gif-aviao-dhl')) return;
@@ -71,71 +77,28 @@
     img.style.width = '100px';
     img.style.display = 'block';
     img.style.margin = '16px auto';
+
     toc.parentElement.appendChild(img);
+  }
+
+  // ====== Ocultar info GitHub no header ======
+  function hideGitHub() {
+    const gh = document.querySelector('.md-header__source');
+    if (gh) gh.style.display = 'none';
   }
 
   // ====== Execução inicial ======
   if (!guard()) return;
   injectLogout();
   injectGif();
+  hideGitHub();
 
   if (window.document$) {
     document$.subscribe(() => {
       if (!guard()) return;
       injectLogout();
       injectGif();
+      hideGitHub();
     });
   }
-})();
-
-/* ====== BLOCO DE LOGIN (login.html) ====== */
-(function () {
-  function basePath() {
-    const parts = location.pathname.split('/').filter(Boolean);
-    return parts.length ? `/${parts[0]}/` : '/';
-  }
-  function isLoginPage() {
-    const p = location.pathname;
-    return p.endsWith('/login.html') || p.endsWith('/login');
-  }
-  function setAuthOk() {
-    const exp = Date.now() + 8 * 60 * 60 * 1000; // 8h
-    localStorage.setItem('dg_auth', JSON.stringify({ ok: true, exp }));
-  }
-
-  if (!isLoginPage()) return;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('dg-login-form');
-    if (!form) return;
-
-    const accountInput = document.getElementById('dg-account');
-    const passInput = document.getElementById('dg-pass');
-    const errorBox = document.getElementById('dg-login-error');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const account = (accountInput.value || '').trim();
-      const pass = (passInput.value || '').trim();
-
-      const isNineDigits = /^[0-9]{9}$/.test(account);
-      const okPass = pass === 'dhl1234!';
-
-      if (!isNineDigits) {
-        errorBox.textContent = 'A conta deve ter exatamente 9 dígitos numéricos.';
-        errorBox.style.display = 'block';
-        return;
-      }
-      if (!okPass) {
-        errorBox.textContent = 'Senha inválida.';
-        errorBox.style.display = 'block';
-        return;
-      }
-
-      // Autenticação OK
-      setAuthOk();
-      window.location.replace(basePath());
-    });
-  });
 })();
