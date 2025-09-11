@@ -1,27 +1,4 @@
-/* ====== Ajuste de links ====== */
-
-/* Links normais (cor cinza escuro #666666) */
-a,
-a:visited {
-  color: #666666 !important;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Mantém o índice (menu lateral direita) em vermelho */
-.md-sidebar--secondary .md-nav__link,
-.md-sidebar--secondary .md-nav__link:visited {
-  color: #C4001A !important; /* Vermelho DHL */
-}
-.md-sidebar--secondary .md-nav__link:hover {
-  color: #a00015 !important; /* Tom mais escuro no hover */
-}
-
-/* ====== Restante do tema já aplicado ====== */
-
-/* Fundo base e estrutura */
+/* ===== Fundo e Estrutura ===== */
 body,
 .md-content,
 .md-main {
@@ -29,14 +6,61 @@ body,
   font-family: 'Barlow', sans-serif;
 }
 
-/* Header em amarelo DHL */
+/* ===== Cabeçalho em amarelo DHL ===== */
 .md-header {
-  background-color: #FFD700;
+  background-color: #FFCC00; /* Postyellow */
   color: black;
   font-weight: 600;
 }
 
-/* Destaques em cartões */
+/* ===== Links (arquivos para download) ===== */
+a, a:visited {
+  color: #666666 !important; /* Cinza para links */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #666666 !important; /* Mantém cinza ao passar o mouse */
+}
+
+/* ===== Menu lateral ESQUERDO ===== */
+.md-sidebar--primary {
+  background-color: #F1F3F4;
+}
+
+/* ===== Menu lateral DIREITO (índice) ===== */
+.md-sidebar--secondary .md-nav__link {
+  color: #D40511 !important; /* Vermelho DHL para os itens do índice */
+}
+.md-sidebar--secondary .md-nav__link:hover {
+  color: #a00015 !important; /* Tom mais escuro no hover */
+}
+
+/* ===== Títulos ===== */
+h2 {
+  color: #D40511;
+  font-weight: bold;
+}
+
+/* ===== Botão SAIR (Topo) ===== */
+#dg-logout {
+  background-color: #C4001A;  /* Vermelho DHL */
+  color: white !important;    /* Letra sempre branca */
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;         /* Botão arredondado */
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 40px;           /* Distância da barra de busca */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#dg-logout:hover {
+  background-color: #000000;   /* Preto ao passar o mouse */
+  color: white !important;     /* Mantém letra branca no hover */
+}
+
+/* ===== Cartões (seções de destaque) ===== */
 .card-dhl {
   background: white;
   border: 1px solid #eee;
@@ -46,13 +70,7 @@ body,
   margin-bottom: 1.5rem;
 }
 
-/* Títulos em vermelho DHL */
-h2 {
-  color: #D40511;
-  font-weight: bold;
-}
-
-/* Botões estilo DHL */
+/* ===== Botões estilo DHL (extras) ===== */
 .btn-dhl {
   background-color: #C4001A;
   color: white;
