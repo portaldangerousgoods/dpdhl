@@ -1,49 +1,30 @@
-/* Importa a fonte Delivery */
-@font-face {
-  font-family: 'Delivery';
-  src: url('../Delivery_Lt.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Aplica a fonte e cor base */
+/* Fundo base e estrutura */
 body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif;
-  color: #000000; /* texto padrão em preto */
+  font-family: 'Barlow', sans-serif;
 }
 
-/* Header com Post Yellow */
+/* Header em amarelo DHL */
 .md-header {
-  background-color: #FFCC00;
-  color: #000000;
+  background-color: #FFD700;
+  color: black;
   font-weight: 600;
 }
 
-/* Links e navegação (links clicáveis em azul claro) */
-a, a:visited {
-  color: #B2DEF3; /* LIGHT BLUE */
+/* Links e navegação – atualizado para Light Blue */
+a,
+a:visited {
+  color: #B2DEF3 !important;
   text-decoration: none;
 }
 a:hover {
+  color: #7fc1e6 !important; /* tom um pouco mais escuro no hover */
   text-decoration: underline;
-  color: #000000;
 }
 
-/* Navegação lateral em cinza com links */
-.md-sidebar--primary {
-  background-color: #F1F3F4;
-}
-.md-nav__link {
-  color: #D40511 !important; /* DHL Red */
-}
-.md-nav__link--active {
-  color: #000000 !important; /* link ativo em preto */
-}
-
-/* Cartões e caixas */
+/* Destaques em cartões */
 .card-dhl {
   background: white;
   border: 1px solid #eee;
@@ -53,16 +34,16 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* Títulos principais */
-h1, h2, h3 {
-  color: #D40511; /* DHL Red */
+/* Títulos em vermelho DHL */
+h2 {
+  color: #D40511;
   font-weight: bold;
 }
 
 /* Botões estilo DHL */
 .btn-dhl {
-  background-color: #D40511;
-  color: #ffffff;
+  background-color: #C4001A;
+  color: white;
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 5px;
@@ -73,4 +54,28 @@ h1, h2, h3 {
 }
 .btn-dhl:hover {
   background-color: #a00015;
+}
+
+/* Menu lateral com fundo cinza */
+.md-sidebar--primary {
+  background-color: #F1F3F4;
+  height: 100%;
+}
+.md-sidebar__scrollwrap {
+  background-color: transparent;
+}
+
+/* Ajuste do botão "Sair" */
+#dg-logout {
+  margin-left: 20px;
+  padding: 5px 12px;
+  background-color: #D40511;
+  color: #fff !important;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#dg-logout:hover {
+  background-color: #000;
 }
