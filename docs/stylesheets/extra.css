@@ -22,9 +22,9 @@ body,
   font-weight: 600;
 }
 
-/* Links e navegação */
+/* Links e navegação (links clicáveis em azul claro) */
 a, a:visited {
-  color: #D40511; /* DHL Red */
+  color: #B2DEF3; /* LIGHT BLUE */
   text-decoration: none;
 }
 a:hover {
@@ -37,7 +37,7 @@ a:hover {
   background-color: #F1F3F4;
 }
 .md-nav__link {
-  color: #D40511 !important; /* cor dos links na lateral */
+  color: #D40511 !important; /* DHL Red */
 }
 .md-nav__link--active {
   color: #000000 !important; /* link ativo em preto */
