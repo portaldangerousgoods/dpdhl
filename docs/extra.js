@@ -45,7 +45,7 @@
 
     const a = document.createElement('a');
     a.id = 'dg-logout';
-    a.textContent = '🚪 Sair';
+    a.textContent = '⇨ Sair';
     a.style.marginLeft = '20px';
     a.style.cursor = 'pointer';
     a.style.fontWeight = 'bold';
