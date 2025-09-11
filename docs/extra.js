@@ -46,7 +46,7 @@ function injectLogout() {
   // Função para aplicar estilo e eventos (serve para criar ou atualizar)
   const styleLogoutBtn = (btn) => {
     btn.id = 'dg-logout';
-    btn.innerHTML = '➡️ Sair';
+    btn.innerHTML = '⇨ Sair';
     btn.setAttribute('aria-label', 'Sair');
     btn.style.marginLeft = '24px';          // espaço da barra de busca
     btn.style.marginRight = '12px';
