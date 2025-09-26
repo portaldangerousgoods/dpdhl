@@ -3,7 +3,7 @@ body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Delivery', sans-serif; /* alterado para Delivery */
 }
 
 /* ===== Cabeçalho em amarelo DHL ===== */
