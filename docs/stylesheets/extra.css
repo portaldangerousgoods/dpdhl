@@ -260,3 +260,7 @@ h2 {
     margin-left: 0;
   }
 }
+/* ===== Ocultar sidebar da direita (Índice) ===== */
+.md-sidebar--secondary {
+  display: none !important;
+}
