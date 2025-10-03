@@ -288,3 +288,107 @@ function injectLogout() {
     });
   }
 })();
+/* =========================
+   MEGA-MENU – faixa branca
+   ========================= */
+function dgBasePath() {
+  const parts = location.pathname.split('/').filter(Boolean);
+  return parts.length ? `/${parts[0]}/` : '/';
+}
+
+function injectTopNavMega() {
+  // evita duplicar
+  const old = document.getElementById('dg-topnav');
+  if (old) old.remove();
+
+  const header = document.querySelector('.md-header');
+  if (!header) return;
+
+  const nav = document.createElement('div');
+  nav.id = 'dg-topnav';
+  nav.innerHTML = `
+    <div class="dg-wrap">
+      <a class="dg-link" href="${dgBasePath()}">Início</a>
+
+      <a class="dg-link" href="${dgBasePath()}faq/">FAQ Técnico</a>
+
+      <div class="dg-drop">
+        <a class="dg-link" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+          Produtos <span class="dg-caret">▾</span>
+        </a>
+        <div class="dg-panel" role="menu">
+          <div class="dg-grid">
+            <a role="menuitem" href="${dgBasePath()}bateria/">Baterias de Lítio</a>
+            <a role="menuitem" href="${dgBasePath()}bebidas/">Bebidas Alcoólicas</a>
+            <a role="menuitem" href="${dgBasePath()}gelo-seco/">Gelo Seco</a>
+            <a role="menuitem" href="${dgBasePath()}perfumes/">Perfumes</a>
+            <a role="menuitem" href="${dgBasePath()}biologicos/">Produtos Biológicos</a>
+            <a role="menuitem" href="${dgBasePath()}eq/">Cargas em Quantidades Excetuadas (EQ)</a>
+            <a role="menuitem" href="${dgBasePath()}fulldg/">Cargas Perigosas Totais (Full DG)</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="dg-link" href="${dgBasePath()}aprovacao/">Aprovação de Conta</a>
+      <a class="dg-link" href="${dgBasePath()}documentos/">Documentos Exigidos</a>
+    </div>
+  `;
+  header.insertAdjacentElement('afterend', nav);
+
+  // Comportamento do dropdown (hover + teclado + clique fora)
+  const drop = nav.querySelector('.dg-drop');
+  const trigger = drop.querySelector('.dg-link');
+  const panel = drop.querySelector('.dg-panel');
+
+  function open()  { drop.classList.add('open');  trigger.setAttribute('aria-expanded','true'); }
+  function close() { drop.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }
+
+  // abre no hover
+  drop.addEventListener('mouseenter', open);
+  drop.addEventListener('mouseleave', close);
+
+  // toggle no click (mobile/touch)
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    drop.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', drop.classList.contains('open') ? 'true' : 'false');
+  });
+
+  // fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!drop.contains(e.target)) close();
+  });
+
+  // tecla ESC fecha
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+
+  // marca link ativo pela URL (só visual)
+  const links = nav.querySelectorAll('.dg-link[href]');
+  const here = location.pathname.replace(/\/$/, '');
+  links.forEach(a => {
+    const href = a.getAttribute('href').replace(/\/$/, '');
+    if (href && here === href) a.classList.add('is-active');
+  });
+}
+
+/* ==========
+   CHAMADA
+   ==========
+   Garanta que você chama injectTopNavMega() junto com
+   as outras rotinas que já executa após carregar a página.
+*/
+
+// Exemplo de chamada imediata (caso seu extra.js já use guard/document$):
+document.addEventListener('DOMContentLoaded', () => {
+  injectTopNavMega();
+});
+
+// Se você usa o SPA do MkDocs Material:
+if (window.document$) {
+  document$.subscribe(() => {
+    injectTopNavMega();
+  });
+}
+
