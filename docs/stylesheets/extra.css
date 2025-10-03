@@ -264,3 +264,97 @@ h2 {
 .md-sidebar--secondary {
   display: none !important;
 }
+/* =========================
+   MEGA-MENU (faixa branca)
+   ========================= */
+
+/* barra branca logo abaixo do header amarelo */
+#dg-topnav {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  z-index: 1001;
+}
+
+/* container alinhado ao layout do MkDocs Material */
+#dg-topnav .dg-wrap {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* links principais */
+#dg-topnav .dg-link {
+  font-family: 'Delivery', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a3a3a;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 58px;
+  border-bottom: 3px solid transparent;
+}
+#dg-topnav .dg-link:hover { color: #D40511; }
+#dg-topnav .dg-link.is-active {
+  color: #D40511;
+  border-color: #D40511;
+}
+
+/* item com dropdown */
+#dg-topnav .dg-drop {
+  position: relative;
+}
+#dg-topnav .dg-caret {
+  margin-left: 6px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* painel do mega-menu */
+#dg-topnav .dg-panel {
+  position: absolute;
+  left: 0;
+  top: 58px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border-radius: 8px;
+  padding: 18px 20px;
+  min-width: 520px;
+  display: none;
+}
+
+/* grid em 2 colunas */
+#dg-topnav .dg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 8px 24px;
+}
+
+/* links do painel */
+#dg-topnav .dg-panel a {
+  display: block;
+  padding: 6px 4px;
+  color: #D40511;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+}
+#dg-topnav .dg-panel a:hover {
+  background: #F8F8F8;
+  color: #a00015;
+}
+
+/* mostrar painel quando aberto */
+#dg-topnav .open > .dg-panel {
+  display: block;
+}
+
+/* esconder o índice da direita (sidebar secundária) */
+.md-sidebar--secondary { display: none !important; }
+.md-content__inner { max-width: 100% !important; }
