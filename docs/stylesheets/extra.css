@@ -3,19 +3,19 @@ body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif; /* Fonte oficial DHL */
+  font-family: 'Delivery', sans-serif; /* Fonte oficial Delivery */
 }
 
-/* ===== Hero / Cabeçalho ===== */
+/* ===== Cabeçalho em amarelo DHL ===== */
 .md-header {
-  background-color: #FFCC00; /* Postyellow oficial DHL */
+  background-color: #FFCC00; /* Postyellow */
   color: black;
   font-weight: 600;
 }
 
-/* ===== Links ===== */
+/* ===== Links (arquivos para download) ===== */
 a, a:visited {
-  color: #666666 !important; /* Cinza neutro para links */
+  color: #666666 !important; /* Cinza neutro */
   text-decoration: none;
 }
 a:hover {
@@ -33,40 +33,37 @@ a:hover {
   color: #D40511 !important; /* Vermelho DHL */
 }
 .md-sidebar--secondary .md-nav__link:hover {
-  color: #a00015 !important; /* Tom mais escuro */
+  color: #a00015 !important;
 }
 
 /* ===== Títulos ===== */
 h1, h2, h3 {
-  color: #D40511;   /* Vermelho DHL para títulos */
+  font-family: 'Delivery', sans-serif;
   font-weight: bold;
 }
-
-/* ===== Subtítulos menores ===== */
-h4, h5, h6 {
-  color: #000000;   /* Preto padrão */
-  font-weight: 600;
+h2 {
+  color: #D40511;
 }
 
-/* ===== Botão SAIR ===== */
+/* ===== Botão SAIR (Topo) ===== */
 #dg-logout {
   background-color: #C4001A;  /* Vermelho DHL */
-  color: white !important;    /* Sempre branco */
+  color: white !important;    
   padding: 5px 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 12px;         
   font-weight: bold;
   font-size: 13px;
-  margin-left: 50px;          /* mais distante da barra de busca */
+  margin-left: 40px;           
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 #dg-logout:hover {
-  background-color: #000000;   /* Preto no hover */
+  background-color: #000000;   /* Preto ao passar o mouse */
   color: white !important;
 }
 
-/* ===== Cartões (caixas de destaque) ===== */
+/* ===== Cartões ===== */
 .card-dhl {
   background: white;
   border: 1px solid #eee;
@@ -76,7 +73,7 @@ h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Botões estilo DHL (extras) ===== */
+/* ===== Botões extras ===== */
 .btn-dhl {
   background-color: #C4001A;
   color: white;
@@ -92,28 +89,22 @@ h4, h5, h6 {
   background-color: #a00015;
 }
 
-/* ===== HERO (faixa com imagem de fundo e título em branco) ===== */
+/* ===== Hero Section ===== */
 .hero {
-  position: relative;
-  background-image: url('hero.jpg'); /* coloque sua imagem em docs/hero.jpg */
+  background: url("hero.png") no-repeat center center;
   background-size: cover;
-  background-position: center;
-  color: white;
   padding: 80px 20px;
   text-align: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
-
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0;
+  font-size: 40px;
   color: #ffffff;
-  text-transform: uppercase;
-  font-family: 'Delivery', sans-serif;
+  font-weight: bold;
 }
-
 .hero p {
   font-size: 20px;
-  margin-top: 15px;
-  color: #f0f0f0;
+  color: #ffffff;
+  margin-top: 10px;
 }
