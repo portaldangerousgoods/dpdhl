@@ -142,3 +142,112 @@ h2 {
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   max-width: 920px;
 }
+/* ===================== TOP NAV (faixa branca abaixo do header) ===================== */
+.dg-topbar-wrap {
+  position: sticky;              /* fixa logo abaixo do amarelo quando rolar */
+  top: 64px;                     /* altura aproximada do header Material; ajuste se preciso */
+  z-index: 1100;                 /* acima do conteúdo */
+}
+
+.md-header--shadow .dg-topbar-wrap { top: 64px; } /* compatibilidade */
+
+.dg-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 10px 24px;
+  overflow-x: auto;              /* se apertar, deixa rolar horizontal */
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  box-shadow: 0 0 0 rgba(0,0,0,0); /* sem sombra */
+}
+
+/* Links do top menu (mantém identidade DHL) */
+.dg-topbar a,
+.dg-topbar button {
+  font-family: 'Delivery', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #D40511;                /* DHL Red */
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.dg-topbar a:hover,
+.dg-topbar button:hover {
+  background: #F5F5F5;
+  color: #A00015;
+}
+
+/* ===================== Drop-down Produtos ===================== */
+.dg-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dg-caret {
+  font-size: 14px;
+  line-height: 1;
+  transform: translateY(1px);
+  color: #D40511;
+}
+
+.dg-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  min-width: 280px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  padding: 10px 0;
+  display: none;
+}
+
+.dg-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #444 !important;
+  font-weight: 600;
+}
+
+.dg-menu a:hover {
+  background: #F1F3F4;
+  color: #111 !important;
+}
+
+/* Abre por hover (desktop) */
+.dg-dropdown:hover .dg-menu {
+  display: block;
+}
+
+/* Abre por classe (click/toque) – controlado no JS */
+.dg-dropdown.open .dg-menu {
+  display: block;
+}
+
+/* Responsivo: em telinhas, aproxime os itens */
+@media (max-width: 900px) {
+  .dg-topbar {
+    gap: 12px;
+    padding: 8px 12px;
+  }
+  .dg-topbar a, .dg-topbar button {
+    font-size: 15px;
+    padding: 6px 6px;
+  }
+}
+
+/* Ajuste para o botão Sair já existente: garante contraste branco */
+#dg-logout {
+  color: #ffffff !important;
+}
