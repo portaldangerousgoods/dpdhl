@@ -178,3 +178,113 @@ function injectLogout() {
     });
   }
 })();
+/* ===================== TOP NAV – Barra branca + drop-down Produtos ===================== */
+(function () {
+  // Usa a mesma basePath do seu arquivo (se você já a declarou, reutiliza)
+  function basePath() {
+    const parts = location.pathname.split('/').filter(Boolean);
+    return parts.length ? `/${parts[0]}/` : '/';
+  }
+
+  // Evita duplicar quando navegar via SPA do MkDocs
+  function hasTopbar() {
+    return document.querySelector('.dg-topbar-wrap');
+  }
+
+  // Links úteis com basePath para funcionar em GitHub Pages de projeto
+  const links = {
+    home:           basePath(),
+    faq:            basePath() + 'faq/',
+    aprovacao:      basePath() + 'aprovacao/',
+    documentos:     basePath() + 'documentos/',
+    bateria:        basePath() + 'bateria/',
+    bebidas:        basePath() + 'bebidas/',
+    gelo:           basePath() + 'gelo-seco/',
+    perfume:        basePath() + 'perfume/',
+    biologicos:     basePath() + 'biologicos/',
+    eq:             basePath() + 'eq/',
+    fulldg:         basePath() + 'fulldg/'
+  };
+
+  function injectTopbar() {
+    if (hasTopbar()) return;
+
+    // Envolve para ficar sticky logo abaixo do header amarelo
+    const wrap = document.createElement('div');
+    wrap.className = 'dg-topbar-wrap';
+
+    // Barra em si
+    const bar = document.createElement('nav');
+    bar.className = 'dg-topbar';
+    bar.setAttribute('role', 'navigation');
+    bar.setAttribute('aria-label', 'Navegação principal');
+
+    // Itens: Início, FAQ, Produtos (dropdown), Aprovação de Conta, Documentos Exigidos
+    bar.innerHTML = `
+      <a href="${links.home}">Início</a>
+      <a href="${links.faq}">FAQ Técnico</a>
+
+      <div class="dg-dropdown">
+        <button type="button" class="dg-dropbtn" aria-haspopup="true" aria-expanded="false">
+          Produtos <span class="dg-caret">▾</span>
+        </button>
+        <div class="dg-menu" role="menu">
+          <a role="menuitem" href="${links.bateria}">Baterias de Lítio</a>
+          <a role="menuitem" href="${links.bebidas}">Bebidas Alcoólicas</a>
+          <a role="menuitem" href="${links.gelo}">Gelo Seco</a>
+          <a role="menuitem" href="${links.perfume}">Perfumes</a>
+          <a role="menuitem" href="${links.biologicos}">Produtos Biológicos</a>
+          <a role="menuitem" href="${links.eq}">Cargas em Quantidades Excetuadas (EQ)</a>
+          <a role="menuitem" href="${links.fulldg}">Cargas Perigosas Totais (Full DG)</a>
+        </div>
+      </div>
+
+      <a href="${links.aprovacao}">Aprovação de Conta</a>
+      <a href="${links.documentos}">Documentos Exigidos</a>
+    `;
+
+    wrap.appendChild(bar);
+
+    // Insere logo DEPOIS do header amarelo do Material
+    const header = document.querySelector('.md-header');
+    if (header && header.parentElement) {
+      header.parentElement.insertBefore(wrap, header.nextSibling);
+    } else {
+      // fallback: cola no começo do body
+      document.body.insertBefore(wrap, document.body.firstChild);
+    }
+
+    // Acessibilidade: abre/fecha no clique/toque (mobile) sem depender de :hover
+    const dropdown = bar.querySelector('.dg-dropdown');
+    const btn = bar.querySelector('.dg-dropbtn');
+
+    function closeOnOutsideClick(ev) {
+      if (!dropdown.contains(ev.target)) {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('click', closeOnOutsideClick);
+      }
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        document.addEventListener('click', closeOnOutsideClick);
+      } else {
+        document.removeEventListener('click', closeOnOutsideClick);
+      }
+    });
+  }
+
+  // Injeta agora…
+  document.addEventListener('DOMContentLoaded', injectTopbar);
+
+  // …e após trocas internas de página (SPA do MkDocs Material)
+  if (window.document$) {
+    document$.subscribe(() => {
+      injectTopbar();
+    });
+  }
+})();
