@@ -251,3 +251,12 @@ h2 {
 #dg-logout {
   color: #ffffff !important;
 }
+/* (Opcional) esconder sidebar esquerda */
+@media (min-width: 1024px) {
+  .md-sidebar--primary {
+    display: none;
+  }
+  .md-content {
+    margin-left: 0;
+  }
+}
