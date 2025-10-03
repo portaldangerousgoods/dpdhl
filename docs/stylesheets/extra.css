@@ -3,24 +3,24 @@ body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif; /* alterado para Delivery */
+  font-family: 'Delivery', sans-serif; /* Fonte oficial DHL */
 }
 
-/* ===== Cabeçalho em amarelo DHL ===== */
+/* ===== Hero / Cabeçalho ===== */
 .md-header {
-  background-color: #FFCC00; /* Postyellow */
+  background-color: #FFCC00; /* Postyellow oficial DHL */
   color: black;
   font-weight: 600;
 }
 
-/* ===== Links (arquivos para download) ===== */
+/* ===== Links ===== */
 a, a:visited {
-  color: #666666 !important; /* Cinza para links */
+  color: #666666 !important; /* Cinza neutro para links */
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
-  color: #666666 !important; /* Mantém cinza ao passar o mouse */
+  color: #666666 !important;
 }
 
 /* ===== Menu lateral ESQUERDO ===== */
@@ -30,37 +30,43 @@ a:hover {
 
 /* ===== Menu lateral DIREITO (índice) ===== */
 .md-sidebar--secondary .md-nav__link {
-  color: #D40511 !important; /* Vermelho DHL para os itens do índice */
+  color: #D40511 !important; /* Vermelho DHL */
 }
 .md-sidebar--secondary .md-nav__link:hover {
-  color: #a00015 !important; /* Tom mais escuro no hover */
+  color: #a00015 !important; /* Tom mais escuro */
 }
 
 /* ===== Títulos ===== */
-h2 {
-  color: #D40511;
+h1, h2, h3 {
+  color: #D40511;   /* Vermelho DHL para títulos */
   font-weight: bold;
 }
 
-/* ===== Botão SAIR (Topo) ===== */
+/* ===== Subtítulos menores ===== */
+h4, h5, h6 {
+  color: #000000;   /* Preto padrão */
+  font-weight: 600;
+}
+
+/* ===== Botão SAIR ===== */
 #dg-logout {
   background-color: #C4001A;  /* Vermelho DHL */
-  color: white !important;    /* Letra sempre branca */
-  padding: 5px 10px;
+  color: white !important;    /* Sempre branco */
+  padding: 5px 14px;
   border: none;
-  border-radius: 12px;         /* Botão arredondado */
+  border-radius: 12px;
   font-weight: bold;
-  font-size: 14px;
-  margin-left: 40px;           /* Distância da barra de busca */
+  font-size: 13px;
+  margin-left: 50px;          /* mais distante da barra de busca */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 #dg-logout:hover {
-  background-color: #000000;   /* Preto ao passar o mouse */
-  color: white !important;     /* Mantém letra branca no hover */
+  background-color: #000000;   /* Preto no hover */
+  color: white !important;
 }
 
-/* ===== Cartões (seções de destaque) ===== */
+/* ===== Cartões (caixas de destaque) ===== */
 .card-dhl {
   background: white;
   border: 1px solid #eee;
