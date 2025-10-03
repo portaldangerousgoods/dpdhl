@@ -3,7 +3,7 @@ body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif; /* fonte DHL Delivery */
+  font-family: 'Delivery', sans-serif;
 }
 
 /* ===== Cabeçalho em amarelo DHL ===== */
@@ -20,7 +20,7 @@ a, a:visited {
 }
 a:hover {
   text-decoration: underline;
-  color: #666666 !important; /* Mantém cinza ao passar o mouse */
+  color: #666666 !important;
 }
 
 /* ===== Menu lateral ESQUERDO ===== */
@@ -30,37 +30,37 @@ a:hover {
 
 /* ===== Menu lateral DIREITO (índice) ===== */
 .md-sidebar--secondary .md-nav__link {
-  color: #D40511 !important; /* Vermelho DHL para os itens do índice */
+  color: #D40511 !important; /* Vermelho DHL */
 }
 .md-sidebar--secondary .md-nav__link:hover {
-  color: #a00015 !important; /* Tom mais escuro no hover */
+  color: #a00015 !important;
 }
 
 /* ===== Títulos ===== */
-h1, h2 {
+h2 {
   color: #D40511;
   font-weight: bold;
 }
 
-/* ===== Botão SAIR (Topo) ===== */
+/* ===== Botão SAIR ===== */
 #dg-logout {
-  background-color: #C4001A;  /* Vermelho DHL */
-  color: white !important;    /* Letra sempre branca */
-  padding: 6px 14px;
+  background-color: #C4001A;
+  color: white !important;
+  padding: 5px 10px;
   border: none;
-  border-radius: 12px;         /* Botão arredondado */
+  border-radius: 12px;
   font-weight: bold;
-  font-size: 13px;
-  margin-left: 40px;           /* Distância da barra de busca */
+  font-size: 14px;
+  margin-left: 40px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 #dg-logout:hover {
-  background-color: #000000;   /* Preto ao passar o mouse */
-  color: white !important;     /* Mantém letra branca no hover */
+  background-color: #000000;
+  color: white !important;
 }
 
-/* ===== Cartões (seções de destaque) ===== */
+/* ===== Cartões ===== */
 .card-dhl {
   background: white;
   border: 1px solid #eee;
@@ -70,7 +70,7 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Botões estilo DHL (extras) ===== */
+/* ===== Botões extras ===== */
 .btn-dhl {
   background-color: #C4001A;
   color: white;
@@ -86,22 +86,23 @@ h1, h2 {
   background-color: #a00015;
 }
 
-/* ===== Hero Section ===== */
+/* ===== HERO (foto de fundo + título) ===== */
 .hero {
-  background: url("hero.png") center/cover no-repeat; /* usa a imagem como fundo */
-  padding: 60px 20px;
+  background: url("hero.png") no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px;
   text-align: center;
   color: white;
   border-radius: 8px;
   margin-bottom: 2rem;
 }
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .hero p {
-  font-size: 1.2em;
+  font-size: 1.4rem;
   max-width: 800px;
   margin: 0 auto;
 }
