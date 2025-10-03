@@ -3,19 +3,19 @@ body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif;
+  font-family: 'Delivery', sans-serif;  /* fonte Delivery */
 }
 
 /* ===== Cabeçalho em amarelo DHL ===== */
 .md-header {
-  background-color: #FFCC00; /* Postyellow */
+  background-color: #FFCC00;  /* Postyellow */
   color: black;
   font-weight: 600;
 }
 
 /* ===== Links (arquivos para download) ===== */
 a, a:visited {
-  color: #666666 !important; /* Cinza para links */
+  color: #666666 !important;        /* Cinza para links */
   text-decoration: none;
 }
 a:hover {
@@ -30,13 +30,13 @@ a:hover {
 
 /* ===== Menu lateral DIREITO (índice) ===== */
 .md-sidebar--secondary .md-nav__link {
-  color: #D40511 !important; /* Vermelho DHL */
+  color: #D40511 !important;         /* Vermelho DHL */
 }
 .md-sidebar--secondary .md-nav__link:hover {
   color: #a00015 !important;
 }
 
-/* ===== Títulos ===== */
+/* ===== Títulos padrão ===== */
 h2 {
   color: #D40511;
   font-weight: bold;
@@ -45,18 +45,18 @@ h2 {
 /* ===== Botão SAIR ===== */
 #dg-logout {
   background-color: #C4001A;
-  color: white !important;
+  color: white !important;           /* letra sempre branca */
   padding: 5px 10px;
   border: none;
   border-radius: 12px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
-  margin-left: 40px;
+  margin-left: 40px;                 /* distância da busca */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 #dg-logout:hover {
-  background-color: #000000;
+  background-color: #000000;         /* preto no hover */
   color: white !important;
 }
 
@@ -70,7 +70,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Botões extras ===== */
+/* ===== Botões extras (se precisar) ===== */
 .btn-dhl {
   background-color: #C4001A;
   color: white;
@@ -86,23 +86,59 @@ h2 {
   background-color: #a00015;
 }
 
-/* ===== HERO (foto de fundo + título) ===== */
+/* ===== HERO (foto de fundo + título grande em branco) =====
+   IMPORTANTE: este CSS está em docs/stylesheets/extra.css
+   e a imagem hero.png está em docs/  => usar ../hero.png
+*/
 .hero {
-  background: url("hero.png") no-repeat center center;
+  /* 1º tenta relativo ao CSS (../hero.png),
+     2º tenta quando publicado em /dpdhl/,
+     3º tenta na raiz / */
+  background-image:
+    url("../hero.png"),
+    url("/dpdhl/hero.png"),
+    url("/hero.png");
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
+
+  position: relative;
+  padding: 110px 24px;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
 }
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+
+/* leve overlay para melhorar contraste do texto */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.35) 100%
+  );
 }
-.hero p {
-  font-size: 1.4rem;
-  max-width: 800px;
+
+/* garante texto branco mesmo com estilos do tema */
+.md-content .hero h1,
+.md-content .hero p {
+  position: relative;         /* acima do overlay */
+  color: #fff !important;
   margin: 0 auto;
+}
+
+.md-content .hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);  /* responsivo */
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.md-content .hero p {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  max-width: 920px;
 }
