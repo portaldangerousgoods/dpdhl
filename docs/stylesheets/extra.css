@@ -91,3 +91,29 @@ h4, h5, h6 {
 .btn-dhl:hover {
   background-color: #a00015;
 }
+
+/* ===== HERO (faixa com imagem de fundo e título em branco) ===== */
+.hero {
+  position: relative;
+  background-image: url('hero.jpg'); /* coloque sua imagem em docs/hero.jpg */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Delivery', sans-serif;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #f0f0f0;
+}
