@@ -179,30 +179,37 @@ h2 {
   border-color: #D40511;
 }
 
-/* === Dropdown (Produtos) – posiciona o painel ABAIXO do item === */
+/* ===== Dropdown de Produtos (abre abaixo, só no clique) ===== */
+
+/* garante que nada corte o painel */
+#dg-topnav,
+#dg-topnav .dg-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+/* o item Produtos precisa ser relative para ancorar o painel */
 #dg-topnav .dg-drop {
-  position: relative;            /* referência para posicionar o painel */
+  position: relative;
 }
 
-#dg-topnav .dg-caret {
-  margin-left: 6px;
-  font-size: 14px;
-  color: inherit !important;
-}
-
-/* Painel do dropdown (abre abaixo do item Produtos) */
+/* Painel do dropdown (fecha por padrão) */
 #dg-topnav .dg-panel {
   position: absolute;
   left: 0;
-  top: calc(100% + 10px);        /* 👈 agora abre embaixo do item */
+  top: calc(100% + 10px);        /* abre logo abaixo do item */
   background: #ffffff;
   border: 1px solid #e6e6e6;
   box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   border-radius: 8px;
   padding: 18px 20px;
   min-width: 520px;
-  z-index: 1200;                 /* fica acima do hero e do conteúdo */
-  display: none;
+  z-index: 1200;                 /* acima do conteúdo */
+  display: block;                /* usa opacity/pointer-events p/ animação */
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;          /* desativa cliques quando fechado */
+  transition: opacity .15s ease, transform .15s ease;
 }
 
 /* Grid em duas colunas */
@@ -221,14 +228,34 @@ h2 {
   color: #000 !important;
   text-decoration: none !important;
 }
-
 #dg-topnav .dg-panel a:hover {
   color: #D40511 !important;
   text-decoration: underline;
 }
 
-/* Abrir por hover OU pela classe .open (JS) */
-#dg-topnav .dg-drop:hover > .dg-panel,
+/* ===== Estado ABERTO controlado via JS (.open na .dg-drop) ===== */
 #dg-topnav .dg-drop.open > .dg-panel {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ===== Remover abertura por hover (se existir em outro lugar) ===== */
+#dg-topnav .dg-drop:hover > .dg-panel {
+  /* desabilita hover-open */
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+}
+
+/* ===== Responsivo: estreito vira uma coluna ===== */
+@media (max-width: 640px) {
+  #dg-topnav .dg-panel {
+    min-width: 300px;
+    max-width: calc(100vw - 40px);
+  }
+  #dg-topnav .dg-grid {
+    grid-template-columns: 1fr;
+    gap: 6px 12px;
+  }
 }
