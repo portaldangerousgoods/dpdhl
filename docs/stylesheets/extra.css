@@ -71,6 +71,26 @@ h2 {
 }
 #dg-logout:hover { background-color: #000000; color: #ffffff !important; }
 
+/* === Espaço entre a busca e o botão Sair === */
+
+/* 1) Adiciona um gap entre os itens do header (logo, busca, botão) */
+.md-header__inner {
+  display: flex;            /* já é flex, reforçamos para garantir */
+  gap: 12px;                /* espaço padrão entre os itens */
+}
+
+/* 2) Garante um respiro extra ao lado direito do campo de busca */
+.md-header__inner .md-search {
+  margin-right: 8px !important;   /* afasta a busca do botão */
+}
+
+/* 3) E ajusta o botão (mantém uma folga da borda direita) */
+#dg-logout {
+  margin-left: 0 !important;      /* não precisa empurrar, o gap faz isso */
+  margin-right: 24px !important;  /* distância do canto direito */
+}
+
+
 /* ===== HERO (foto de fundo + título grande em branco) ===== */
 .hero {
   background-image:
