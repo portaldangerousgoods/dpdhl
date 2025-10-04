@@ -27,16 +27,20 @@ a:hover {
   color: #666666 !important;
 }
 
-/* Sidebar esquerda (toc do tema) – aparência neutra */
+/* ===== OCULTAR SIDEBARS ===== */
+/* Esquerda (menu de navegação padrão do tema) */
 .md-sidebar--primary {
-  background-color: #F1F3F4;
+  display: none !important;
 }
-
-/* Sidebar direita (Índice) – OCULTA */
+/* Direita (índice) */
 .md-sidebar--secondary {
   display: none !important;
 }
+/* Expandir o conteúdo quando as sidebars estão ocultas */
+.md-content,
+.md-main__inner,
 .md-content__inner {
+  margin-left: 0 !important;
   max-width: 100% !important;
 }
 
@@ -157,7 +161,7 @@ h2 {
 /* Links principais do menu (Início, FAQ, Produtos, Aprovação, Documentos) */
 #dg-topnav .dg-link {
   font-family: 'Delivery', sans-serif;
-  font-size: 16px;
+  font-size: 16px !important;    /* tamanho uniforme */
   font-weight: 400 !important;    /* SEM negrito por padrão */
   color: #000000 !important;      /* preto */
   text-decoration: none !important;
@@ -179,10 +183,15 @@ h2 {
   border-color: #D40511;          /* sublinhado vermelho como guia visual */
 }
 
-/* Dropdown "Produtos" */
-#dg-topnav .dg-drop {
-  position: relative;
+/* Dropdown "Produtos" – garante que o link do gatilho tenha exatamente o mesmo estilo */
+#dg-topnav .dg-drop > .dg-link {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  line-height: 1.15;
 }
+
+/* Caret do Produtos */
 #dg-topnav .dg-caret {
   margin-left: 6px;
   font-size: 12px;
@@ -215,7 +224,7 @@ h2 {
 #dg-topnav .dg-panel a {
   display: block;
   padding: 6px 4px;
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 400 !important;     /* normal */
   color: #000000 !important;
   text-decoration: none !important;
@@ -238,7 +247,7 @@ h2 {
    COMPONENTES / UTILITÁRIOS
    ================================ */
 
-/* Cartões de destaque (se usar) */
+/* Cartões de destaque */
 .card-dhl {
   background: #ffffff;
   border: 1px solid #eeeeee;
@@ -272,8 +281,9 @@ h2 {
     padding: 0 12px;
     height: 54px;
   }
-  #dg-topnav .dg-link {
-    font-size: 15px;
+  #dg-topnav .dg-link,
+  #dg-topnav .dg-drop > .dg-link {
+    font-size: 15px !important;
     height: 54px;
   }
   #dg-topnav .dg-panel {
