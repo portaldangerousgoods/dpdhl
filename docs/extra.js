@@ -183,35 +183,45 @@
   }
 })();
 
-/* ===== Controle do Dropdown de Produtos ===== */
-document.addEventListener("DOMContentLoaded", function () {
-  const drop = document.querySelector("#dg-topnav .dg-drop");
-  const trigger = drop ? drop.querySelector(".dg-link") : null;
-  const panel = drop ? drop.querySelector(".dg-panel") : null;
+/* ===== Controle do Dropdown de Produtos (abre no clique e só fecha ao clicar fora/ESC) ===== */
+function dgWireDropdown() {
+  const drop = document.querySelector('#dg-topnav .dg-drop');
+  const trigger = drop ? drop.querySelector(':scope > .dg-link') : null;   // o link "Produtos"
+  const panel = drop ? drop.querySelector(':scope > .dg-panel') : null;
 
-  if (drop && trigger && panel) {
-    // Alterna ao clicar em "Produtos"
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = drop.classList.toggle("open");
-      trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+  if (!drop || !trigger || !panel) return;
 
-    // Fecha ao clicar fora
-    document.addEventListener("click", function (e) {
-      if (!drop.contains(e.target)) {
-        drop.classList.remove("open");
-        trigger.setAttribute("aria-expanded", "false");
-      }
-    });
+  // Evita dupla inscrição
+  if (drop.dataset.wired === '1') return;
+  drop.dataset.wired = '1';
 
-    // Fecha também com tecla ESC
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        drop.classList.remove("open");
-        trigger.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-});
+  // abre/fecha no clique do "Produtos"
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    drop.classList.toggle('open');
+  });
+
+  // fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!drop.contains(e.target)) drop.classList.remove('open');
+  });
+
+  // fecha com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') drop.classList.remove('open');
+  });
+
+  // manter aberto ao interagir dentro do painel (apenas impede propagação)
+  panel.addEventListener('click', (e) => e.stopPropagation());
+}
+
+// liga no carregamento inicial…
+document.addEventListener('DOMContentLoaded', dgWireDropdown);
+
+// …e também após mudanças de página do MkDocs Material (SPA)
+if (window.document$) {
+  document$.subscribe(() => {
+    dgWireDropdown();
+  });
+}
