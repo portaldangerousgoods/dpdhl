@@ -353,3 +353,66 @@ h2 {
   margin-left: 4px;
   color: inherit !important;
 }
+
+/* ======================= AJUSTES FINAIS ======================= */
+
+/* Esconde completamente a sidebar esquerda */
+.md-sidebar--primary {
+  display: none !important;
+}
+
+/* Faz o conteúdo central recuar da esquerda */
+.md-content, 
+.md-content__inner {
+  margin-left: 40px !important;  /* ajuste do recuo geral */
+  max-width: calc(100% - 40px);  /* garante que não estoure para fora */
+}
+
+/* ========== TOPO: MENU SUPERIOR (faixa branca) ========== */
+#dg-topnav .dg-link,
+#dg-topnav .dg-drop > .dg-link {
+  font-size: 16px !important;    /* mesmo tamanho em todos */
+  font-weight: normal !important;/* todos SEM negrito por padrão */
+  text-transform: none !important; /* mantém estilo original (Produtos = P maiúsculo) */
+  color: #000000 !important;     /* preto */
+  text-decoration: none !important;
+  padding: 12px 16px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+/* Hover: vermelho DHL */
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-drop > .dg-link:hover {
+  color: #D40511 !important;
+  font-weight: normal !important;
+}
+
+/* Só o item da página atual em negrito */
+#dg-topnav .dg-link.is-active,
+#dg-topnav .dg-drop > .dg-link.is-active {
+  font-weight: bold !important;
+  color: #000000 !important;
+}
+
+/* ========== DROP-DOWN (submenu Produtos) ========== */
+#dg-topnav .dg-panel a {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  padding: 6px 12px;
+  display: block;
+}
+
+#dg-topnav .dg-panel a:hover {
+  color: #D40511 !important;
+  text-decoration: underline;
+}
+
+/* ========== Ajuste do caret (setinha ▾) ========== */
+#dg-topnav .dg-caret {
+  font-size: 12px !important;
+  margin-left: 4px;
+  color: inherit !important;
+}
