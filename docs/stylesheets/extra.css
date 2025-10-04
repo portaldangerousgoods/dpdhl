@@ -501,6 +501,37 @@ h2 {
   font-weight: bold;
   color: #000000;           /* mantém preto, mas em negrito */
 }
+/* ===== Reset de peso do menu superior (sem negrito por padrão) ===== */
+#dg-topnav .dg-link,
+#dg-topnav .dg-link:visited,
+#dg-topnav .dg-drop > .dg-link,
+#dg-topnav .dg-drop.open > .dg-link {
+  font-weight: 400 !important;   /* normal */
+  color: #000 !important;        /* preto */
+}
+
+/* Hover vermelho, sem negrito */
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-drop > .dg-link:hover {
+  color: #D40511 !important;     /* vermelho DHL */
+  font-weight: 400 !important;   /* mantém normal no hover */
+}
+
+/* Itens dentro do painel (dropdown) também sem negrito */
+#dg-topnav .dg-panel a {
+  font-weight: 400 !important;
+  color: #000 !important;
+}
+#dg-topnav .dg-panel a:hover {
+  color: #D40511 !important;
+}
+
+/* Somente a página ativa em negrito */
+#dg-topnav .dg-link.is-active,
+#dg-topnav .dg-drop > .dg-link.is-active {
+  font-weight: 700 !important;   /* negrito SÓ no ativo */
+  color: #000 !important;
+}
 
 
 /* Só o ativo fica em negrito */
