@@ -130,13 +130,13 @@
           </a>
           <div class="dg-panel" role="menu">
             <div class="dg-grid">
-              <a role="menuitem" href="${basePath()}bateria/">Baterias de Lítio</a>
+              <a role="menuitem" href="${basePath()}baterias/">Baterias de Lítio</a>
               <a role="menuitem" href="${basePath()}bebidas/">Bebidas Alcoólicas</a>
               <a role="menuitem" href="${basePath()}gelo-seco/">Gelo Seco</a>
               <a role="menuitem" href="${basePath()}perfumes/">Perfumes</a>
               <a role="menuitem" href="${basePath()}biologicos/">Produtos Biológicos</a>
               <a role="menuitem" href="${basePath()}eq/">Cargas em Quantidades Excetuadas (EQ)</a>
-              <a role="menuitem" href="${basePath()}fulldg/">Cargas Perigosas Totais (Full DG)</a>
+              <a role="menuitem" href="${basePath()}full-dg/">Cargas Perigosas Totais (Full DG)</a>
             </div>
           </div>
         </div>
