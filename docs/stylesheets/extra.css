@@ -237,5 +237,6 @@ h2 {
 /* ===== Ajuste de cor para TÍTULOS PRINCIPAIS ===== */
 h1 {
   color: #D40511 !important;  /* vermelho DHL */
-  font-weight: 700;           /* mantém negrito */
+  font-weight: 700 !important;           /* mantém negrito */
 }
+
