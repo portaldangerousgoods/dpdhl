@@ -1,23 +1,25 @@
-/* ===== Fundo e Estrutura ===== */
+/* ================================
+   BASE / IDENTIDADE DHL
+   ================================ */
+
 body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif;  /* fonte Delivery */
-  margin-left: 40px;    /* recuo geral à esquerda */
-  margin-right: 40px;   /* recuo à direita também */
+  font-family: 'Delivery', sans-serif;  /* fonte oficial DHL */
 }
 
-/* ===== Cabeçalho em amarelo DHL ===== */
+/* Header amarelo DHL */
 .md-header {
-  background-color: #FFCC00;  /* Postyellow */
-  color: black;
+  background-color: #FFCC00;     /* Postyellow */
+  color: #000000;
   font-weight: 600;
 }
 
-/* ===== Links (arquivos para download) ===== */
-a, a:visited {
-  color: #666666 !important;
+/* Links gerais (arquivos, âncoras de conteúdo) */
+a,
+a:visited {
+  color: #666666 !important;      /* cinza para links de conteúdo */
   text-decoration: none;
 }
 a:hover {
@@ -25,45 +27,65 @@ a:hover {
   color: #666666 !important;
 }
 
-/* ===== Menu lateral ESQUERDO ===== */
+/* ===== OCULTAR SIDEBARS ===== */
+/* Esquerda (menu de navegação padrão do tema) */
 .md-sidebar--primary {
-  display: none !important; /* ocultar completamente */
+  display: none !important;
 }
-.md-content {
-  margin-left: 0 !important; /* corrige deslocamento */
-}
-
-/* ===== Menu lateral DIREITO (índice) ===== */
+/* Direita (índice) */
 .md-sidebar--secondary {
   display: none !important;
 }
+/* Expandir o conteúdo quando as sidebars estão ocultas */
+.md-content,
+.md-main__inner,
+.md-content__inner {
+  margin-left: 0 !important;
+  max-width: 100% !important;
+}
 
-/* ===== Títulos padrão ===== */
+/* Títulos internos (h2) */
 h2 {
-  color: #D40511;
+  color: #D40511;                /* DHL Red */
   font-weight: bold;
 }
 
-/* ===== Botão SAIR ===== */
+/* ================================
+   BOTÃO SAIR (TOPO)
+   ================================ */
 #dg-logout {
-  background-color: #C4001A;
-  color: white !important;
-  padding: 5px 10px;
+  background-color: #C4001A;     /* Vermelho DHL */
+  color: #ffffff !important;     /* fonte sempre branca */
+  padding: 4px 10px;             /* compacto */
   border: none;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 14px;
-  margin-left: 40px;
+  border-radius: 9999px;         /* pílula */
+  font-weight: 600;
+  font-size: 13px;
+  margin-left: 24px;             /* afasta da busca */
+  margin-right: 12px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  user-select: none;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+  display: inline-block;
 }
 #dg-logout:hover {
-  background-color: #000000;
-  color: white !important;
+  background-color: #000000;     /* preto no hover */
+  color: #ffffff !important;
+}
+#dg-logout:active {
+  transform: scale(0.98);
 }
 
-/* ===== HERO (foto de fundo + título grande em branco) ===== */
+/* ================================
+   HERO – FOTO DE FUNDO + TÍTULO
+   ================================ */
+/* Coloque <div class="hero"> ... </div> no index.md */
 .hero {
+  /* 1) relativo ao CSS (../hero.png) – porque este arquivo está em docs/stylesheets/
+     2) fallback quando publicado em /dpdhl/
+     3) fallback raiz */
   background-image:
     url("../hero.png"),
     url("/dpdhl/hero.png"),
@@ -71,12 +93,15 @@ h2 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
   position: relative;
   padding: 110px 24px;
   border-radius: 8px;
   text-align: center;
   margin: 0 0 2rem 0;
 }
+
+/* overlay leve para contraste do texto */
 .hero::before {
   content: "";
   position: absolute;
@@ -88,12 +113,14 @@ h2 {
     rgba(0,0,0,0.35) 100%
   );
 }
+
 .md-content .hero h1,
 .md-content .hero p {
-  position: relative;
-  color: #fff !important;
+  position: relative;             /* acima do overlay */
+  color: #ffffff !important;
   margin: 0 auto;
 }
+
 .md-content .hero h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 800;
@@ -101,62 +128,78 @@ h2 {
   line-height: 1.15;
   margin-bottom: 12px;
 }
+
 .md-content .hero p {
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   max-width: 920px;
 }
 
-/* =========================
-   MENU SUPERIOR (faixa branca)
-   ========================= */
+/* ================================
+   MEGA-MENU (FAIXA BRANCA)
+   Elemento injetado via JS: #dg-topnav
+   ================================ */
+
+/* Barra branca abaixo do header amarelo */
 #dg-topnav {
   background: #ffffff;
   border-bottom: 1px solid #e6e6e6;
   width: 100%;
   z-index: 1001;
 }
+
+/* Container alinhado ao layout do tema */
 #dg-topnav .dg-wrap {
   max-width: 1220px;
   margin: 0 auto;
-  padding: 0 40px; /* recuo interno igual ao conteúdo */
+  padding: 0 16px;
   height: 58px;
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-/* Links principais */
-#dg-topnav .dg-link,
-#dg-topnav .dg-drop > .dg-link {
+/* Links principais do menu (Início, FAQ, Produtos, Aprovação, Documentos) */
+#dg-topnav .dg-link {
   font-family: 'Delivery', sans-serif;
-  font-size: 16px !important;
-  font-weight: normal !important;  /* sem negrito */
-  color: #000 !important;
-  text-decoration: none;
+  font-size: 16px !important;    /* tamanho uniforme */
+  font-weight: 400 !important;    /* SEM negrito por padrão */
+  color: #000000 !important;      /* preto */
+  text-decoration: none !important;
   display: inline-flex;
   align-items: center;
   height: 58px;
   border-bottom: 3px solid transparent;
-}
-#dg-topnav .dg-link:hover,
-#dg-topnav .dg-drop > .dg-link:hover {
-  color: #D40511 !important;
+  transition: color 0.2s ease;
 }
 
-/* Apenas o link ativo em negrito */
-#dg-topnav .dg-link.is-active,
-#dg-topnav .dg-drop > .dg-link.is-active {
-  font-weight: bold !important;
-  color: #000 !important;
-  border-color: #D40511; /* destaque igual DHL */
+#dg-topnav .dg-link:hover {
+  color: #D40511 !important;      /* vermelho DHL no hover */
 }
 
-/* Dropdown */
+/* SOMENTE o link ativo em negrito (definido via JS com .is-active) */
+#dg-topnav .dg-link.is-active {
+  font-weight: 700 !important;    /* negrito */
+  color: #000000 !important;      /* mantém preto */
+  border-color: #D40511;          /* sublinhado vermelho como guia visual */
+}
+
+/* Dropdown "Produtos" – garante que o link do gatilho tenha exatamente o mesmo estilo */
+#dg-topnav .dg-drop > .dg-link {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  line-height: 1.15;
+}
+
+/* Caret do Produtos */
 #dg-topnav .dg-caret {
   margin-left: 6px;
-  font-size: 14px;
-  color: inherit !important;
+  font-size: 12px;
+  line-height: 1;
+  color: inherit;                  /* acompanha a cor do link */
 }
+
+/* Painel do dropdown (2 colunas) */
 #dg-topnav .dg-panel {
   position: absolute;
   left: 0;
@@ -167,24 +210,83 @@ h2 {
   border-radius: 8px;
   padding: 18px 20px;
   min-width: 520px;
-  display: none;
+  display: none;                   /* abre via classe .open no JS */
 }
+
+/* Grid do painel: 2 colunas */
 #dg-topnav .dg-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 8px 24px;
 }
+
+/* Links do painel */
 #dg-topnav .dg-panel a {
-  font-size: 16px !important;
-  font-weight: normal !important;
-  color: #000 !important;
-  text-decoration: none !important;
+  display: block;
   padding: 6px 4px;
+  font-size: 16px !important;
+  font-weight: 400 !important;     /* normal */
+  color: #000000 !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
+
 #dg-topnav .dg-panel a:hover {
   color: #D40511 !important;
-  text-decoration: underline;
+  background: #F8F8F8;
+  text-decoration: underline;      /* igual ao site público */
 }
+
+/* Quando o dropdown está aberto (classe adicionada no JS) */
 #dg-topnav .open > .dg-panel {
   display: block;
+}
+
+/* ================================
+   COMPONENTES / UTILITÁRIOS
+   ================================ */
+
+/* Cartões de destaque */
+.card-dhl {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões extras estilo DHL */
+.btn-dhl {
+  background-color: #C4001A;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+.btn-dhl:hover {
+  background-color: #A00015;
+}
+
+/* Responsivo: aproxima itens da barra branca em telas menores */
+@media (max-width: 900px) {
+  #dg-topnav .dg-wrap {
+    gap: 16px;
+    padding: 0 12px;
+    height: 54px;
+  }
+  #dg-topnav .dg-link,
+  #dg-topnav .dg-drop > .dg-link {
+    font-size: 15px !important;
+    height: 54px;
+  }
+  #dg-topnav .dg-panel {
+    min-width: 92vw;              /* painel mais largo no mobile */
+  }
 }
