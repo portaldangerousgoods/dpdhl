@@ -185,21 +185,32 @@
 
 /* ===== Controle do Dropdown de Produtos ===== */
 document.addEventListener("DOMContentLoaded", function () {
-  const dropToggle = document.querySelector("#dg-topnav .dg-drop");
-  const dropPanel = document.querySelector("#dg-topnav .dg-drop .dg-panel");
+  const drop = document.querySelector("#dg-topnav .dg-drop");
+  const trigger = drop ? drop.querySelector(".dg-link") : null;
+  const panel = drop ? drop.querySelector(".dg-panel") : null;
 
-  if (dropToggle && dropPanel) {
-    // abre/fecha ao clicar em Produtos
-    dropToggle.addEventListener("click", function (e) {
+  if (drop && trigger && panel) {
+    // Alterna ao clicar em "Produtos"
+    trigger.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      dropToggle.classList.toggle("open");
+      const isOpen = drop.classList.toggle("open");
+      trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // fecha ao clicar fora
+    // Fecha ao clicar fora
     document.addEventListener("click", function (e) {
-      if (!dropToggle.contains(e.target)) {
-        dropToggle.classList.remove("open");
+      if (!drop.contains(e.target)) {
+        drop.classList.remove("open");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fecha também com tecla ESC
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        drop.classList.remove("open");
+        trigger.setAttribute("aria-expanded", "false");
       }
     });
   }
