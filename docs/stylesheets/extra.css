@@ -423,4 +423,27 @@ h2 {
   font-size: 12px !important;
   color: inherit !important;     /* segue a cor do texto (preto/hover vermelho) */
 }
+/* ===== Ajustes do TopNav (faixa branca) ===== */
+.dg-topnav .dg-link,
+.dg-topnav .dg-drop > .dg-link,
+.dg-topnav .dg-panel a {
+  font-size: 15px !important;    /* mesmo tamanho */
+  font-weight: normal !important;/* sem negrito */
+  color: #000 !important;        /* texto preto */
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+/* Hover vermelho DHL */
+.dg-topnav .dg-link:hover,
+.dg-topnav .dg-drop > .dg-link:hover,
+.dg-topnav .dg-panel a:hover {
+  color: #C4001A !important;
+}
+
+/* Menu suspenso mantém consistência */
+.dg-topnav .dg-panel a {
+  display: block;
+  padding: 6px 12px;
+}
 
