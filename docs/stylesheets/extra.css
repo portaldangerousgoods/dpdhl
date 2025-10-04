@@ -460,3 +460,27 @@ h2 {
 #dg-topnav .dg-panel a:hover {
   color: #C4001A !important;    /* vermelho DHL no hover */
 }
+/* ====== Estilo do Menu Superior (sem negrito por padrão) ====== */
+.dg-topnav .dg-link,
+.dg-topnav .dg-drop > .dg-link,
+.dg-topnav .dg-drop .dg-caret {
+  font-weight: normal !important;  /* todos normais */
+  font-size: 15px;                 /* tamanho uniforme */
+  color: #000 !important;          /* preto */
+  text-decoration: none;
+  padding: 12px 18px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+/* Hover = vermelho DHL */
+.dg-topnav .dg-link:hover,
+.dg-topnav .dg-drop.open > .dg-link {
+  color: #C4001A !important;
+}
+
+/* Só o ativo fica em negrito */
+.dg-topnav .dg-link.is-active {
+  font-weight: bold !important;
+  color: #000 !important; /* mantém preto mesmo ativo */
+}
