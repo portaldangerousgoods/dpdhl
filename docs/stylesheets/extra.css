@@ -390,3 +390,37 @@ h2 {
   font-size: 12px !important;
   color: inherit !important;     /* segue a cor do texto (preto/hover vermelho) */
 }
+
+/* ====== Ajustes do mega-menu (tamanhos e cores) ====== */
+#dg-topnav .dg-link,
+#dg-topnav .dg-mega-btn {
+  font-size: 16px !important;   /* mesmo tamanho de "Início", "FAQ Técnico"... */
+  line-height: 1.15 !important;
+  color: #000 !important;        /* preto */
+  font-weight: 700 !important;   /* mesmo peso dos demais itens */
+  text-decoration: none !important;
+}
+
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-mega-btn:hover {
+  color: #D40511 !important;     /* vermelho DHL no hover */
+}
+
+/* Itens internos do menu (as duas colunas) */
+#dg-topnav .dg-grid a {
+  font-size: 16px !important;    /* igual ao topo */
+  line-height: 1.15 !important;
+  color: #000 !important;        /* preto */
+  text-decoration: none !important;
+}
+#dg-topnav .dg-grid a:hover {
+  color: #D40511 !important;     /* vermelho no hover */
+  text-decoration: underline;    /* igual ao site público */
+}
+
+/* Mantém o caret visível e alinhado */
+#dg-topnav .dg-caret {
+  font-size: 12px !important;
+  color: inherit !important;     /* segue a cor do texto (preto/hover vermelho) */
+}
+
