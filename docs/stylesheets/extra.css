@@ -479,6 +479,30 @@ h2 {
   color: #C4001A !important;
 }
 
+/* ====== Ajuste do Menu Superior ====== */
+#dg-topnav .dg-link,
+#dg-topnav .dg-drop > .dg-link {
+  font-size: 15px;          /* mantém o mesmo tamanho */
+  font-weight: normal;      /* sem negrito por padrão */
+  color: #000000;           /* preto */
+  text-decoration: none;
+  padding: 12px 16px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-drop:hover > .dg-link {
+  color: #D40511;           /* vermelho DHL no hover */
+}
+
+/* Só a página atual em negrito */
+#dg-topnav .dg-link.is-active {
+  font-weight: bold;
+  color: #000000;           /* mantém preto, mas em negrito */
+}
+
+
 /* Só o ativo fica em negrito */
 .dg-topnav .dg-link.is-active {
   font-weight: bold !important;
