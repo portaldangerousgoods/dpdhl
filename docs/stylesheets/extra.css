@@ -66,8 +66,8 @@ h2 {
   line-height: 1.2;
 
   /* posição: empurra para a direita e deixa uma folga do canto */
-  margin-left: auto;      /* gruda à direita do header */
-  margin-right: 32px;     /* folga antes da borda direita */
+  margin-left: 12px;      /* gruda à direita do header */
+  margin-right: 24px;     /* folga antes da borda direita */
 }
 #dg-logout:hover { background-color: #000000; color: #ffffff !important; }
 
