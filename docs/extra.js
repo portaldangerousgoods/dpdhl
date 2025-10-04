@@ -182,3 +182,26 @@
     });
   }
 })();
+
+/* ===== Controle do Dropdown de Produtos ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const dropToggle = document.querySelector("#dg-topnav .dg-drop");
+  const dropPanel = document.querySelector("#dg-topnav .dg-drop .dg-panel");
+
+  if (dropToggle && dropPanel) {
+    // abre/fecha ao clicar em Produtos
+    dropToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropToggle.classList.toggle("open");
+    });
+
+    // fecha ao clicar fora
+    document.addEventListener("click", function (e) {
+      if (!dropToggle.contains(e.target)) {
+        dropToggle.classList.remove("open");
+      }
+    });
+  }
+});
+
