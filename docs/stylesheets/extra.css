@@ -539,3 +539,25 @@ h2 {
   font-weight: bold !important;
   color: #000 !important; /* mantém preto mesmo ativo */
 }
+/* =======================
+   Ajuste do menu superior
+   ======================= */
+
+/* Todos os links do menu: normal, sem negrito */
+#dg-topnav .dg-link {
+  font-weight: normal !important;
+  color: #000000 !important;   /* preto padrão */
+  text-decoration: none;
+  font-size: 16px;             /* ajusta se quiser maior/menor */
+}
+
+/* Hover: fica vermelho */
+#dg-topnav .dg-link:hover {
+  color: #D40511 !important;
+}
+
+/* Apenas o link ativo (da página atual): fica em negrito */
+#dg-topnav .dg-link.is-active {
+  font-weight: bold !important;
+  color: #000000 !important;   /* mantém preto */
+}
