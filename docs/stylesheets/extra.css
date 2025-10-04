@@ -180,46 +180,47 @@ h2 {
 }
 
 /* ===== Dropdown de Produtos (abre abaixo, só no clique) ===== */
+#dg-topnav, #dg-topnav .dg-wrap { position: relative; overflow: visible; }
+#dg-topnav .dg-drop { position: relative; }
 
-/* garante que nada corte o painel */
-#dg-topnav,
-#dg-topnav .dg-wrap {
-  position: relative;
-  overflow: visible;
-}
-
-/* o item Produtos precisa ser relative para ancorar o painel */
-#dg-topnav .dg-drop {
-  position: relative;
-}
-
-/* Painel do dropdown (fecha por padrão) */
+/* Painel fechado por padrão (sem display:none para evitar conflito) */
 #dg-topnav .dg-panel {
   position: absolute;
   left: 0;
-  top: calc(100% + 10px);        /* abre logo abaixo do item */
+  top: calc(100% + 10px);
   background: #ffffff;
   border: 1px solid #e6e6e6;
   box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   border-radius: 8px;
   padding: 18px 20px;
   min-width: 520px;
-  z-index: 1200;                 /* acima do conteúdo */
-  display: block;                /* usa opacity/pointer-events p/ animação */
+  z-index: 1200;
   opacity: 0;
   transform: translateY(4px);
-  pointer-events: none;          /* desativa cliques quando fechado */
+  pointer-events: none;
   transition: opacity .15s ease, transform .15s ease;
 }
 
-/* Grid em duas colunas */
+/* Abre SOMENTE quando a classe .open está na .dg-drop */
+#dg-topnav .dg-drop.open > .dg-panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Desativa abertura por hover, mesmo que exista outra regra */
+#dg-topnav .dg-drop:hover > .dg-panel {
+  opacity: 0 !important;
+  transform: translateY(4px) !important;
+  pointer-events: none !important;
+}
+
+/* Grid e links internos (mantém seu estilo) */
 #dg-topnav .dg-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 8px 24px;
 }
-
-/* Links internos do painel */
 #dg-topnav .dg-panel a {
   display: block;
   padding: 6px 8px;
@@ -231,31 +232,4 @@ h2 {
 #dg-topnav .dg-panel a:hover {
   color: #D40511 !important;
   text-decoration: underline;
-}
-
-/* ===== Estado ABERTO controlado via JS (.open na .dg-drop) ===== */
-#dg-topnav .dg-drop.open > .dg-panel {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* ===== Remover abertura por hover (se existir em outro lugar) ===== */
-#dg-topnav .dg-drop:hover > .dg-panel {
-  /* desabilita hover-open */
-  opacity: 0;
-  transform: translateY(4px);
-  pointer-events: none;
-}
-
-/* ===== Responsivo: estreito vira uma coluna ===== */
-@media (max-width: 640px) {
-  #dg-topnav .dg-panel {
-    min-width: 300px;
-    max-width: calc(100vw - 40px);
-  }
-  #dg-topnav .dg-grid {
-    grid-template-columns: 1fr;
-    gap: 6px 12px;
-  }
 }
