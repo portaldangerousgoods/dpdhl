@@ -1,48 +1,53 @@
-/* ================================
-   BASE / ESTRUTURA / TEMA DHL
-   ================================ */
+/* ===== Fundo e Estrutura ===== */
 body,
 .md-content,
 .md-main {
   background: #ffffff;
-  font-family: 'Delivery', sans-serif;
-  margin-left: 40px;   /* recuo lateral uniforme */
-  margin-right: 40px;
+  font-family: 'Delivery', sans-serif;  /* fonte Delivery */
+  margin-left: 40px;    /* recuo geral à esquerda */
+  margin-right: 40px;   /* recuo à direita também */
 }
 
-/* Cabeçalho amarelo DHL */
+/* ===== Cabeçalho em amarelo DHL ===== */
 .md-header {
-  background-color: #FFCC00; /* Postyellow */
-  color: #000;
+  background-color: #FFCC00;  /* Postyellow */
+  color: black;
   font-weight: 600;
 }
 
-/* Links de documentos/download */
+/* ===== Links (arquivos para download) ===== */
 a, a:visited {
   color: #666666 !important;
   text-decoration: none;
 }
 a:hover {
-  color: #666666 !important;
   text-decoration: underline;
+  color: #666666 !important;
 }
 
-/* Sidebar esquerda e direita: ocultar */
-.md-sidebar--primary { display: none !important; }
-.md-sidebar--secondary { display: none !important; }
-.md-content { margin-left: 0 !important; }
-.md-content__inner { max-width: 100% !important; }
+/* ===== Menu lateral ESQUERDO ===== */
+.md-sidebar--primary {
+  display: none !important; /* ocultar completamente */
+}
+.md-content {
+  margin-left: 0 !important; /* corrige deslocamento */
+}
 
-/* Títulos internos */
+/* ===== Menu lateral DIREITO (índice) ===== */
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+/* ===== Títulos padrão ===== */
 h2 {
   color: #D40511;
   font-weight: bold;
 }
 
-/* Botão SAIR (topo) */
+/* ===== Botão SAIR ===== */
 #dg-logout {
   background-color: #C4001A;
-  color: #fff !important;
+  color: white !important;
   padding: 5px 10px;
   border: none;
   border-radius: 12px;
@@ -50,21 +55,19 @@ h2 {
   font-size: 14px;
   margin-left: 40px;
   cursor: pointer;
-  transition: background-color .2s ease;
+  transition: background-color 0.2s ease;
 }
 #dg-logout:hover {
-  background-color: #000;
-  color: #fff !important;
+  background-color: #000000;
+  color: white !important;
 }
 
-/* ====================================
-   HERO (imagem de fundo + título branco)
-   ==================================== */
+/* ===== HERO (foto de fundo + título grande em branco) ===== */
 .hero {
   background-image:
-    url("../hero.png"),    /* build local */
-    url("/dpdhl/hero.png"),/* GitHub Pages project */
-    url("/hero.png");      /* fallback */
+    url("../hero.png"),
+    url("/dpdhl/hero.png"),
+    url("/hero.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -79,7 +82,11 @@ h2 {
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.35) 100%
+  );
 }
 .md-content .hero h1,
 .md-content .hero p {
@@ -90,7 +97,7 @@ h2 {
 .md-content .hero h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   line-height: 1.15;
   margin-bottom: 12px;
 }
@@ -99,11 +106,11 @@ h2 {
   max-width: 920px;
 }
 
-/* ====================================
-   MEGA-MENU (faixa branca abaixo do header)
-   ==================================== */
+/* =========================
+   MENU SUPERIOR (faixa branca)
+   ========================= */
 #dg-topnav {
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #e6e6e6;
   width: 100%;
   z-index: 1001;
@@ -111,54 +118,45 @@ h2 {
 #dg-topnav .dg-wrap {
   max-width: 1220px;
   margin: 0 auto;
-  padding: 0 40px;            /* mesmo recuo do conteúdo */
+  padding: 0 40px; /* recuo interno igual ao conteúdo */
   height: 58px;
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-/* 🔧 RESET: removemos qualquer resquício da barra antiga (.dg-topbar) */
-.dg-topbar, .dg-topbar-wrap { display: none !important; }
-
-/* Links principais do topo (TODOS IGUAIS) */
+/* Links principais */
 #dg-topnav .dg-link,
 #dg-topnav .dg-drop > .dg-link {
   font-family: 'Delivery', sans-serif;
-  font-size: 16px !important;     /* mesmo tamanho em todos */
-  font-weight: 400 !important;     /* sem negrito por padrão */
-  color: #000 !important;          /* preto */
+  font-size: 16px !important;
+  font-weight: normal !important;  /* sem negrito */
+  color: #000 !important;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   height: 58px;
-  padding: 0 2px;
   border-bottom: 3px solid transparent;
-  line-height: 1.2;
 }
-
-/* Hover do topo */
 #dg-topnav .dg-link:hover,
 #dg-topnav .dg-drop > .dg-link:hover {
-  color: #D40511 !important;       /* vermelho DHL */
+  color: #D40511 !important;
 }
 
-/* 🔴 Apenas o item da página atual em negrito */
+/* Apenas o link ativo em negrito */
 #dg-topnav .dg-link.is-active,
 #dg-topnav .dg-drop > .dg-link.is-active {
-  font-weight: 700 !important;
+  font-weight: bold !important;
   color: #000 !important;
-  border-color: #D40511;
+  border-color: #D40511; /* destaque igual DHL */
 }
 
-/* Caret ao lado de “Produtos” */
+/* Dropdown */
 #dg-topnav .dg-caret {
   margin-left: 6px;
-  font-size: 14px !important;      /* segue o tamanho do texto */
-  color: inherit !important;        /* herda preto/vermelho no hover */
+  font-size: 14px;
+  color: inherit !important;
 }
-
-/* Painel do dropdown */
 #dg-topnav .dg-panel {
   position: absolute;
   left: 0;
@@ -171,27 +169,22 @@ h2 {
   min-width: 520px;
   display: none;
 }
-
-/* Grid de duas colunas no dropdown */
 #dg-topnav .dg-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 8px 24px;
 }
-
-/* Links internos do dropdown (mesmo padrão visual) */
 #dg-topnav .dg-panel a {
   font-size: 16px !important;
-  font-weight: 400 !important;  /* sem negrito */
+  font-weight: normal !important;
   color: #000 !important;
   text-decoration: none !important;
   padding: 6px 4px;
-  border-radius: 4px;
 }
 #dg-topnav .dg-panel a:hover {
   color: #D40511 !important;
   text-decoration: underline;
 }
-
-/* Exibir dropdown quando open */
-#dg-topnav .open > .dg-panel { display: block; }
+#dg-topnav .open > .dg-panel {
+  display: block;
+}
