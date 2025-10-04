@@ -233,3 +233,9 @@ h2 {
   color: #D40511 !important;
   text-decoration: underline;
 }
+
+/* ===== Ajuste de cor para TÍTULOS PRINCIPAIS ===== */
+h1 {
+  color: #D40511 !important;  /* vermelho DHL */
+  font-weight: 700;           /* mantém negrito */
+}
