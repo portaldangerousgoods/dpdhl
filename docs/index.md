@@ -13,24 +13,24 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
 
 ## **O que você encontra aqui:**
 
-- ✅ Como solicitar **aprovação de conta**
-- 📄 Lista completa de **documentos exigidos**
-- 📚 Perguntas frequentes (FAQ) com orientações técnicas
-- 🧪 Acesso ao nosso **material de apoio e treinamentos**
+- Como solicitar **aprovação de conta**
+- Lista completa de **documentos exigidos**
+- Perguntas frequentes (FAQ) com orientações técnicas
+- Acesso ao nosso **material de apoio e treinamentos**
 
 ---
 
 ## **Comece por aqui:**
 
-- 👉 [Como aprovar uma conta](aprovacao.md)
-- 🧾 [Documentos exigidos](documentos.md)
-- 🤔 [FAQ Técnico](faq.md)
+- [Como aprovar uma conta](aprovacao.md)
+- [Documentos exigidos](documentos.md)
+- [FAQ Técnico](faq.md)
 
 ---
 
 ## **Materiais importantes**
 
-- 🔗 [Manual de Serviços DG (PPT)](DHL%20EXPRESS%20-%20DGR.pptx)
+- [Manual de Serviços DG (PPT)](DHL%20EXPRESS%20-%20DGR.pptx)
 
 ---
 
