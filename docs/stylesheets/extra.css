@@ -447,3 +447,16 @@ h2 {
   padding: 6px 12px;
 }
 
+/* === Ajuste de peso da fonte no menu topnav === */
+#dg-topnav .dg-link,
+#dg-topnav .dg-drop > .dg-link,
+#dg-topnav .dg-panel a {
+  font-weight: 400 !important;  /* remove o negrito */
+  color: #000 !important;       /* preto normal */
+  text-decoration: none;
+}
+
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-panel a:hover {
+  color: #C4001A !important;    /* vermelho DHL no hover */
+}
