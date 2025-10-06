@@ -45,8 +45,8 @@ A DHL Express transporta materiais classificados como:
 
 ## Modelos e Guias
 
-- 📥 [Guia de preparo de remessas biológicas (PDF)](GuiaBio.pdf)
-- 📥 [Declaração de Risco Mínimo (DOCX)](Min.docx)
-- 📥 [Declaração UN3373 (DOCX)](UN3373.docx)
+- [Guia de preparo de remessas biológicas (PDF)](GuiaBio.pdf)
+- [Declaração de Risco Mínimo (DOCX)](Min.docx)
+- [Declaração UN3373 (DOCX)](UN3373.docx)
 
 Caso tenha dúvidas, entre em contato com seu ponto de atendimento DHL.
