@@ -3,10 +3,10 @@
 ## Regras Gerais
 
 - **Bebidas alcoólicas contendo 24% ou menos de álcool por volume**  
-  ➡️ Não são classificadas como materiais perigosos e **não possuem restrições** de transporte.
+  Não são classificadas como materiais perigosos e **não possuem restrições** de transporte.
 
 - **Bebidas alcoólicas acima de 24% e até 70% de álcool por volume**  
-  ➡️ Também não são consideradas mercadorias perigosas, **desde que atendam às condições da Provisão Especial A9**.
+  Também não são consideradas mercadorias perigosas, **desde que atendam às condições da Provisão Especial A9**.
 
 ---
 
