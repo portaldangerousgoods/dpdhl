@@ -155,11 +155,11 @@ Para remessas destinadas a **Argentina, Paraguai e Uruguai**, é **obrigatório*
 ⚠️ **Atenção**: Essa exigência vale para baterias de lítio **acopladas ou não ao equipamento**.
 
 📄 Documentos necessários:
-- 👉 [Dangerous Goods Acceptance Confirmation Letter](DANGEROUS%20GOODS%20ACCEPTANCE%20CONFIRMATION%20LETTER%20ETHIOPIAN.docx)  
-- 👉 [Shipper's Authorization](SHIPPER'S%20AUTHORIZATION%20ETHIOPIAN.docx)  
-- 👉 [Shipper's Declaration for Section II Lithium Cells and Batteries](SHIPPER'S%20DECLARATION%20%20FOR%20SECTION%20II%20LITHIUM%20CELLS,%20BATTERIES%20ETHIOPIAN.docx)
+- [Dangerous Goods Acceptance Confirmation Letter](DANGEROUS%20GOODS%20ACCEPTANCE%20CONFIRMATION%20LETTER%20ETHIOPIAN.docx)  
+- [Shipper's Authorization](SHIPPER'S%20AUTHORIZATION%20ETHIOPIAN.docx)  
+- [Shipper's Declaration for Section II Lithium Cells and Batteries](SHIPPER'S%20DECLARATION%20%20FOR%20SECTION%20II%20LITHIUM%20CELLS,%20BATTERIES%20ETHIOPIAN.docx)
 
-📘 Para apoio no preenchimento, consulte o guia:  
+Para apoio no preenchimento, consulte o guia:  
 👉 [FormsCIA.pdf](FormsCIA.pdf)
 
 ---
