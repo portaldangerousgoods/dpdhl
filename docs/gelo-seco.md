@@ -24,7 +24,7 @@ Marcações externas:
   - **Etiqueta Classe 9 - Diversos**
   - **Setas de orientação (posição vertical)**
 
-> 📌 O não cumprimento desses requisitos inviabiliza o transporte.
+> O não cumprimento desses requisitos inviabiliza o transporte.
 
 ---
 
@@ -36,7 +36,7 @@ Para que o envio de remessas com gelo seco seja autorizado, é necessário que o
 ---
 
 ## Guia para embalagem
-📥 Acesse o passo a passo:
+Acesse o passo a passo:
 👉 [Como Embalar uma Remessa com Gelo Seco (PDF)](DryIce.pdf)
 
 Caso tenha dúvidas, entre em contato com o seu ponto de atendimento DHL.
