@@ -25,7 +25,7 @@ Abaixo estão os principais documentos e orientações para cada caso:
 [Baixar modelos no site da IATA](https://www.iata.org/en/programs/cargo/dgr/shippers-declaration/)
 
 👉 Guia interno de preenchimento:  
-[📘 DGD.pdf](DGD.pdf)
+[DGD.pdf](DGD.pdf)
 
 ---
 
