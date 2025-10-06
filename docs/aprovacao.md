@@ -12,9 +12,9 @@ Para dar início ao processo de aprovação, você deve reunir e enviar a seguin
 
 Faça o download e preencha:
 
-- 👉 [Formulário de Solicitação de Aprovação – Form1.docx](Form1.docx)
-- 👉 [Declaração de Produto – Form2.pdf](Form2.pdf)
-- 👉 [Guia de Preenchimento – GuiaForms.pptx](GuiaForms.pptx) — este material orienta o correto preenchimento dos formulários acima.
+- [Formulário de Solicitação de Aprovação – Form1.docx](Form1.docx)
+- [Declaração de Produto – Form2.pdf](Form2.pdf)
+- [Guia de Preenchimento – GuiaForms.pptx](GuiaForms.pptx) — este material orienta o correto preenchimento dos formulários acima.
 
 ### 2. Certificado de Treinamento DG IATA (quando aplicável)
 
