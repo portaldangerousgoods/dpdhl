@@ -48,46 +48,30 @@ h2 {
   color: #D40511;
   font-weight: bold;
 }
-
-/* ===== Botão SAIR (topo) – visual aprovado ===== */
+/* ===== Botão SAIR (topo) – estilo DHL atualizado ===== */
 #dg-logout {
-  background-color: #C4001A;
-  color: #ffffff !important;
-  padding: 4px 10px;
+  background-color: #D40511;        /* vermelho DHL */
+  color: #ffffff !important;        /* texto branco */
+  padding: 10px 22px;               /* altura e largura equilibradas */
   border: none;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 13px;
+  border-radius: 6px;               /* leve arredondamento */
+  font-weight: 700;                 /* bem negrito */
+  font-size: 14px;                  /* tamanho visível */
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.05s ease;
-  text-decoration: none;
+  text-transform: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* leve sombra */
   display: inline-block;
-  user-select: none;
-  line-height: 1.2;
-
-  /* posição: empurra para a direita e deixa uma folga do canto */
-  margin-left: 12px;      /* gruda à direita do header */
-  margin-right: 24px;     /* folga antes da borda direita */
-}
-#dg-logout:hover { background-color: #000000; color: #ffffff !important; }
-
-/* === Espaço entre a busca e o botão Sair === */
-
-/* 1) Adiciona um gap entre os itens do header (logo, busca, botão) */
-.md-header__inner {
-  display: flex;            /* já é flex, reforçamos para garantir */
-  gap: 12px;                /* espaço padrão entre os itens */
+  line-height: 1.3;
+  margin-left: 0 !important;        /* mantém espaçamento via gap */
+  margin-right: 24px !important;    /* distância do canto direito */
 }
 
-/* 2) Garante um respiro extra ao lado direito do campo de busca */
-.md-header__inner .md-search {
-  margin-right: 8px !important;   /* afasta a busca do botão */
-}
-
-/* 3) E ajusta o botão (mantém uma folga da borda direita) */
-#dg-logout {
-  margin-left: 0 !important;      /* não precisa empurrar, o gap faz isso */
-  margin-right: 24px !important;  /* distância do canto direito */
+/* Efeito ao passar o mouse */
+#dg-logout:hover {
+  background-color: #a00015;        /* vermelho escuro DHL */
+  transform: translateY(-1px);      /* leve elevação */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 
