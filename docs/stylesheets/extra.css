@@ -247,62 +247,69 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* =========================================================================
-   BUSCA (Header) — fundo branco, centralizada, estilo limpo DHL
-   ========================================================================== */
+/* ===== BUSCA (Header) — branca, centralizada, estilo pill ===== */
+.md-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* centraliza a busca no header */
+  gap: 16px;                 /* espaço entre logo, busca e Sair */
+}
 
 /* Container da busca */
 .md-header__inner .md-search {
-  background: #ffffff;                  /* fundo branco */
-  border-radius: 12px;                  /* cantos arredondados */
-  padding: 4px 10px;
-  margin: 0 auto;                       /* centraliza horizontalmente */
+  background: #ffffff !important;   /* fundo branco do container */
+  border-radius: 18px;              /* pill */
+  padding: 6px 10px;
+  margin: 0 auto;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-  width: 420px;
-  max-width: 45vw;                      /* se adapta a telas menores */
-  transition: all 0.2s ease;
-  position: relative;
+  width: 500px;                     /* largura alvo */
+  max-width: 55vw;
+  transition: box-shadow .2s ease;
 }
 
-/* Campo de busca */
+/* Input 100% branco, sem fundo cinza */
+.md-header__inner .md-search__inner,
 .md-header__inner .md-search__input {
-  background: transparent !important;
-  color: #000 !important;               /* texto preto */
-  font-weight: 600;
-  caret-color: #D40511;                 /* cursor vermelho DHL */
+  background: #ffffff !important;
+  color: #000 !important;
+  height: 38px;                     /* altura consistente */
+  line-height: 38px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;        /* borda sutil */
+  padding: 0 14px 0 38px;           /* espaço para a lupa à esquerda */
+  box-shadow: none !important;
+}
+
+/* Ícone da lupa preto e posicionado */
+.md-header__inner .md-search__icon,
+.md-header__inner .md-search__icon svg {
+  color: #000 !important;
+  fill: currentColor !important;
+}
+.md-header__inner .md-search__icon {
+  left: 12px !important;            /* aproxima da borda */
 }
 
 /* Placeholder */
 .md-header__inner .md-search__input::placeholder {
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.55);
+  font-weight: 600;
 }
 
-/* Ícone da lupa */
-.md-header__inner .md-search__icon {
-  color: #000 !important;
-  fill: currentColor !important;
-}
-
-/* Foco */
-.md-header__inner .md-search:focus-within {
-  box-shadow: 0 0 0 2px #D40511;        /* destaque vermelho DHL */
+/* Foco destacado em vermelho DHL */
+.md-header__inner .md-search__input:focus {
+  outline: none !important;
+  border-color: #D40511 !important;
+  box-shadow: 0 0 0 2px rgba(212,5,17,0.25) !important;
 }
 
 /* Responsividade */
-@media (max-width: 1100px) {
+@media (max-width: 1100px){
+  .md-header__inner .md-search { width: 420px; }
+}
+@media (max-width: 900px){
   .md-header__inner .md-search { width: 320px; }
 }
-@media (max-width: 900px) {
-  .md-header__inner .md-search { width: 260px; }
-}
-@media (max-width: 700px) {
-  .md-header__inner .md-search { width: 200px; }
-}
-
-/* Mantém espaçamento entre itens do header */
-.md-header__inner {
-  display: flex;
-  justify-content: center;              /* centraliza o grupo */
-  align-items: center;
-  gap: 16px;                            /* espaço entre logo, busca e sair */
+@media (max-width: 700px){
+  .md-header__inner .md-search { width: 240px; }
 }
