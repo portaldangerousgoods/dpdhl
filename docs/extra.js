@@ -33,43 +33,75 @@
     return true;
   }
 
-  /* ===== Botão SAIR ===== */
-  function injectLogout() {
-    if (!hasAuth()) return;
-    const header = document.querySelector('.md-header__inner');
-    if (!header) return;
+ /* ===== Botão SAIR ===== */
+function injectLogout() {
+  if (!hasAuth()) return;
+  const header = document.querySelector('.md-header__inner');
+  if (!header) return;
 
-    const styleLogoutBtn = (btn) => {
-      btn.id = 'dg-logout';
-      btn.innerHTML = '⇨ Sair';
-      btn.setAttribute('aria-label', 'Sair');
-      btn.style.marginLeft = '24px';
-      btn.style.marginRight = '12px';
-      btn.style.padding = '4px 10px';
-      btn.style.borderRadius = '9999px';
-      btn.style.backgroundColor = '#C4001A';
-      btn.style.color = '#fff';
-      btn.style.fontWeight = '600';
-      btn.style.fontSize = '13px';
-      btn.style.cursor = 'pointer';
-      btn.style.transition = 'background-color 0.2s ease, transform 0.05s ease';
-      btn.style.textDecoration = 'none';
-      btn.style.display = 'inline-block';
-      btn.style.userSelect = 'none';
-      btn.style.lineHeight = '1.2';
-      btn.onmouseenter = null; btn.onmouseleave = null;
-      btn.onmousedown = null; btn.onmouseup = null; btn.onclick = null;
-      btn.addEventListener('mouseenter', () => { btn.style.backgroundColor = '#000'; });
-      btn.addEventListener('mouseleave', () => { btn.style.backgroundColor = '#C4001A'; });
-      btn.addEventListener('mousedown',  () => { btn.style.transform = 'scale(0.98)'; });
-      btn.addEventListener('mouseup',    () => { btn.style.transform = 'scale(1)'; });
-      btn.onclick = () => { clearAuth(); window.location.href = basePath() + 'login.html'; };
+  const styleLogoutBtn = (btn) => {
+    btn.id = 'dg-logout';
+    btn.innerHTML = '⇨ Sair';
+    btn.setAttribute('aria-label', 'Sair');
+
+    // ===== Estilo atualizado (retângulo com cantos arredondados) =====
+    btn.style.marginLeft = '16px';            // distância da barra de busca
+    btn.style.marginRight = '32px';           // distância do canto direito
+    btn.style.padding = '10px 26px';          // corpo do botão
+    btn.style.borderRadius = '6px';           // cantos arredondados (não mais pílula)
+    btn.style.backgroundColor = '#D40511';    // vermelho DHL
+    btn.style.color = '#fff';
+    btn.style.fontWeight = '700';
+    btn.style.fontSize = '15px';
+    btn.style.cursor = 'pointer';
+    btn.style.transition = 'background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease';
+    btn.style.textDecoration = 'none';
+    btn.style.display = 'inline-block';
+    btn.style.userSelect = 'none';
+    btn.style.lineHeight = '1.3';
+    btn.style.boxShadow = '0 3px 6px rgba(0, 0, 0, 0.15)';
+
+    // ===== Eventos =====
+    btn.onmouseenter = null; 
+    btn.onmouseleave = null;
+    btn.onmousedown = null; 
+    btn.onmouseup = null; 
+    btn.onclick = null;
+
+    // Hover / active
+    btn.addEventListener('mouseenter', () => { 
+      btn.style.backgroundColor = '#a00015'; 
+      btn.style.boxShadow = '0 5px 10px rgba(0,0,0,0.25)';
+    });
+    btn.addEventListener('mouseleave', () => { 
+      btn.style.backgroundColor = '#D40511'; 
+      btn.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15)';
+    });
+    btn.addEventListener('mousedown', () => { 
+      btn.style.transform = 'scale(0.98)'; 
+    });
+    btn.addEventListener('mouseup', () => { 
+      btn.style.transform = 'scale(1)'; 
+    });
+
+    // Clique: ação de logout
+    btn.onclick = () => { 
+      clearAuth(); 
+      window.location.href = basePath() + 'login.html'; 
     };
+  };
 
-    let a = document.getElementById('dg-logout');
-    if (!a) { a = document.createElement('a'); styleLogoutBtn(a); header.appendChild(a); }
-    else { styleLogoutBtn(a); }
+  // Cria ou atualiza o botão
+  let a = document.getElementById('dg-logout');
+  if (!a) { 
+    a = document.createElement('a'); 
+    styleLogoutBtn(a); 
+    header.appendChild(a); 
+  } else { 
+    styleLogoutBtn(a); 
   }
+}
+
 
   /* ===== Esconde link GitHub no header ===== */
   function hideGitHubLink() {
