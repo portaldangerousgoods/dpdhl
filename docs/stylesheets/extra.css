@@ -248,57 +248,47 @@ h1 {
 }
 
 /* =========================================================================
-   BUSCA (Header) — Estilo DHL Brand Hub
-   Postyellow #FFCC00, texto/ícone pretos, cantos arredondados, foco em vermelho
+   BUSCA (Header) — fundo branco, centralizada, estilo limpo DHL
    ========================================================================== */
 
-/* Container da busca dentro do header */
+/* Container da busca */
 .md-header__inner .md-search {
-  background: #FFCC00;                    /* Postyellow */
-  border-radius: 12px;                     /* cantos arredondados */
-  padding: 4px 10px;                       /* respiro interno */
-  margin-right: 16px !important;           /* distância do botão Sair */
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
-  transition: background-color .2s ease, box-shadow .2s ease, border-color .2s ease;
-
-  /* largura em desktop (ajuste se quiser mais/menos larga) */
+  background: #ffffff;                  /* fundo branco */
+  border-radius: 12px;                  /* cantos arredondados */
+  padding: 4px 10px;
+  margin: 0 auto;                       /* centraliza horizontalmente */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   width: 420px;
-  max-width: 42vw;                         /* evita estourar telas menores */
+  max-width: 45vw;                      /* se adapta a telas menores */
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-/* Formulário da busca (remove fundos do tema) */
-.md-header__inner .md-search__form {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Campo de texto da busca */
+/* Campo de busca */
 .md-header__inner .md-search__input {
   background: transparent !important;
-  color: #000000 !important;               /* texto preto */
-  font-weight: 600;                        /* leve destaque */
-  caret-color: #000;                       /* cursor preto */
+  color: #000 !important;               /* texto preto */
+  font-weight: 600;
+  caret-color: #D40511;                 /* cursor vermelho DHL */
 }
 
-/* Placeholder da busca */
+/* Placeholder */
 .md-header__inner .md-search__input::placeholder {
-  color: rgba(0,0,0,0.65) !important;      /* preto suavizado */
+  color: rgba(0,0,0,0.6);
 }
 
 /* Ícone da lupa */
 .md-header__inner .md-search__icon {
-  color: #000000 !important;               /* ícone preto */
-  fill: currentColor !important;           /* garante cor preta em SVG */
-  opacity: 1 !important;
+  color: #000 !important;
+  fill: currentColor !important;
 }
 
-/* Estado de foco: borda vermelha DHL + leve amarelo mais claro */
+/* Foco */
 .md-header__inner .md-search:focus-within {
-  background: #FFD64D;                     /* Postyellow mais claro no foco */
-  box-shadow: 0 0 0 2px #D40511;           /* vermelho DHL */
+  box-shadow: 0 0 0 2px #D40511;        /* destaque vermelho DHL */
 }
 
-/* Responsividade: reduz largura em telas menores */
+/* Responsividade */
 @media (max-width: 1100px) {
   .md-header__inner .md-search { width: 320px; }
 }
@@ -309,8 +299,10 @@ h1 {
   .md-header__inner .md-search { width: 200px; }
 }
 
-/* Mantém um pequeno gap geral entre os itens do header */
+/* Mantém espaçamento entre itens do header */
 .md-header__inner {
   display: flex;
-  gap: 12px;                                /* espaço entre logo, busca e “Sair” */
+  justify-content: center;              /* centraliza o grupo */
+  align-items: center;
+  gap: 16px;                            /* espaço entre logo, busca e sair */
 }
