@@ -275,17 +275,24 @@ h1 {
   display: none !important;
 }
 
-/* ===== BUSCA ===== */
+/* ===== Busca centralizada com formato e respiro igual ao botão Sair ===== */
 .md-header__inner .md-search {
-  position: absolute !important;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  right: 150px;                   /* distância até o botão Sair */
-  width: 420px !important;
-  height: 40px !important;        /* acompanha faixa menor */
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px !important;        /* ligeiramente menor */
+  height: 42px !important;
+  border-radius: 8px !important;  /* mesmo formato arredondado do botão Sair */
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.md-header__inner .md-search__form {
+  border-radius: 8px !important;
+}
+
+#dg-logout {
+  margin-right: 40px !important;  /* 1 cm de respiro */
 }
 
 /* pílula branca da busca */
