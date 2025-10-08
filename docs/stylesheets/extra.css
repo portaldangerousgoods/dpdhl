@@ -425,3 +425,33 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* ===== Ajuste final: mesmo alinhamento vertical e respiro do botão Sair ===== */
+.md-header__inner .md-search {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -56%) !important; /* sobe um pouco mais */
+  width: 360px !important;
+  height: 40px !important;
+  z-index: 20;
+}
+
+/* Mesmo formato e proporção do botão Sair */
+.md-header__inner .md-search__form {
+  background: #fff !important;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 6px !important; /* mesmo formato */
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+}
+
+/* Ícone centralizado verticalmente dentro da busca */
+.md-header__inner .md-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
