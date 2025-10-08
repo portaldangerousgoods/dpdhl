@@ -247,37 +247,30 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== BUSCA no Header — estilo Brand Hub, central e nivelada ===== */
+/* ===== BUSCA no Header — estilo Brand Hub (central exata) ===== */
 .md-header {
-  min-height: 76px; /* altura confortável da faixa */
+  min-height: 76px;
 }
 
 .md-header__inner {
-  position: relative;
+  position: relative;               /* necessário para centralizar absoluto */
   height: 76px;
   display: flex;
-  align-items: center;   /* alinha verticalmente */
-  justify-content: center;
-  gap: 12px;
+  align-items: center;              /* alinha verticalmente itens (inclui o Sair) */
 }
 
-/* ===== Parâmetro de ajuste fino do "centro visual" =====
-   Se ainda parecer ligeiramente deslocado para a direita,
-   aumente (módulo) este valor para -53%, -54%...  */
-:root { --dg-center-offset: -52%; }
-
-/* Container da busca */
+/* Container da busca (central exata no header) */
 .md-header__inner .md-search {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(var(--dg-center-offset), -50%); /* centro + ajuste fino */
-  width: min(720px, 60vw);
+  transform: translate(-50%, -50%); /* centro perfeito */
+  width: min(560px, 55vw);          /* largura na proporção do Brand Hub */
   height: 46px;
-  z-index: 10;
+  z-index: 10;                      /* fica acima do fundo amarelo */
 }
 
-/* Limpa wrappers internos do Material */
+/* Limpa wrappers do Material */
 .md-header__inner .md-search__inner {
   background: transparent !important;
   border: none !important;
@@ -286,11 +279,11 @@ h1 {
   overflow: visible !important;
 }
 
-/* Campo “pílula” branco com sombra */
+/* Pílula branca com borda e sombra suave */
 .md-header__inner .md-search__form {
   background: #ffffff !important;
-  border: 1px solid #e6e6e6 !important;
-  border-radius: 14px !important;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 14px !important;   /* cantos arredondados estilo Brand Hub */
   height: 46px !important;
   display: flex !important;
   align-items: center !important;
@@ -322,16 +315,27 @@ h1 {
   font-weight: 600;
 }
 
-/* Foco em vermelho DHL */
+/* Foco com destaque vermelho DHL */
 .md-header__inner .md-search__input:focus {
   outline: none !important;
   border: 1px solid #D40511 !important;
   box-shadow: 0 0 0 2px rgba(212,5,17,.25) !important;
 }
 
-/* Garante o alinhamento vertical e folga lateral do botão Sair */
+/* Botão Sair: nivelado verticalmente e com folga da borda direita */
 #dg-logout {
-  align-self: center;
-  margin-right: 28px !important;  /* folga da borda direita */
-  margin-left: 16px !important;   /* folga em relação à busca */
+  align-self: center;               /* alinha verticalmente com a busca */
+  margin-right: 28px !important;    /* folga do canto direito */
+  margin-left: 16px !important;     /* respiro em relação ao conteúdo à esquerda */
+}
+
+/* Responsivo (telinhas): encurta um pouco a busca para não colar no Sair */
+@media (max-width: 1080px) {
+  .md-header__inner .md-search { width: min(520px, 58vw); }
+}
+@media (max-width: 920px) {
+  .md-header__inner .md-search { width: min(480px, 62vw); }
+}
+@media (max-width: 740px) {
+  .md-header__inner .md-search { width: min(420px, 68vw); }
 }
