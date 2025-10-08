@@ -466,3 +466,44 @@ h1 {
   height: 40px !important;
   z-index: 20;
 }
+
+/* === Busca com MESMA ALTURA do botão Sair (≈44px) e alinhamento fino === */
+.md-header__inner .md-search {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -57%) !important; /* microajuste vertical */
+  width: 360px !important;
+  height: 44px !important;                    /* altura igual ao Sair */
+  z-index: 20;
+}
+
+.md-header__inner .md-search__form {
+  height: 44px !important;                    /* igual ao container */
+  background: #ffffff !important;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 6px !important;              /* mesmo raio do Sair */
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden;
+}
+
+.md-header__inner .md-search__input {
+  height: 44px !important;                    /* igual ao form */
+  line-height: 44px !important;               /* centraliza o texto */
+  background: transparent !important;
+  color: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 14px 0 40px !important;          /* espaço pro ícone */
+  font-size: 15px;
+}
+
+.md-header__inner .md-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000 !important;
+}
