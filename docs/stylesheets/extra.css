@@ -247,33 +247,37 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== BUSCA no Header — alinhamento central e nivelado com o botão SAIR ===== */
+/* ===== BUSCA no Header — estilo Brand Hub, central e nivelada ===== */
 .md-header {
-  min-height: 76px; /* um pouco mais alto pra deixar a faixa respirando */
+  min-height: 76px; /* altura confortável da faixa */
 }
 
 .md-header__inner {
   position: relative;
   height: 76px;
   display: flex;
-  align-items: center;
-  justify-content: center;  /* centraliza horizontalmente os elementos */
+  align-items: center;   /* alinha verticalmente */
+  justify-content: center;
   gap: 12px;
 }
 
-/* campo de busca centralizado perfeitamente na faixa */
+/* ===== Parâmetro de ajuste fino do "centro visual" =====
+   Se ainda parecer ligeiramente deslocado para a direita,
+   aumente (módulo) este valor para -53%, -54%...  */
+:root { --dg-center-offset: -52%; }
+
+/* Container da busca */
 .md-header__inner .md-search {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  top: 50%;                             /* baseia o centro vertical */
-  transform: translate(-50%, -50%);     /* centraliza vertical e horizontal */
+  top: 50%;
+  transform: translate(var(--dg-center-offset), -50%); /* centro + ajuste fino */
   width: min(720px, 60vw);
   height: 46px;
   z-index: 10;
 }
 
-/* reseta camadas internas e aplica estilo “pílula DHL” */
+/* Limpa wrappers internos do Material */
 .md-header__inner .md-search__inner {
   background: transparent !important;
   border: none !important;
@@ -282,8 +286,9 @@ h1 {
   overflow: visible !important;
 }
 
+/* Campo “pílula” branco com sombra */
 .md-header__inner .md-search__form {
-  background: #fff !important;
+  background: #ffffff !important;
   border: 1px solid #e6e6e6 !important;
   border-radius: 14px !important;
   height: 46px !important;
@@ -293,7 +298,7 @@ h1 {
   overflow: hidden;
 }
 
-/* input e ícone */
+/* Input e ícone */
 .md-header__inner .md-search__input {
   height: 46px !important;
   line-height: 46px !important;
@@ -317,16 +322,16 @@ h1 {
   font-weight: 600;
 }
 
-/* foco em vermelho DHL */
+/* Foco em vermelho DHL */
 .md-header__inner .md-search__input:focus {
   outline: none !important;
   border: 1px solid #D40511 !important;
   box-shadow: 0 0 0 2px rgba(212,5,17,.25) !important;
 }
 
-/* garante que o botão Sair fique alinhado na vertical e com folga da borda */
+/* Garante o alinhamento vertical e folga lateral do botão Sair */
 #dg-logout {
   align-self: center;
-  margin-right: 28px !important;
-  margin-left: 16px !important;
+  margin-right: 28px !important;  /* folga da borda direita */
+  margin-left: 16px !important;   /* folga em relação à busca */
 }
