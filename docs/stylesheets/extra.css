@@ -247,62 +247,82 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== HEADER com busca e botão alinhados visualmente ===== */
+/* ===== HEADER centralizado com busca branca ===== */
 .md-header {
-  background-color: #FFCC00;
-  height: 84px; /* altura da faixa amarela */
+  background-color: #FFCC00;  /* Amarelo DHL */
+  height: 84px;               /* Altura fixa */
   display: flex;
-  align-items: center; /* centraliza verticalmente */
+  align-items: center;        /* Centraliza verticalmente */
   justify-content: center;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* Agrupa busca e botão no mesmo eixo */
+/* Container interno (limita largura) */
 .md-header__inner {
   width: 100%;
   max-width: 1220px;
   display: flex;
-  align-items: center;
+  align-items: center;        /* alinha verticalmente busca e botão */
   justify-content: space-between;
-  padding: 0 40px; /* folga lateral */
-  box-sizing: border-box;
+  padding: 0 40px;
 }
 
-/* ===== Busca centralizada ===== */
+/* ===== Barra de busca ===== */
 .md-search {
-  background: #fff !important;
-  border: 1px solid #E6E6E6 !important;
-  border-radius: 14px !important;
-  height: 46px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
-  overflow: hidden;
+  position: relative;
   width: 520px;
+  height: 46px;
   margin: 0 auto;
+  background: #FFFFFF !important;  /* fundo branco puro */
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 14px !important;  /* cantos arredondados */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
+/* Remove qualquer overlay cinza */
+.md-search__inner,
+.md-search__form {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== Input ===== */
 .md-search__input {
   height: 46px !important;
   line-height: 46px !important;
-  border: none !important;
   background: transparent !important;
-  padding-left: 44px !important;
-  font-size: 16px;
   color: #000 !important;
+  border: none !important;
+  padding-left: 44px !important;
+  width: 100%;
+  font-size: 16px;
 }
 
+.md-search__input::placeholder {
+  color: rgba(0,0,0,0.6);
+  font-weight: 600;
+}
+
+/* ===== Ícone da lupa ===== */
 .md-search__icon {
   position: absolute;
   left: 16px;
   color: #000 !important;
   pointer-events: none;
 }
+.md-search__icon svg { fill: currentColor !important; }
 
-.md-search__input::placeholder {
-  color: rgba(0,0,0,.6);
-  font-weight: 600;
+/* ===== Foco ===== */
+.md-search__input:focus {
+  outline: none !important;
+  border: 1px solid #D40511 !important;
+  box-shadow: 0 0 0 2px rgba(212,5,17,0.25) !important;
 }
 
 /* ===== Botão SAIR ===== */
@@ -317,8 +337,18 @@ h1 {
   cursor: pointer;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
   transition: all 0.2s ease-in-out;
+  align-self: center;
 }
 #dg-logout:hover {
   background-color: #a00015;
   transform: translateY(-1px);
 }
+
+/* ===== Responsivo ===== */
+@media (max-width: 1080px) {
+  .md-search { width: min(480px, 58vw); }
+}
+@media (max-width: 740px) {
+  .md-search { width: min(420px, 68vw); }
+}
+
