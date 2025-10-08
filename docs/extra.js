@@ -352,3 +352,115 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeDropdown();
   });
 });
+
+/* ========= Autocomplete customizado (usa search_index.json do MkDocs) ========= */
+(function () {
+  let DG_SEARCH_DOCS = null;
+
+  function getBase() {
+    // base do site no GitHub Pages (ex.: /dpdhl/)
+    if (location.pathname.includes("/dpdhl/")) return "/dpdhl/";
+    // fallback: raiz
+    return "/";
+  }
+
+  async function loadIndex() {
+    if (DG_SEARCH_DOCS) return DG_SEARCH_DOCS;
+    const base = getBase();
+    const url = base + "search/search_index.json";
+    try {
+      const res = await fetch(url, { cache: "force-cache" });
+      const data = await res.json();
+      DG_SEARCH_DOCS = data.docs || data;
+    } catch (e) {
+      DG_SEARCH_DOCS = []; // se não achar, evita quebrar
+    }
+    return DG_SEARCH_DOCS;
+  }
+
+  function createDropdown(root) {
+    let dd = root.querySelector("#dg-suggest");
+    if (!dd) {
+      dd = document.createElement("div");
+      dd.id = "dg-suggest";
+      dd.className = "dg-suggest";
+      root.appendChild(dd);
+    }
+    return dd;
+  }
+
+  function escapeHtml(s) {
+    return (s || "").replace(/[&<>"']/g, m => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[m]));
+  }
+
+  function highlight(text, q) {
+    const t = escapeHtml(text);
+    const re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
+    return t.replace(re, "<mark>$1</mark>");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector('.md-header__inner [data-md-component="search"]');
+    if (!root) return;
+
+    // tenta captar o input da busca do Material
+    const input = root.querySelector('input[data-md-component="search-query"]')
+               || root.querySelector('input[type="text"]');
+    if (!input) return;
+
+    // garante posicionamento relativo
+    root.style.position = "absolute";
+
+    const dd = createDropdown(root);
+
+    function hide() { dd.style.display = "none"; dd.innerHTML = ""; }
+    function show() { dd.style.display = "block"; }
+
+    // fecha quando clica fora ou aperta ESC
+    document.addEventListener("click", (e) => {
+      if (!root.contains(e.target)) hide();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hide();
+    });
+
+    input.addEventListener("input", async () => {
+      const q = (input.value || "").trim().toLowerCase();
+      if (q.length < 2) { hide(); return; }
+
+      const docs = await loadIndex();
+      const base = getBase();
+
+      // filtro simples por substring em título ou texto
+      const results = [];
+      for (const d of docs) {
+        const title = (d.title || "");
+        const text  = (d.text  || "");
+        if (title.toLowerCase().includes(q) || text.toLowerCase().includes(q)) {
+          results.push({
+            url: d.location.startsWith("http") ? d.location : (base + d.location),
+            title: title || (text.slice(0, 60) + "..."),
+            text
+          });
+        }
+        if (results.length >= 8) break; // limita a 8 sugestões
+      }
+
+      if (!results.length) { hide(); return; }
+
+      dd.innerHTML = results.map(r => `
+        <a class="dg-suggest__item" href="${r.url}">
+          ${highlight(r.title, q)}
+        </a>
+      `).join("");
+      show();
+    });
+
+    // abre ao focar se já houver texto
+    input.addEventListener("focus", () => {
+      if ((input.value || "").trim().length >= 2 && dd.innerHTML.trim()) show();
+    });
+  });
+})();
