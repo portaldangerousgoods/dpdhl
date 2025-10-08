@@ -392,18 +392,46 @@ h1 {
   transform: translateY(-1px);
 }
 
-/* ===== Ajuste fino: centralização vertical da busca ===== */
+/* === Alinhamento final da barra de busca (altura e posição idênticas ao botão Sair) === */
 .md-header__inner .md-search {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  transform: translate(-50%, -52%) !important; /* eleva levemente (de 50% → 52%) */
+  transform: translate(-50%, -60%) !important; /* sobe mais 2% */
   width: 360px !important;
-  height: 40px !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+  height: 44px !important; /* igual ao botão Sair */
   z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__inner .md-search__form {
+  height: 44px !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  border: 1px solid #E6E6E6 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 12px !important; /* cria respiro interno igual ao botão */
+}
+
+.md-header__inner .md-search__input {
+  height: 44px !important;
+  line-height: 44px !important;
+  background: transparent !important;
+  color: #000 !important;
+  border: none !important;
+  padding: 0 14px 0 36px !important;
+  font-size: 15px;
+}
+
+.md-header__inner .md-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000 !important;
 }
 
 /* Garante mesmo formato e altura do botão Sair */
