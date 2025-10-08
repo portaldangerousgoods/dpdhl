@@ -340,3 +340,67 @@ h1 {
   background-color: #a00015;
   transform: translateY(-1px);
 }
+
+/* ===== Alinhamento final: logo extremo esquerdo, sair com recuo ===== */
+
+/* Header geral */
+.md-header {
+  background: #FFCC00;
+  height: 66px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0; /* remove margens laterais */
+}
+
+/* Área interna */
+.md-header__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  height: 66px;
+}
+
+/* Logo no canto esquerdo */
+.md-header__inner .md-logo {
+  margin-left: 0 !important; /* encosta no canto esquerdo */
+  padding-left: 0 !important;
+}
+
+/* Remove o texto "Portal DG" */
+.md-header__title {
+  display: none !important;
+}
+
+/* Busca centralizada entre o logo e o botão Sair */
+.md-header__inner .md-search {
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 150px;  /* mantém o mesmo espaço até o botão Sair */
+  width: 420px !important;
+  height: 40px !important;
+}
+
+/* Botão Sair encostado com recuo de 1cm (~40px) */
+#dg-logout {
+  margin-right: 40px !important;
+  background-color: #D40511;
+  color: #fff !important;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+#dg-logout:hover {
+  background-color: #a00015;
+  transform: translateY(-1px);
+}
