@@ -247,95 +247,78 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== BUSCA no Header — estilo Brand Hub (central exata) ===== */
+/* ===== HEADER com busca e botão alinhados visualmente ===== */
 .md-header {
-  min-height: 76px;
-}
-
-.md-header__inner {
-  position: relative;               /* necessário para centralizar absoluto */
-  height: 76px;
+  background-color: #FFCC00;
+  height: 84px; /* altura da faixa amarela */
   display: flex;
-  align-items: center;              /* alinha verticalmente itens (inclui o Sair) */
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center;
+  position: relative;
 }
 
-/* Container da busca (central exata no header) */
-.md-header__inner .md-search {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); /* centro perfeito */
-  width: min(560px, 55vw);          /* largura na proporção do Brand Hub */
-  height: 46px;
-  z-index: 10;                      /* fica acima do fundo amarelo */
+/* Agrupa busca e botão no mesmo eixo */
+.md-header__inner {
+  width: 100%;
+  max-width: 1220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px; /* folga lateral */
+  box-sizing: border-box;
 }
 
-/* Limpa wrappers do Material */
-.md-header__inner .md-search__inner {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-}
-
-/* Pílula branca com borda e sombra suave */
-.md-header__inner .md-search__form {
-  background: #ffffff !important;
+/* ===== Busca centralizada ===== */
+.md-search {
+  background: #fff !important;
   border: 1px solid #E6E6E6 !important;
-  border-radius: 14px !important;   /* cantos arredondados estilo Brand Hub */
+  border-radius: 14px !important;
   height: 46px !important;
   display: flex !important;
   align-items: center !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,.12) !important;
+  justify-content: flex-start !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
   overflow: hidden;
+  width: 520px;
+  margin: 0 auto;
 }
 
-/* Input e ícone */
-.md-header__inner .md-search__input {
+.md-search__input {
   height: 46px !important;
   line-height: 46px !important;
-  background: transparent !important;
-  color: #000 !important;
   border: none !important;
-  box-shadow: none !important;
-  padding: 0 14px 0 44px !important;
+  background: transparent !important;
+  padding-left: 44px !important;
+  font-size: 16px;
+  color: #000 !important;
 }
-.md-header__inner .md-search__icon {
+
+.md-search__icon {
   position: absolute;
   left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
   color: #000 !important;
+  pointer-events: none;
 }
-.md-header__inner .md-search__icon svg { fill: currentColor !important; }
 
-.md-header__inner .md-search__input::placeholder {
-  color: rgba(0,0,0,.65);
+.md-search__input::placeholder {
+  color: rgba(0,0,0,.6);
   font-weight: 600;
 }
 
-/* Foco com destaque vermelho DHL */
-.md-header__inner .md-search__input:focus {
-  outline: none !important;
-  border: 1px solid #D40511 !important;
-  box-shadow: 0 0 0 2px rgba(212,5,17,.25) !important;
-}
-
-/* Botão Sair: nivelado verticalmente e com folga da borda direita */
+/* ===== Botão SAIR ===== */
 #dg-logout {
-  align-self: center;               /* alinha verticalmente com a busca */
-  margin-right: 28px !important;    /* folga do canto direito */
-  margin-left: 16px !important;     /* respiro em relação ao conteúdo à esquerda */
+  background-color: #D40511;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 10px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
 }
-
-/* Responsivo (telinhas): encurta um pouco a busca para não colar no Sair */
-@media (max-width: 1080px) {
-  .md-header__inner .md-search { width: min(520px, 58vw); }
-}
-@media (max-width: 920px) {
-  .md-header__inner .md-search { width: min(480px, 62vw); }
-}
-@media (max-width: 740px) {
-  .md-header__inner .md-search { width: min(420px, 68vw); }
+#dg-logout:hover {
+  background-color: #a00015;
+  transform: translateY(-1px);
 }
