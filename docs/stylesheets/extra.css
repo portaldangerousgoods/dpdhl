@@ -376,12 +376,12 @@ h1 {
   display: none !important;
 }
 
-/* Busca centralizada entre o logo e o botão Sair */
+/* Centraliza perfeitamente a barra de busca entre o logo e o botão Sair */
 .md-header__inner .md-search {
   position: absolute !important;
   top: 50%;
-  transform: translateY(-50%);
-  right: 150px;  /* mantém o mesmo espaço até o botão Sair */
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 420px !important;
   height: 40px !important;
 }
