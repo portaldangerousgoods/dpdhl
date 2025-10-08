@@ -365,10 +365,11 @@ h1 {
   height: 66px;
 }
 
-/* Logo no canto esquerdo */
+/* === Recuo fixo do logo DHL === */
 .md-header__inner .md-logo {
-  margin-left: 0 !important; /* encosta no canto esquerdo */
-  padding-left: 0 !important;
+  margin-left: 40px !important;  /* 1 cm de distância do canto esquerdo */
+  display: flex;
+  align-items: center;
 }
 
 /* Remove o texto "Portal DG" */
