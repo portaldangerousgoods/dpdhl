@@ -831,3 +831,37 @@ h1 {
 .md-header__inner [data-md-component="search"] .md-search__overlay {
   display: none !important;
 }
+
+/* ===== [1] Dropdown acima do menu (fica por cima do md-tabs) ===== */
+.md-header,
+.md-header__inner,
+.md-header__inner [data-md-component="search"] {
+  position: relative !important;
+  overflow: visible !important;   /* não corta a lista */
+}
+
+.dg-suggest{
+  z-index: 5000 !important;       /* eleva a lista de sugestões */
+}
+
+/* O menu branco (md-tabs) fica abaixo da lista */
+.md-tabs {
+  z-index: 900 !important;
+  overflow: visible !important;
+}
+
+/* ===== [2] Remove “sombra/amarelo” no campo (autofill do Chrome) ===== */
+.md-header__inner .md-search__input:-webkit-autofill,
+.md-header__inner .md-search__input:-webkit-autofill:hover,
+.md-header__inner .md-search__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000 !important;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  caret-color: #000 !important;
+}
+
+/* Se for seleção de texto, mantém discreto (opcional) */
+.md-header__inner .md-search__input::selection {
+  background: #e6eefc;  /* azul clarinho */
+  color: #000;
+}
