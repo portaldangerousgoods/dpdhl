@@ -247,10 +247,10 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== HEADER centralizado com busca branca ===== */
+/* ===== HEADER centralizado com busca ajustada ===== */
 .md-header {
   background-color: #FFCC00;  /* Amarelo DHL */
-  height: 84px;               /* Altura fixa */
+  height: 84px;               /* Altura da faixa */
   display: flex;
   align-items: center;        /* Centraliza verticalmente */
   justify-content: center;
@@ -258,33 +258,34 @@ h1 {
   box-sizing: border-box;
 }
 
-/* Container interno (limita largura) */
+/* Container interno */
 .md-header__inner {
   width: 100%;
   max-width: 1220px;
   display: flex;
-  align-items: center;        /* alinha verticalmente busca e botão */
+  align-items: center;
   justify-content: space-between;
   padding: 0 40px;
+  position: relative;
 }
 
-/* ===== Barra de busca ===== */
+/* ===== Barra de busca (ajuste de tamanho e posição) ===== */
 .md-search {
   position: relative;
-  width: 520px;
-  height: 46px;
-  margin: 0 auto;
-  background: #FFFFFF !important;  /* fundo branco puro */
+  width: 420px;                      /* reduzida em ~3 cm */
+  height: 42px;
+  background: #FFFFFF !important;    /* branca pura */
   border: 1px solid #E6E6E6 !important;
-  border-radius: 14px !important;  /* cantos arredondados */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  top: -4px;                         /* sobe levemente (~2 cm visualmente) */
 }
 
-/* Remove qualquer overlay cinza */
+/* Remover camadas extras */
 .md-search__inner,
 .md-search__form {
   background: transparent !important;
@@ -294,22 +295,21 @@ h1 {
 
 /* ===== Input ===== */
 .md-search__input {
-  height: 46px !important;
-  line-height: 46px !important;
+  height: 42px !important;
+  line-height: 42px !important;
   background: transparent !important;
   color: #000 !important;
   border: none !important;
   padding-left: 44px !important;
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
 }
-
 .md-search__input::placeholder {
   color: rgba(0,0,0,0.6);
   font-weight: 600;
 }
 
-/* ===== Ícone da lupa ===== */
+/* ===== Ícone ===== */
 .md-search__icon {
   position: absolute;
   left: 16px;
@@ -346,9 +346,8 @@ h1 {
 
 /* ===== Responsivo ===== */
 @media (max-width: 1080px) {
-  .md-search { width: min(480px, 58vw); }
+  .md-search { width: min(380px, 56vw); }
 }
 @media (max-width: 740px) {
-  .md-search { width: min(420px, 68vw); }
+  .md-search { width: min(340px, 68vw); }
 }
-
