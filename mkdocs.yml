@@ -34,3 +34,8 @@ extra_javascript:
 extra_css:
   - stylesheets/menu-lateral.css
   - stylesheets/extra.css
+
+theme:
+  features:
+    - search.suggest
+    - search.highlight
