@@ -17,7 +17,11 @@ theme:
   features:
     - search.suggest
     - search.highlight
-    
+
+plugins:
+  - search:
+      lang: pt
+      
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
