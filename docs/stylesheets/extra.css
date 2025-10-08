@@ -412,3 +412,79 @@ h1 {
   background-color: #a00015;
   transform: translateY(-1px);
 }
+
+/* ===== BUSCA – central, branca e sem "fantasma" ===== */
+
+/* Altura do header e alinhamento vertical dos itens */
+.md-header {
+  min-height: 64px;
+}
+.md-header__inner {
+  position: relative;
+  height: 64px;
+  display: flex;
+  align-items: center;   /* alinha verticalmente com o botão Sair */
+}
+
+/* Container da busca: central absoluto dentro do header */
+.md-header__inner .md-search {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);   /* centro perfeito */
+  width: 360px !important;            /* ~3 cm menor que antes */
+  height: 40px !important;
+  background: transparent !important; /* elimina qualquer fundo do container */
+  border: 0 !important;
+  box-shadow: none !important;
+  z-index: 20;                        /* acima do fundo amarelo */
+}
+
+/* Remove o “fantasma” (overlay/wrapper do search do tema) */
+.md-header__inner .md-search__overlay { display: none !important; }
+.md-header__inner .md-search__inner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+/* Pílula branca com borda e sombra suave (form real) */
+.md-header__inner .md-search__form {
+  height: 40px !important;
+  background: #ffffff !important;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 10px !important;     /* cantos arredondados = Sair */
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+  overflow: hidden;
+}
+
+/* Ícone e input */
+.md-header__inner .md-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000 !important;
+}
+.md-header__inner .md-search__icon svg { fill: currentColor !important; }
+
+.md-header__inner .md-search__input {
+  height: 40px !important;
+  line-height: 40px !important;
+  background: transparent !important;
+  color: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 12px 0 40px !important;  /* espaço p/ o ícone */
+}
+.md-header__inner .md-search__input::placeholder {
+  color: rgba(0,0,0,.65);
+  font-weight: 600;
+}
+
+/* Mantém o “Sair” com folga de ~1 cm do canto */
+#dg-logout {
+  margin-right: 36px !important;
+}
