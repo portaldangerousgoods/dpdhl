@@ -246,158 +246,97 @@ h1 {
   color: #D40511 !important;        /* vermelho DHL no hover */
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
-
-/* ===== HEADER centralizado com busca ajustada ===== */
-.md-header {
-  background-color: #FFCC00;  /* Amarelo DHL */
-  height: 84px;               /* Altura da faixa */
-  display: flex;
-  align-items: center;        /* Centraliza verticalmente */
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-}
-
-/* Container interno */
-.md-header__inner {
-  width: 100%;
-  max-width: 1220px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  position: relative;
-}
-
 /* ===========================================================
-   HEADER em grid: Logo | Busca (central do espaço) | Sair
+   HEADER AJUSTADO — faixa menor, sem "Portal DG"
    =========================================================== */
+
+/* reduz altura da faixa amarela */
 .md-header {
   background: #FFCC00;
-  height: 84px;
+  height: 66px !important;       /* faixa um pouco mais fina */
   display: flex;
   align-items: center;
   box-sizing: border-box;
 }
 
-/* Grid de 3 colunas no conteúdo do header */
+/* estrutura interna */
 .md-header__inner {
-  width: 100%;
+  position: relative;
+  height: 66px;
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 24px;
-  display: grid !important;
-  grid-template-columns: auto 1fr auto;  /* esq | centro | dir */
-  align-items: center;
-  column-gap: 24px;
-  height: 84px;
-}
-
-/* Garante que o título (logo + Portal DG DHL) fique na coluna 1 */
-.md-header__title { grid-column: 1; }
-
-/* ===== HEADER centralizado com busca ajustada ===== */
-.md-header {
-  background-color: #FFCC00;  /* Amarelo DHL */
-  height: 84px;               /* Altura da faixa */
-  display: flex;
-  align-items: center;        /* Centraliza verticalmente */
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-}
-
-/* Container interno */
-.md-header__inner {
-  width: 100%;
-  max-width: 1220px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  position: relative;
 }
 
-/* ===== Barra de busca (ajuste de tamanho e posição) ===== */
-.md-search {
-  position: relative;
-  width: 420px;                      /* reduzida em ~3 cm */
-  height: 42px;
-  background: #FFFFFF !important;    /* branca pura */
-  border: 1px solid #E6E6E6 !important;
-  border-radius: 14px !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  top: -4px;                         /* sobe levemente (~2 cm visualmente) */
+/* remove o texto "Portal DG DHL" */
+.md-header__title {
+  display: none !important;
 }
 
-/* Remover camadas extras */
-.md-search__inner,
-.md-search__form {
+/* ===== BUSCA ===== */
+.md-header__inner .md-search {
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 150px;                   /* distância até o botão Sair */
+  width: 420px !important;
+  height: 40px !important;        /* acompanha faixa menor */
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* ===== Input ===== */
-.md-search__input {
-  height: 42px !important;
-  line-height: 42px !important;
+/* pílula branca da busca */
+.md-header__inner .md-search__form {
+  background: #fff !important;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 12px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1) !important;
+  overflow: hidden;
+}
+.md-header__inner .md-search__input {
   background: transparent !important;
   color: #000 !important;
   border: none !important;
-  padding-left: 44px !important;
+  box-shadow: none !important;
   width: 100%;
+  height: 40px !important;
+  line-height: 40px !important;
+  padding: 0 14px 0 44px !important;
   font-size: 15px;
 }
-.md-search__input::placeholder {
-  color: rgba(0,0,0,0.6);
+.md-header__inner .md-search__icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000 !important;
+}
+.md-header__inner .md-search__input::placeholder {
+  color: rgba(0,0,0,.65);
   font-weight: 600;
 }
 
-/* ===== Ícone ===== */
-.md-search__icon {
-  position: absolute;
-  left: 16px;
-  color: #000 !important;
-  pointer-events: none;
-}
-.md-search__icon svg { fill: currentColor !important; }
-
-/* ===== Foco ===== */
-.md-search__input:focus {
-  outline: none !important;
-  border: 1px solid #D40511 !important;
-  box-shadow: 0 0 0 2px rgba(212,5,17,0.25) !important;
-}
-
-/* ===== Botão SAIR ===== */
+/* ===== BOTÃO SAIR ===== */
 #dg-logout {
+  margin-right: 24px !important;
   background-color: #D40511;
   color: #fff !important;
+  padding: 8px 24px;
   border: none;
   border-radius: 6px;
   font-weight: 700;
-  padding: 10px 28px;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   transition: all 0.2s ease-in-out;
-  align-self: center;
 }
 #dg-logout:hover {
   background-color: #a00015;
   transform: translateY(-1px);
 }
-
-/* ===== Responsivo ===== */
-@media (max-width: 1080px) {
-  .md-search { width: min(380px, 56vw); }
-}
-@media (max-width: 740px) {
-  .md-search { width: min(340px, 68vw); }
-}
-
