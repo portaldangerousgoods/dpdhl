@@ -296,21 +296,45 @@ h1 {
 /* Garante que o título (logo + Portal DG DHL) fique na coluna 1 */
 .md-header__title { grid-column: 1; }
 
-/* ====== BUSCA — centralizada na coluna 2 ====== */
+/* === BUSCA posicionada como o mock (ancorada pela direita) === */
+/* Mantém a altura do header e o alinhamento vertical */
+.md-header {
+  height: 84px;
+  display: flex;
+  align-items: center;
+}
+.md-header__inner {
+  position: relative;
+  height: 84px;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* POSIÇÃO DA BUSCA — NÃO CENTRALIZADA, MAIS À ESQUERDA DO BOTÃO SAIR */
 .md-header__inner .md-search {
-  grid-column: 2 !important;
-  justify-self: center !important;     /* centro do espaço disponível */
-  width: min(520px, 52vw) !important;  /* largura confortável */
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);     /* centraliza verticalmente na faixa amarela */
+  right: 150px;                     /* <<< distância fixa entre a busca e o botão Sair */
+  width: 420px !important;          /* <<< largura da pílula (ajuste fino aqui) */
   height: 46px !important;
-  position: static !important;         /* remove posicionamento absoluto anterior */
+  z-index: 5;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Pílula branca com sombra levinha */
+/* mantém o botão Sair afastado da borda direita */
+#dg-logout {
+  margin-right: 24px !important;    /* respiro até a borda direita */
+}
+
+/* Pílula branca 100% (sem cinza) */
 .md-header__inner .md-search__form {
-  background: #ffffff !important;             /* 100% branco */
+  background: #ffffff !important;   /* branco absoluto */
   border: 1px solid #E6E6E6 !important;
   border-radius: 14px !important;
   height: 46px !important;
@@ -319,15 +343,21 @@ h1 {
   box-shadow: 0 2px 8px rgba(0,0,0,.12) !important;
   overflow: hidden;
 }
-
-/* Remove fundos/resíduos do tema */
 .md-header__inner .md-search__inner {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
-
-/* Ícone e input */
+.md-header__inner .md-search__input {
+  height: 46px !important;
+  line-height: 46px !important;
+  background: transparent !important;
+  color: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100%;
+  padding: 0 14px 0 44px !important;
+}
 .md-header__inner .md-search__icon {
   position: absolute;
   left: 16px;
@@ -336,51 +366,7 @@ h1 {
   color: #000 !important;
 }
 .md-header__inner .md-search__icon svg { fill: currentColor !important; }
-
-.md-header__inner .md-search__input {
-  height: 46px !important;
-  line-height: 46px !important;
-  background: transparent !important;
-  color: #000 !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 14px 0 44px !important;
-  width: 100%;
-  font-size: 15px;
-}
 .md-header__inner .md-search__input::placeholder {
   color: rgba(0,0,0,.65);
   font-weight: 600;
-}
-
-/* ====== BOTÃO SAIR — coluna 3 ====== */
-#dg-logout {
-  grid-column: 3;
-  justify-self: end;                  /* encosta à direita */
-  margin-right: 24px !important;      /* respiro da borda direita */
-  background-color: #D40511;
-  color: #ffffff !important;
-  padding: 10px 28px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  transition: all 0.2s ease-in-out;
-}
-#dg-logout:hover {
-  background-color: #a00015;
-  transform: translateY(-1px);
-}
-
-/* ====== Responsivo: dá uma encurtada na busca quando a tela fecha ====== */
-@media (max-width: 1080px) {
-  .md-header__inner .md-search { width: min(480px, 58vw) !important; }
-}
-@media (max-width: 840px) {
-  .md-header__inner .md-search { width: min(420px, 62vw) !important; }
-}
-@media (max-width: 720px) {
-  .md-header__inner .md-search { width: min(360px, 68vw) !important; }
 }
