@@ -535,3 +535,52 @@ h1 {
   transform: translateY(-50%);
   color: #000 !important;
 }
+
+/* === Permite que o dropdown de resultados apareça sobre o conteúdo === */
+.md-header,
+.md-header__inner {
+  overflow: visible !important;           /* evita que o header “corte” o painel */
+}
+
+/* === Caixa de resultados do Material for MkDocs (estilo dropdown) === */
+.md-header__inner .md-search__output {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;       /* aparece logo abaixo da barra */
+  left: 0;
+  right: 0;
+  width: 100% !important;                 /* mesma largura da barra */
+  background: #ffffff !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
+  z-index: 3000 !important;               /* acima do hero e do topo */
+  max-height: 60vh;                       /* rolagem se ficar grande */
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* Quando o campo estiver ativo ou com texto, mostra o dropdown */
+.md-header__inner .md-search--active .md-search__output,
+.md-header__inner .md-search__input:focus ~ .md-search__output,
+.md-header__inner .md-search__input:not(:placeholder-shown) ~ .md-search__output {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Rolagem suave dentro do painel */
+.md-header__inner .md-search__scrollwrap {
+  max-height: 60vh !important;
+  padding: 6px 0 !important;
+}
+
+/* Realce e sugestões (opcional – mantém o padrão do tema) */
+.md-search-result__title,
+.md-search-result__teaser {
+  color: #000 !important;
+}
+.md-search-result__link:hover {
+  background: #F8F8F8 !important;
+}
