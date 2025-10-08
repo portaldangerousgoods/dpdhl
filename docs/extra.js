@@ -1,15 +1,19 @@
 (function () {
-  /* ===== Helpers ===== */
+  /* =========================
+     Helpers
+     ========================= */
   function basePath() {
     const parts = location.pathname.split('/').filter(Boolean);
-    return parts.length ? `/${parts[0]}/` : '/';
+    return parts.length ? /${parts[0]}/ : '/';
   }
   function isLoginPage() {
     const p = location.pathname;
     return p.endsWith('/login.html') || p.endsWith('/login');
   }
 
-  /* ===== Auth ===== */
+  /* =========================
+     Auth
+     ========================= */
   function hasAuth() {
     try {
       const t = JSON.parse(localStorage.getItem('dg_auth') || '{}');
@@ -33,95 +37,82 @@
     return true;
   }
 
- /* ===== Botão SAIR ===== */
-function injectLogout() {
-  if (!hasAuth()) return;
-  const header = document.querySelector('.md-header__inner');
-  if (!header) return;
+  /* =========================
+     Botão SAIR
+     ========================= */
+  function injectLogout() {
+    if (!hasAuth()) return;
+    const header = document.querySelector('.md-header__inner');
+    if (!header) return;
 
-  const styleLogoutBtn = (btn) => {
-    btn.id = 'dg-logout';
-    btn.innerHTML = '⇨ Sair';
-    btn.setAttribute('aria-label', 'Sair');
+    const styleLogoutBtn = (btn) => {
+      btn.id = 'dg-logout';
+      btn.innerHTML = '⇨ Sair';
+      btn.setAttribute('aria-label', 'Sair');
 
-    // ===== Estilo atualizado (retângulo com cantos arredondados) =====
-    btn.style.marginLeft = '16px';            // distância da barra de busca
-    btn.style.marginRight = '32px';           // distância do canto direito
-    btn.style.padding = '10px 26px';          // corpo do botão
-    btn.style.borderRadius = '6px';           // cantos arredondados (não mais pílula)
-    btn.style.backgroundColor = '#D40511';    // vermelho DHL
-    btn.style.color = '#fff';
-    btn.style.fontWeight = '700';
-    btn.style.fontSize = '15px';
-    btn.style.cursor = 'pointer';
-    btn.style.transition = 'background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease';
-    btn.style.textDecoration = 'none';
-    btn.style.display = 'inline-block';
-    btn.style.userSelect = 'none';
-    btn.style.lineHeight = '1.3';
-    btn.style.boxShadow = '0 3px 6px rgba(0, 0, 0, 0.15)';
+      // Estilo DHL – retângulo rounded
+      btn.style.marginLeft   = '16px';
+      btn.style.marginRight  = '40px';                // ~1 cm do canto direito
+      btn.style.padding      = '8px 24px';
+      btn.style.borderRadius = '6px';
+      btn.style.backgroundColor = '#D40511';
+      btn.style.color        = '#fff';
+      btn.style.fontWeight   = '700';
+      btn.style.fontSize     = '14px';
+      btn.style.cursor       = 'pointer';
+      btn.style.transition   = 'background-color .2s ease, transform .05s ease, box-shadow .2s ease';
+      btn.style.textDecoration = 'none';
+      btn.style.display      = 'inline-block';
+      btn.style.userSelect   = 'none';
+      btn.style.lineHeight   = '1.3';
+      btn.style.boxShadow    = '0 2px 4px rgba(0,0,0,0.15)';
 
-    // ===== Eventos =====
-    btn.onmouseenter = null; 
-    btn.onmouseleave = null;
-    btn.onmousedown = null; 
-    btn.onmouseup = null; 
-    btn.onclick = null;
+      btn.onmouseenter = null; btn.onmouseleave = null;
+      btn.onmousedown  = null; btn.onmouseup    = null; btn.onclick = null;
 
-    // Hover / active
-    btn.addEventListener('mouseenter', () => { 
-      btn.style.backgroundColor = '#a00015'; 
-      btn.style.boxShadow = '0 5px 10px rgba(0,0,0,0.25)';
-    });
-    btn.addEventListener('mouseleave', () => { 
-      btn.style.backgroundColor = '#D40511'; 
-      btn.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15)';
-    });
-    btn.addEventListener('mousedown', () => { 
-      btn.style.transform = 'scale(0.98)'; 
-    });
-    btn.addEventListener('mouseup', () => { 
-      btn.style.transform = 'scale(1)'; 
-    });
+      btn.addEventListener('mouseenter', () => {
+        btn.style.backgroundColor = '#a00015';
+        btn.style.boxShadow = '0 5px 10px rgba(0,0,0,0.25)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.backgroundColor = '#D40511';
+        btn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+      });
+      btn.addEventListener('mousedown', () => { btn.style.transform = 'scale(0.98)'; });
+      btn.addEventListener('mouseup',   () => { btn.style.transform = 'scale(1)'; });
 
-    // Clique: ação de logout
-    btn.onclick = () => { 
-      clearAuth(); 
-      window.location.href = basePath() + 'login.html'; 
+      btn.onclick = () => { clearAuth(); window.location.href = basePath() + 'login.html'; };
     };
-  };
 
-  // Cria ou atualiza o botão
-  let a = document.getElementById('dg-logout');
-  if (!a) { 
-    a = document.createElement('a'); 
-    styleLogoutBtn(a); 
-    header.appendChild(a); 
-  } else { 
-    styleLogoutBtn(a); 
+    let a = document.getElementById('dg-logout');
+    if (!a) { a = document.createElement('a'); styleLogoutBtn(a); header.appendChild(a); }
+    else    { styleLogoutBtn(a); }
   }
-}
 
-
-  /* ===== Esconde link GitHub no header ===== */
+  /* =========================
+     Esconde GitHub source
+     ========================= */
   function hideGitHubLink() {
     const repo = document.querySelector('.md-header__source');
     if (repo) repo.style.display = 'none';
   }
 
-  /* ===== Ícone por página (TOC direito — quando visível) ===== */
+  /* =========================
+     Ícone por página
+     ========================= */
   function getIconForPath(pathname) {
     const p = (pathname || '').toLowerCase();
-    if (p.includes('/faq') || p.endsWith('/faq/') || p.endsWith('/faq')) return 'faq.svg';
-    if (p === '/' || p === basePath() || p.endsWith('/index.html')) return 'inicio.svg';
-    if (p.includes('/bebidas')) return 'beb.svg';
-    if (p.includes('/eq')) return 'eq.svg';
-    if (p.includes('/bateria')) return 'bat.svg';
-    if (p.includes('/gelo-seco')) return 'dry.svg';
-    if (p.includes('/perfume') || p.includes('/perfumes')) return 'per.svg';
-    if (p.includes('/full-dg') || p.includes('/fulldg') || p.includes('/full')) return 'atomo.svg';
-    if (p.includes('/biologico') || p.includes('/biológicos') || p.includes('/biologicos')) return 'wmx.svg';
-    if (p.includes('/documentos')) return 'doc.svg';
+    if (p.includes('/faq')p.endsWith('/faq')) return 'faq.svg';
+    if (p === '/'p.endsWith('/index.html'))     return 'inicio.svg';
+    if (p.includes('/bebidas'))      return 'beb.svg';
+    if (p.includes('/eq'))           return 'eq.svg';
+    if (p.includes('/bateria'))      return 'bat.svg';
+    if (p.includes('/gelo-seco'))    return 'dry.svg';
+    if (p.includes('/perfume'))      return 'per.svg';
+    if (p.includes('/full-dg')
+p.includes('/full')) return 'atomo.svg';
+    if (p.includes('/biologico')p.includes('/biologicos')) return 'wmx.svg';
+    if (p.includes('/documentos'))   return 'doc.svg';
     return 'inicio.svg';
   }
   function injectIcon() {
@@ -140,9 +131,10 @@ function injectLogout() {
     toc.parentElement.appendChild(img);
   }
 
-  /* ===== Mega-menu (faixa branca abaixo do amarelo) ===== */
+  /* =========================
+     Mega-menu (faixa branca)
+     ========================= */
   function injectTopNavMega() {
-    // remove anterior (evita duplicar)
     const old = document.getElementById('dg-topnav');
     if (old) old.remove();
 
@@ -179,45 +171,36 @@ function injectLogout() {
     `;
     header.insertAdjacentElement('afterend', nav);
 
-    // ===== Wire do dropdown (CLIQUE para abrir/fechar; fecha fora/ESC) =====
-    const drop   = nav.querySelector('.dg-drop');
-    const trigger= drop ? drop.querySelector(':scope > .dg-link') : null;
-    const panel  = drop ? drop.querySelector(':scope > .dg-panel') : null;
+    const drop    = nav.querySelector('.dg-drop');
+    const trigger = drop ? drop.querySelector(':scope > .dg-link') : null;
+    const panel   = drop ? drop.querySelector(':scope > .dg-panel') : null;
 
-    if (drop && trigger && panel) {
-      // evita dupla inscrição
-      if (drop.dataset.wired !== '1') {
-        drop.dataset.wired = '1';
+    if (drop && trigger && panel && drop.dataset.wired !== '1') {
+      drop.dataset.wired = '1';
 
-        trigger.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          drop.classList.toggle('open');
-          trigger.setAttribute('aria-expanded', drop.classList.contains('open') ? 'true' : 'false');
-        });
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        drop.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', drop.classList.contains('open') ? 'true' : 'false');
+      });
 
-        // fecha ao clicar fora
-        document.addEventListener('click', (e) => {
-          if (!drop.contains(e.target)) {
-            drop.classList.remove('open');
-            trigger.setAttribute('aria-expanded', 'false');
-          }
-        });
+      document.addEventListener('click', (e) => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
 
-        // fecha com ESC
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-            drop.classList.remove('open');
-            trigger.setAttribute('aria-expanded', 'false');
-          }
-        });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          drop.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
 
-        // interações dentro do painel não fecham
-        panel.addEventListener('click', (e) => e.stopPropagation());
-      }
+      panel.addEventListener('click', (e) => e.stopPropagation());
     }
 
-    // marca ativo visualmente
     const here = location.pathname.replace(/\/$/, '');
     nav.querySelectorAll('.dg-link[href]').forEach(a => {
       const href = a.getAttribute('href').replace(/\/$/, '');
@@ -225,242 +208,89 @@ function injectLogout() {
     });
   }
 
-  /* ===== Run ===== */
+  /* =========================
+     Busca (central, não expande, dropdown sobre menu)
+     ========================= */
+  function wireSearch() {
+    const search = document.querySelector('.md-header__inner [data-md-component="search"]');
+    if (!search || search.dataset.
+dgWired === '1') return;
+
+    const form   = search.querySelector('.md-search__form');
+    const input  = search.querySelector('input[data-md-component="search-query"]') ||
+                   search.querySelector('input[type="text"]');
+    const output = search.querySelector('.md-search__output') ||
+                   search.querySelector('[data-md-component="search-result"]');
+    const overlay = search.querySelector('.md-search__overlay');
+
+    // Evita overlay modal e força posicionamento
+    if (overlay) overlay.style.display = 'none';
+
+    const lock = () => {
+      if (form) {
+        form.style.width    = '360px';
+        form.style.maxWidth = '360px';
+        form.style.height   = '44px';
+      }
+      search.style.height = '44px';
+    };
+    lock();
+
+    // Busca não expande ao ativar
+    search.addEventListener('focusin', lock);
+    search.addEventListener('transitionend', lock);
+
+    // Observa mudanças de classe do Material e relocka
+    const obs = new MutationObserver(() => lock());
+    obs.observe(search, { attributes: true, attributeFilter: ['class'] });
+
+    // Dropdown sob a barra e acima do menu
+    if (output) {
+      output.style.position = 'absolute';
+      output.style.left = '0';
+      output.style.top  = 'calc(100% + 8px)';
+      output.style.width = '100%';
+      output.style.zIndex = '3000';
+      output.setAttribute('hidden', '');
+    }
+
+    const show = () => { if (output) { output.removeAttribute('hidden'); lock(); } };
+    const hide = () => { if (output) output.setAttribute('hidden', ''); };
+
+    if (input) {
+      input.addEventListener('input', () => {
+        const v = (input.value || '').trim();
+        if (v.length >= 2) show(); else hide();
+      });
+      input.addEventListener('focus', () => {
+        if ((input.value || '').trim().length >= 2) show();
+      });
+    }
+
+    document.addEventListener('click', (ev) => { if (output && !search.contains(ev.target)) hide(); });
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') hide(); });
+
+    search.dataset.dgWired = '1';
+  }
+
+  /* =========================
+     Run
+     ========================= */
   if (!guard()) return;
   injectLogout();
   hideGitHubLink();
   injectTopNavMega();
   injectIcon();
+  wireSearch();
 
   if (window.document$) {
     document$.subscribe(() => {
       if (!guard()) return;
       injectLogout();
       hideGitHubLink();
-      injectTopNavMega();  // recria e re-liga o dropdown após navegação
+      injectTopNavMega();
       injectIcon();
+      wireSearch(); // rewire na navegação interna
     });
   }
-})();
-
-/* ===== Dropdown de sugestões sob a barra (força exibição) ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const search = document.querySelector(".md-header__inner .md-search");
-  if (!search) return;
-
-  const input  = search.querySelector('input[data-md-component="search-query"]');
-  const output = search.querySelector(".md-search__output");
-  const overlay = search.querySelector(".md-search__overlay");
-
-  // Não usa overlay em tela cheia
-  if (overlay) overlay.style.display = "none";
-
-  // Garante posicionamento relativo/absoluto
-  search.style.position = "absolute";
-  if (output) {
-    output.style.position = "absolute";
-    output.style.left = "0";
-    output.style.top  = "calc(100% + 8px)";
-  }
-
-  // Exibe o dropdown quando digitar algo; esconde quando limpar
-  function toggleDropdown() {
-    if (!output) return;
-    const q = (input.value || "").trim();
-    if (q.length > 0) {
-      output.removeAttribute("hidden");
-    } else {
-      output.setAttribute("hidden", "");
-    }
-  }
-
-  if (input) {
-    input.addEventListener("input", toggleDropdown);
-    input.addEventListener("focus", toggleDropdown);
-  }
-
-  // Fecha ao clicar fora
-  document.addEventListener("click", (e) => {
-    if (!search.contains(e.target) && output) {
-      output.setAttribute("hidden", "");
-    }
-  });
-
-  // Fecha com ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && output) {
-      output.setAttribute("hidden", "");
-      input && input.blur();
-    }
-  });
-});
-
-/* ——— Força dropdown de sugestões sob a barra, fecha ao clicar fora/ESC ——— */
-document.addEventListener("DOMContentLoaded", () => {
-  const root =
-    document.querySelector('.md-header__inner [data-md-component="search"]');
-  if (!root) return;
-
-  const input  = root.querySelector('input[data-md-component="search-query"]');
-  // compatibilidade com versões diferentes do Material:
-  const result =
-    root.querySelector('[data-md-component="search-result"]') ||
-    root.querySelector('.md-search__output');
-  const overlay = root.querySelector('.md-search__overlay');
-
-  if (overlay) overlay.style.display = "none";
-
-  // posicionamento garantido
-  root.style.position = "absolute";
-  if (result) {
-    result.style.position = "absolute";
-    result.style.left = "0";
-    result.style.top  = "calc(100% + 8px)";
-  }
-
-  function openDropdown() {
-    if (!result) return;
-    root.setAttribute("data-md-state", "active"); // ativa estado do Material
-    result.removeAttribute("hidden");
-  }
-
-  function closeDropdown() {
-    if (!result) return;
-    result.setAttribute("hidden", "");
-    root.removeAttribute("data-md-state");
-  }
-
-  if (input) {
-    input.addEventListener("input", () => {
-      const v = (input.value || "").trim();
-      if (v.length >= 2) openDropdown();
-      else closeDropdown();
-    });
-
-    input.addEventListener("focus", () => {
-      if ((input.value || "").trim().length >= 2) openDropdown();
-    });
-  }
-
-  // fecha ao clicar fora
-  document.addEventListener("click", (e) => {
-    if (!root.contains(e.target)) closeDropdown();
-  });
-
-  // fecha com ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeDropdown();
-  });
-});
-
-/* ========= Autocomplete customizado (usa search_index.json do MkDocs) ========= */
-(function () {
-  let DG_SEARCH_DOCS = null;
-
-  function getBase() {
-    // base do site no GitHub Pages (ex.: /dpdhl/)
-    if (location.pathname.includes("/dpdhl/")) return "/dpdhl/";
-    // fallback: raiz
-    return "/";
-  }
-
-  async function loadIndex() {
-    if (DG_SEARCH_DOCS) return DG_SEARCH_DOCS;
-    const base = getBase();
-    const url = base + "search/search_index.json";
-    try {
-      const res = await fetch(url, { cache: "force-cache" });
-      const data = await res.json();
-      DG_SEARCH_DOCS = data.docs || data;
-    } catch (e) {
-      DG_SEARCH_DOCS = []; // se não achar, evita quebrar
-    }
-    return DG_SEARCH_DOCS;
-  }
-
-  function createDropdown(root) {
-    let dd = root.querySelector("#dg-suggest");
-    if (!dd) {
-      dd = document.createElement("div");
-      dd.id = "dg-suggest";
-      dd.className = "dg-suggest";
-      root.appendChild(dd);
-    }
-    return dd;
-  }
-
-  function escapeHtml(s) {
-    return (s || "").replace(/[&<>"']/g, m => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    }[m]));
-  }
-
-  function highlight(text, q) {
-    const t = escapeHtml(text);
-    const re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
-    return t.replace(re, "<mark>$1</mark>");
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const root = document.querySelector('.md-header__inner [data-md-component="search"]');
-    if (!root) return;
-
-    // tenta captar o input da busca do Material
-    const input = root.querySelector('input[data-md-component="search-query"]')
-               || root.querySelector('input[type="text"]');
-    if (!input) return;
-
-    // garante posicionamento relativo
-    root.style.position = "absolute";
-
-    const dd = createDropdown(root);
-
-    function hide() { dd.style.display = "none"; dd.innerHTML = ""; }
-    function show() { dd.style.display = "block"; }
-
-    // fecha quando clica fora ou aperta ESC
-    document.addEventListener("click", (e) => {
-      if (!root.contains(e.target)) hide();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hide();
-    });
-
-    input.addEventListener("input", async () => {
-      const q = (input.value || "").trim().toLowerCase();
-      if (q.length < 2) { hide(); return; }
-
-      const docs = await loadIndex();
-      const base = getBase();
-
-      // filtro simples por substring em título ou texto
-      const results = [];
-      for (const d of docs) {
-        const title = (d.title || "");
-        const text  = (d.text  || "");
-        if (title.toLowerCase().includes(q) || text.toLowerCase().includes(q)) {
-          results.push({
-            url: d.location.startsWith("http") ? d.location : (base + d.location),
-            title: title || (text.slice(0, 60) + "..."),
-            text
-          });
-        }
-        if (results.length >= 8) break; // limita a 8 sugestões
-      }
-
-      if (!results.length) { hide(); return; }
-
-      dd.innerHTML = results.map(r => `
-        <a class="dg-suggest__item" href="${r.url}">
-          ${highlight(r.title, q)}
-        </a>
-      `).join("");
-      show();
-    });
-
-    // abre ao focar se já houver texto
-    input.addEventListener("focus", () => {
-      if ((input.value || "").trim().length >= 2 && dd.innerHTML.trim()) show();
-    });
-  });
 })();
