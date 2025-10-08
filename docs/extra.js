@@ -242,3 +242,55 @@ function injectLogout() {
     });
   }
 })();
+
+/* ===== Dropdown de sugestões sob a barra (força exibição) ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const search = document.querySelector(".md-header__inner .md-search");
+  if (!search) return;
+
+  const input  = search.querySelector('input[data-md-component="search-query"]');
+  const output = search.querySelector(".md-search__output");
+  const overlay = search.querySelector(".md-search__overlay");
+
+  // Não usa overlay em tela cheia
+  if (overlay) overlay.style.display = "none";
+
+  // Garante posicionamento relativo/absoluto
+  search.style.position = "absolute";
+  if (output) {
+    output.style.position = "absolute";
+    output.style.left = "0";
+    output.style.top  = "calc(100% + 8px)";
+  }
+
+  // Exibe o dropdown quando digitar algo; esconde quando limpar
+  function toggleDropdown() {
+    if (!output) return;
+    const q = (input.value || "").trim();
+    if (q.length > 0) {
+      output.removeAttribute("hidden");
+    } else {
+      output.setAttribute("hidden", "");
+    }
+  }
+
+  if (input) {
+    input.addEventListener("input", toggleDropdown);
+    input.addEventListener("focus", toggleDropdown);
+  }
+
+  // Fecha ao clicar fora
+  document.addEventListener("click", (e) => {
+    if (!search.contains(e.target) && output) {
+      output.setAttribute("hidden", "");
+    }
+  });
+
+  // Fecha com ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && output) {
+      output.setAttribute("hidden", "");
+      input && input.blur();
+    }
+  });
+});
