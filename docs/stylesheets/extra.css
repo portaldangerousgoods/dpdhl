@@ -247,69 +247,98 @@ h1 {
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
 
-/* ===== BUSCA (Header) — branca, centralizada, estilo pill ===== */
+/* ===== BUSCA no Header — estilo Brand Hub (corrigido) ===== */
+
+/* Altura do header para sobrar faixa amarela em cima/baixo do campo */
+.md-header {
+  min-height: 72px;
+}
 .md-header__inner {
+  position: relative;
+  height: 72px;
+  max-width: 100% !important;
   display: flex;
   align-items: center;
-  justify-content: center;   /* centraliza a busca no header */
-  gap: 16px;                 /* espaço entre logo, busca e Sair */
+  gap: 12px;
+  overflow: visible;                 /* deixa a sombra do campo visível */
 }
 
-/* Container da busca */
+/* Centraliza a busca no header (uma única “pílula”) */
 .md-header__inner .md-search {
-  background: #ffffff !important;   /* fundo branco do container */
-  border-radius: 18px;              /* pill */
-  padding: 6px 10px;
-  margin: 0 auto;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-  width: 500px;                     /* largura alvo */
-  max-width: 55vw;
-  transition: box-shadow .2s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12px;                         /* deixa Postyellow aparecendo em cima */
+  width: min(720px, 62vw);
+  height: 48px;
+  z-index: 15;
 }
 
-/* Input 100% branco, sem fundo cinza */
-.md-header__inner .md-search__inner,
-.md-header__inner .md-search__input {
-  background: #ffffff !important;
-  color: #000 !important;
-  height: 38px;                     /* altura consistente */
-  line-height: 38px;
-  border-radius: 14px;
-  border: 1px solid #e6e6e6;        /* borda sutil */
-  padding: 0 14px 0 38px;           /* espaço para a lupa à esquerda */
+/* IMPORTANTE: zera o container interno para não criar “segunda pílula” */
+.md-header__inner .md-search__inner {
+  background: transparent !important;
+  border: none !important;
   box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
 }
 
-/* Ícone da lupa preto e posicionado */
+/* Aplica o visual do Brand Hub APENAS no formulário */
+.md-header__inner .md-search__form {
+  background: #ffffff !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 16px !important;     /* cantos arredondados */
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12) !important;
+  overflow: hidden;
+}
+
+/* Input da busca */
+.md-header__inner .md-search__input {
+  height: 48px !important;
+  line-height: 48px !important;
+  background: transparent !important;
+  color: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 14px 0 44px !important;   /* espaço para a lupa */
+}
+
+/* Ícone da lupa — preto */
 .md-header__inner .md-search__icon,
 .md-header__inner .md-search__icon svg {
   color: #000 !important;
   fill: currentColor !important;
 }
 .md-header__inner .md-search__icon {
-  left: 12px !important;            /* aproxima da borda */
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-/* Placeholder */
+/* Placeholder forte */
 .md-header__inner .md-search__input::placeholder {
-  color: rgba(0,0,0,0.55);
+  color: rgba(0,0,0,.65);
   font-weight: 600;
 }
 
-/* Foco destacado em vermelho DHL */
+/* Foco com borda vermelha */
 .md-header__inner .md-search__input:focus {
   outline: none !important;
-  border-color: #D40511 !important;
-  box-shadow: 0 0 0 2px rgba(212,5,17,0.25) !important;
+  border: 1px solid #D40511 !important;
+  box-shadow: 0 0 0 2px rgba(212,5,17,.25) !important;
 }
 
-/* Responsividade */
-@media (max-width: 1100px){
-  .md-header__inner .md-search { width: 420px; }
-}
-@media (max-width: 900px){
-  .md-header__inner .md-search { width: 320px; }
-}
-@media (max-width: 700px){
-  .md-header__inner .md-search { width: 240px; }
+/* Responsivo */
+@media (max-width: 1100px) { .md-header__inner .md-search { width: 520px; } }
+@media (max-width: 900px)  { .md-header__inner .md-search { width: 420px; } }
+@media (max-width: 700px)  { .md-header__inner .md-search { width: 300px; } }
+
+/* Botão SAIR com folgas corretas (longe da busca e da borda) */
+#dg-logout {
+  margin-left: 16px !important;   /* respiro da busca */
+  margin-right: 28px !important;  /* respiro da borda direita */
 }
