@@ -455,3 +455,14 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* ===== Ajuste fino final: mesma altura exata do botão Sair ===== */
+.md-header__inner .md-search {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -58%) !important; /* sobe mais um pouco */
+  width: 360px !important;
+  height: 40px !important;
+  z-index: 20;
+}
