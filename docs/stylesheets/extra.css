@@ -246,202 +246,72 @@ h1 {
   color: #D40511 !important;        /* vermelho DHL no hover */
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
+> Natália:
 /* ===========================================================
-   HEADER AJUSTADO — faixa menor, sem "Portal DG"
+   HEADER (faixa amarela fina, logo com recuo, busca central,
+   botão Sair à direita, sem “Portal DG”)
    =========================================================== */
 
-/* reduz altura da faixa amarela */
-.md-header {
-  background: #FFCC00;
-  height: 66px !important;       /* faixa um pouco mais fina */
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-/* estrutura interna */
-.md-header__inner {
-  position: relative;
-  height: 66px;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-}
-
-/* remove o texto "Portal DG DHL" */
-.md-header__title {
-  display: none !important;
-}
-
-/* ===== Busca centralizada com formato e respiro igual ao botão Sair ===== */
-.md-header__inner .md-search {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 380px !important;        /* ligeiramente menor */
-  height: 42px !important;
-  border-radius: 8px !important;  /* mesmo formato arredondado do botão Sair */
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-}
-
-.md-header__inner .md-search__form {
-  border-radius: 8px !important;
-}
-
-#dg-logout {
-  margin-right: 40px !important;  /* 1 cm de respiro */
-}
-
-/* pílula branca da busca */
-.md-header__inner .md-search__form {
-  background: #fff !important;
-  border: 1px solid #E6E6E6 !important;
-  border-radius: 12px !important;
-  height: 40px !important;
-  display: flex !important;
-  align-items: center !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1) !important;
-  overflow: hidden;
-}
-.md-header__inner .md-search__input {
-  background: transparent !important;
-  color: #000 !important;
-  border: none !important;
-  box-shadow: none !important;
-  width: 100%;
-  height: 40px !important;
-  line-height: 40px !important;
-  padding: 0 14px 0 44px !important;
-  font-size: 15px;
-}
-.md-header__inner .md-search__icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000 !important;
-}
-.md-header__inner .md-search__input::placeholder {
-  color: rgba(0,0,0,.65);
-  font-weight: 600;
-}
-
-/* ===== BOTÃO SAIR ===== */
-#dg-logout {
-  margin-right: 24px !important;
-  background-color: #D40511;
-  color: #fff !important;
-  padding: 8px 24px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  transition: all 0.2s ease-in-out;
-}
-#dg-logout:hover {
-  background-color: #a00015;
-  transform: translateY(-1px);
-}
-
-/* ===== Alinhamento final: logo extremo esquerdo, sair com recuo ===== */
-
-/* Header geral */
+/* Faixa amarela — 100% largura, altura menor */
 .md-header {
   background: #FFCC00;
   height: 66px !important;
+  min-height: 66px !important;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
-  padding: 0; /* remove margens laterais */
+  padding: 0;                 /* sem padding para não “empurrar” itens */
 }
 
-/* Área interna */
+/* Container interno do header */
 .md-header__inner {
+  position: relative;
+  height: 66px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0;
-  position: relative;
-  height: 66px;
+  justify-content: space-between;   /* logo à esquerda, “Sair” à direita */
+  padding: 0;                       /* controle total pelas margens dos itens */
 }
 
-/* === Recuo fixo do logo DHL === */
-.md-header__inner .md-logo {
-  margin-left: 40px !important;  /* 1 cm de distância do canto esquerdo */
-  display: flex;
-  align-items: center;
-}
-
-/* Remove o texto "Portal DG" */
+/* Remove o texto “Portal DG DHL” do header */
 .md-header__title {
   display: none !important;
 }
 
-/* Centraliza perfeitamente a barra de busca entre o logo e o botão Sair */
+/* === LOGO DHL: recuo fixo de 1 cm do canto esquerdo === */
+.md-header__inner .md-logo {
+  margin-left: 40px !important;     /* ~1 cm */
+  display: flex;
+  align-items: center;
+}
+
+/* ===== BUSCA — centralizada na faixa, branca e SEM expandir ===== */
+
+/* Posiciona o bloco da busca exatamente no centro do header */
 .md-header__inner .md-search {
   position: absolute !important;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 420px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important; /* centro perfeito */
+  width: 360px !important;          /* ~3 cm menor como pediu */
   height: 40px !important;
-}
-
-/* Botão Sair encostado com recuo de 1cm (~40px) */
-#dg-logout {
-  margin-right: 40px !important;
-  background-color: #D40511;
-  color: #fff !important;
-  padding: 8px 24px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  transition: all 0.2s ease-in-out;
-}
-#dg-logout:hover {
-  background-color: #a00015;
-  transform: translateY(-1px);
-}
-
-/* ===== BUSCA – central, branca e sem "fantasma" ===== */
-
-/* Altura do header e alinhamento vertical dos itens */
-.md-header {
-  min-height: 64px;
-}
-.md-header__inner {
-  position: relative;
-  height: 64px;
-  display: flex;
-  align-items: center;   /* alinha verticalmente com o botão Sair */
-}
-
-/* Container da busca: central absoluto dentro do header */
-.md-header__inner .md-search {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);   /* centro perfeito */
-  width: 360px !important;            /* ~3 cm menor que antes */
-  height: 40px !important;
-  background: transparent !important; /* elimina qualquer fundo do container */
+  background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  z-index: 20;                        /* acima do fundo amarelo */
+  z-index: 20;                      /* acima do amarelo */
 }
 
-/* Remove o “fantasma” (overlay/wrapper do search do tema) */
-.md-header__inner .md-search__overlay { display: none !important; }
+/* Remove overlays/outputs do tema (evita “fantasma”/expansão) */
+.md-header__inner .md-search__overlay,
+.md-search__overlay,
+.md-search__output {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Limpa wrappers para não interferirem */
 .md-header__inner .md-search__inner {
   background: transparent !important;
   border: none !important;
@@ -450,17 +320,19 @@ h1 {
   overflow: visible !important;
 }
 
-/* Pílula branca com borda e sombra suave (form real) */
+/* Caixa branca da busca — retângulo rounded corners */
 .md-header__inner .md-search__form {
   height: 40px !important;
   background: #ffffff !important;
   border: 1px solid #E6E6E6 !important;
-  border-radius: 10px !important;     /* cantos arredondados = Sair */
+  border-radius: 8px !important;     /* cantos arredondados (não pílula) */
   box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
   overflow: hidden;
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* Ícone e input */
+/* Ícone e campo de texto */
 .md-header__inner .md-search__icon {
   position: absolute;
   left: 12px;
@@ -468,8 +340,9 @@ h1 {
   transform: translateY(-50%);
   color: #000 !important;
 }
-.md-header__inner .md-search__icon svg { fill: currentColor !important; }
-
+.md-header__inner .md-search__icon svg {
+  fill: currentColor !important;
+}
 .md-header__inner .md-search__input {
   height: 40px !important;
   line-height: 40px !important;
@@ -477,14 +350,45 @@ h1 {
   color: #000 !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 12px 0 40px !important;  /* espaço p/ o ícone */
+  padding: 0 12px 0 40px !important;  /* espaço para o ícone */
+  font-size: 15px !important;
 }
 .md-header__inner .md-search__input::placeholder {
   color: rgba(0,0,0,.65);
   font-weight: 600;
 }
 
-/* Mantém o “Sair” com folga de ~1 cm do canto */
+/* Foco com destaque vermelho DHL (sutil e consistente) */
+.md-header__inner .md-search__input:focus {
+  outline: none !important;
+  border: 1px solid #D40511 !important;
+  box-shadow: 0 0 0 2px rgba(212, 5, 17, .25) !important;
+}
+
+/* Quando “ativo”, mantém o mesmo tamanho (não expande) */
+.md-search--active .md-search__form {
+  width: 360px !important;
+  transform: none !important;
+}
+
+/* ===== BOTÃO SAIR — canto direito com ~1 cm de respiro ===== */
 #dg-logout {
-  margin-right: 36px !important;
+  margin-right: 40px !important;     /* ~1 cm do canto direito */
+  background-color: #D40511;
+  color: #fff !important;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;                 /* retângulo com cantos arredondados */
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+  line-height: 1.3;
+}
+
+> Natália:
+#dg-logout:hover {
+  background-color: #a00015;
+  transform: translateY(-1px);
 }
