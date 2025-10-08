@@ -14,7 +14,10 @@ theme:
     - scheme: default
       primary: yellow
       accent: red
-
+  features:
+    - search.suggest
+    - search.highlight
+    
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
@@ -34,8 +37,3 @@ extra_javascript:
 extra_css:
   - stylesheets/menu-lateral.css
   - stylesheets/extra.css
-
-theme:
-  features:
-    - search.suggest
-    - search.highlight
