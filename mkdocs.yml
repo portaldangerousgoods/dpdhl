@@ -20,12 +20,8 @@ nav:
   - Aprovação de Conta: aprovacao.md
   - Documentos Exigidos: documentos.md
 
-# 🔴 Use apenas estes dois (remova linhas antigas de extra.css/extra.js)
 extra_css:
-  - stylesheets/extra.v14.css
+  - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/extra.v14.js
-
-plugins:
-  - search
+  - extra.js
