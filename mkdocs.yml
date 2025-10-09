@@ -5,8 +5,6 @@ theme:
   logo: logo-dhl.png
   favicon: logo-dhl.png
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
     - search.suggest
     - search.highlight
 
