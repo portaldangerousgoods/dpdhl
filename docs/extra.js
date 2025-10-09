@@ -84,7 +84,7 @@
     if (p === '/' || p === basePath() || p.endsWith('/index.html')) return 'inicio.svg';
     if (p.includes('/bebidas')) return 'beb.svg';
     if (p.includes('/eq')) return 'eq.svg';
-    if (p.includes('/bateria')) return 'bat.svg';
+    if (p.includes('/baterias')) return 'bat.svg';
     if (p.includes('/gelo-seco')) return 'dry.svg';
     if (p.includes('/perfume') || p.includes('/perfumes')) return 'per.svg';
     if (p.includes('/full-dg') || p.includes('/fulldg') || p.includes('/full')) return 'atomo.svg';
