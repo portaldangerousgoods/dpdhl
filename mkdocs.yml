@@ -36,8 +36,8 @@ nav:
   - Cargas Perigosas Totais (Full DG): full-dg.md
    
 extra_javascript:
-  - extra.js
+  - javascripts/extra.v14.js
 
 extra_css:
   - stylesheets/menu-lateral.css
-  - stylesheets/extra.css
+  - stylesheets/extra.v14.css
