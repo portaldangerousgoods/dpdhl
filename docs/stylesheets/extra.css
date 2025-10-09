@@ -1,103 +1,93 @@
-/* =============== BASE =============== */
-body{background:#fff;font-family:'Delivery',sans-serif;margin:0}
-.md-content__inner{padding:0 40px}
-.md-sidebar--primary,.md-sidebar--secondary{display:none!important}
-.md-content{margin-left:0!important}
-h1{color:#D40511!important;font-weight:900!important;text-shadow:1px 1px 2px rgba(0,0,0,.25);font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1.2;margin-bottom:20px}
-h2{color:#D40511;font-weight:bold}
+/* ===== Base ===== */
+body {
+  background: #ffffff;
+  font-family: 'Delivery', sans-serif;
+  margin: 0;
+}
 
-/* links pretos / hover vermelho sublinhado */
-.md-content a,.md-typeset a,.md-content__inner a{color:#000!important;text-decoration:none!important}
-.md-content a:hover,.md-typeset a:hover,.md-content__inner a:hover{color:#D40511!important;text-decoration:underline!important}
+/* Conteúdo com recuo igual ao seu padrão */
+.md-content__inner { padding-left: 40px; padding-right: 40px; }
 
-/* =============== HEADER =============== */
+/* ===== HEADER: faixa amarela fina, logo com 1cm, busca central, Sair à direita ===== */
 .md-header{
-  background:#FFCC00;height:66px!important;min-height:66px!important;
-  display:flex;align-items:center;box-sizing:border-box;padding:0;
-  overflow:visible!important;z-index:1000
+  background:#FFCC00;
+  height:66px !important; min-height:66px !important;
+  display:flex; align-items:center;
+  box-sizing:border-box; padding:0;
 }
 .md-header__inner{
-  position:relative;height:66px;width:100%;
-  display:flex;align-items:center;justify-content:space-between;padding:0;
-  overflow:visible!important
+  position:relative; height:66px;
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  padding:0;
 }
-/* esconde “Portal DG DHL” e o GitHub nativo */
-.md-header__title,.md-header__source{display:none!important}
-/* logo com recuo fixo (~1 cm) */
-.md-header__inner .md-logo{margin-left:40px!important;display:flex;align-items:center}
 
-/* -------- BUSCA central (NÃO EXPANDE) -------- */
-.md-header__inner [data-md-component="search"]{
-  position:absolute!important;left:50%!important;top:50%!important;
-  transform:translate(-50%,-57%)!important;
-  width:360px!important;height:44px!important;z-index:1200;
-  right:auto!important; /* trava a âncora no centro */
+/* Remove “Portal DG DHL” (texto) do cabeçalho */
+.md-header__title{ display:none !important; }
+
+/* Logo com 1 cm do canto esquerdo */
+.md-header__inner .md-logo{
+  margin-left:40px !important;    /* ~1 cm */
+  display:flex; align-items:center;
 }
-/* quando o tema marca como active, continuamos travando */
-.md-header__inner [data-md-component="search"][data-md-state="active"],
-.md-search--active{
-  position:absolute!important;left:50%!important;right:auto!important;top:50%!important;
-  transform:translate(-50%,-57%)!important;width:360px!important;height:44px!important;z-index:1200!important
+
+/* Esconde o bloco “GitHub” do cabeçalho (se aparecer) */
+.md-header__source{ display:none !important; }
+
+/* ===== BUSCA: centralizada e NÃO EXPANDE ===== */
+.md-header__inner .md-search{
+  position:absolute !important;
+  left:50% !important; top:50% !important;
+  transform:translate(-50%,-50%) !important;    /* centro perfeito */
+  width:360px !important; height:40px !important;
+  z-index:20;
 }
-.md-header__inner [data-md-component="search"][data-md-state="active"] .md-search__form,
-.md-search--active .md-search__form,
-.md-search--active .md-search__inner{width:360px!important}
 
-/* nunca usa overlay modal */
-.md-header__inner .md-search__overlay{display:none!important}
-.md-header__inner .md-search__inner{background:transparent!important;box-shadow:none!important}
-
-/* caixa (retângulo 6px) — mesma altura do SAIR */
+/* Caixa branca arredondada padrão (retângulo rounded corners) */
 .md-header__inner .md-search__form{
-  height:44px!important;background:#fff!important;border:1px solid #E6E6E6!important;
-  border-radius:6px!important;box-shadow:0 2px 6px rgba(0,0,0,.12)!important;
-  display:flex!important;align-items:center!important;overflow:hidden;transition:none!important
+  height:40px !important;
+  background:#fff !important;
+  border:1px solid #E6E6E6 !important;
+  border-radius:6px !important;
+  box-shadow:0 2px 6px rgba(0,0,0,.12) !important;
+  display:flex !important; align-items:center !important;
+  overflow:hidden;
 }
-.md-header__inner .md-search__icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000!important}
-.md-header__inner .md-search__icon svg{fill:currentColor!important}
+/* NÃO deixe o tema aumentar a largura quando ativa */
+.md-search--active .md-search__form{ width:360px !important; }
+
+/* Ícone e input alinhados */
+.md-header__inner .md-search__icon{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  color:#000 !important;
+}
 .md-header__inner .md-search__input{
-  height:44px!important;line-height:44px!important;background:transparent!important;color:#000!important;
-  border:none!important;box-shadow:none!important;padding:0 14px 0 40px!important;font-size:15px
+  height:40px !important; line-height:40px !important;
+  background:transparent !important; border:none !important; box-shadow:none !important;
+  color:#000 !important;
+  padding:0 12px 0 38px !important;     /* espaço p/ ícone */
+  font-size:15px !important;
 }
-.md-header__inner .md-search__input::placeholder{color:rgba(0,0,0,.65);font-weight:600}
+.md-header__inner .md-search__input::placeholder{ color:rgba(0,0,0,.65); font-weight:600; }
 
-/* -------- SAIR à direita (recuo ~1 cm) -------- */
+/* ===== BOTÃO SAIR — canto direito com ~1cm de respiro ===== */
 #dg-logout{
-  margin-right:40px!important;background:#D40511;color:#fff!important;padding:10px 28px;border:none;
-  border-radius:6px;font-weight:700;font-size:15px;line-height:1.3;cursor:pointer;
-  box-shadow:0 3px 6px rgba(0,0,0,.15);transition:all .2s ease-in-out
+  margin-right:40px !important;               /* ~1 cm */
+  background:#D40511; color:#fff !important;
+  padding:10px 26px; border:none; border-radius:6px;
+  font-weight:700; font-size:15px; line-height:1.3;
+  cursor:pointer; display:inline-block;
+  box-shadow:0 3px 6px rgba(0,0,0,.15);
+  transition:background-color .2s ease, transform .05s ease, box-shadow .2s ease;
 }
-#dg-logout:hover{background:#a00015;transform:translateY(-1px);box-shadow:0 5px 10px rgba(0,0,0,.25)}
+#dg-logout:hover{ background:#a00015; transform:translateY(-1px); box-shadow:0 5px 10px rgba(0,0,0,.25); }
 
-/* =============== DROPDOWN DA BUSCA (sobre o menu) =============== */
-.md-header__inner [data-md-component="search"]{overflow:visible!important;z-index:2000!important}
-.md-header__inner .md-search__output,
-.md-header__inner [data-md-component="search-result"]{
-  position:absolute!important;left:0!important;top:calc(100% + 8px)!important;width:100%!important;
-max-height:340px!important;overflow:auto!important;background:#fff!important;border:1px solid #e6e6e6!important;
-  border-radius:10px!important;box-shadow:0 10px 24px rgba(0,0,0,.12)!important;padding:6px 0!important;margin:0!important;
-  box-sizing:border-box!important;z-index:5000!important
-}
-.md-tabs{z-index:900!important}
-.md-header__inner .md-search__output[hidden],
-.md-header__inner [data-md-component="search-result"][hidden]{display:none!important}
-.md-header__inner .md-search__output a,
-.md-header__inner [data-md-component="search-result"] a{display:block!important;padding:8px 12px!important;color:#000!important;text-decoration:none!important}
-.md-header__inner .md-search__output a:hover,
-.md-header__inner [data-md-component="search-result"] a:hover{background:#F8F8F8!important;color:#D40511!important}
-.md-header__inner .md-search__output mark{background:#FFF29D!important;color:#000!important;border-radius:2px;padding:0 2px}
+/* ===== Links no conteúdo (como você tinha) ===== */
+a, a:visited{ color:#666666 !important; text-decoration:none; }
+a:hover{ color:#666666 !important; text-decoration:underline; }
 
-/* =============== MEGA MENU (faixa branca) =============== */
-#dg-topnav{background:#fff;border-bottom:1px solid #e6e6e6;width:100%;z-index:1001}
-#dg-topnav .dg-wrap{max-width:1220px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;gap:28px}
-#dg-topnav .dg-link,#dg-topnav .dg-drop>.dg-link{font-family:'Delivery',sans-serif;font-size:16px!important;color:#000!important;text-decoration:none;display:inline-flex;align-items:center;height:58px;border-bottom:3px solid transparent;transition:color .2s}
-#dg-topnav .dg-link:hover,#dg-topnav .dg-drop>.dg-link:hover{color:#D40511!important}
-#dg-topnav .dg-link.is-active,#dg-topnav .dg-drop>.dg-link.is-active{font-weight:bold!important;color:#000!important;border-color:#D40511}
-#dg-topnav,#dg-topnav .dg-wrap{position:relative;overflow:visible}
-#dg-topnav .dg-drop{position:relative}
-#dg-topnav .dg-panel{position:absolute;left:0;top:calc(100% + 10px);background:#fff;border:1px solid #e6e6e6;box-shadow:0 10px 24px rgba(0,0,0,.08);border-radius:8px;padding:18px 20px;min-width:520px;z-index:1200;opacity:0;transform:translateY(4px);pointer-events:none;transition:opacity .15s,transform .15s}
-#dg-topnav .dg-drop.open>.dg-panel{opacity:1!important;transform:translateY(0)!important;pointer-events:auto!important}
-#dg-topnav .dg-drop:hover>.dg-panel{opacity:0;transform:translateY(4px);pointer-events:none}
-#dg-topnav .dg-grid{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:8px 24px}
-#dg-topnav .dg-panel a{display:block;padding:6px 8px;font-size:16px!important;color:#000!important;text-decoration:none!important}
-#dg-topnav .dg-panel a:hover{color:#D40511!important;text-decoration:underline}
+/* ===== Títulos padrão ===== */
+h2{ color:#D40511; font-weight:bold; }
+
+/* ===== Ocultar sidebars (seu padrão) ===== */
+.md-sidebar--primary, .md-sidebar--secondary{ display:none !important; }
+.md-content{ margin-left:0 !important; }
