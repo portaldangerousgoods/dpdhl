@@ -2,8 +2,8 @@ site_name: Portal DG DHL
 site_url: https://portaldangerousgoods.github.io/dpdhl/
 theme:
   name: material
-  logo: images/logo-dhl.png
-  favicon: images/logo-dhl.png
+  logo: logo-dhl.png
+  favicon: logo-dhl.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
