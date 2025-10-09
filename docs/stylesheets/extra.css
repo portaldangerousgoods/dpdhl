@@ -159,38 +159,56 @@ h2 {
   border-color: #D40511;
 }
 
-/* Dropdown (Produtos) */
+/* === Dropdown (Produtos) – posiciona o painel ABAIXO do item === */
+#dg-topnav .dg-drop {
+  position: relative;            /* referência para posicionar o painel */
+}
+
 #dg-topnav .dg-caret {
   margin-left: 6px;
   font-size: 14px;
   color: inherit !important;
 }
+
+/* Painel do dropdown (abre abaixo do item Produtos) */
 #dg-topnav .dg-panel {
   position: absolute;
   left: 0;
-  top: 58px;
+  top: calc(100% + 10px);        /* 👈 agora abre embaixo do item */
   background: #ffffff;
   border: 1px solid #e6e6e6;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   border-radius: 8px;
   padding: 18px 20px;
   min-width: 520px;
+  z-index: 1200;                 /* fica acima do hero e do conteúdo */
   display: none;
 }
+
+/* Grid em duas colunas */
 #dg-topnav .dg-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 8px 24px;
 }
+
+/* Links internos do painel */
 #dg-topnav .dg-panel a {
+  display: block;
+  padding: 6px 8px;
   font-size: 16px !important;
-  font-weight: normal !important;
+  font-weight: 400 !important;
   color: #000 !important;
   text-decoration: none !important;
-  padding: 6px 4px;
 }
+
 #dg-topnav .dg-panel a:hover {
   color: #D40511 !important;
   text-decoration: underline;
 }
-#dg-topnav .open > .dg-panel { display: block; }
+
+/* Abrir por hover OU pela classe .open (JS) */
+#dg-topnav .dg-drop:hover > .dg-panel,
+#dg-topnav .dg-drop.open > .dg-panel {
+  display: block;
+}
