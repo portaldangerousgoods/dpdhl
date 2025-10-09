@@ -33,43 +33,80 @@
     return true;
   }
 
-  /* ===== Botão SAIR ===== */
-  function injectLogout() {
-    if (!hasAuth()) return;
-    const header = document.querySelector('.md-header__inner');
-    if (!header) return;
+ // ====== Botão "Sair" no header (cria ou reestiliza) ======
+function injectLogout() {
+  if (!hasAuth()) return;
 
-    const styleLogoutBtn = (btn) => {
-      btn.id = 'dg-logout';
-      btn.innerHTML = '⇨ Sair';
-      btn.setAttribute('aria-label', 'Sair');
-      btn.style.marginLeft = '24px';
-      btn.style.marginRight = '12px';
-      btn.style.padding = '4px 10px';
-      btn.style.borderRadius = '9999px';
-      btn.style.backgroundColor = '#C4001A';
-      btn.style.color = '#fff';
-      btn.style.fontWeight = '600';
-      btn.style.fontSize = '13px';
-      btn.style.cursor = 'pointer';
-      btn.style.transition = 'background-color 0.2s ease, transform 0.05s ease';
-      btn.style.textDecoration = 'none';
-      btn.style.display = 'inline-block';
-      btn.style.userSelect = 'none';
-      btn.style.lineHeight = '1.2';
-      btn.onmouseenter = null; btn.onmouseleave = null;
-      btn.onmousedown = null; btn.onmouseup = null; btn.onclick = null;
-      btn.addEventListener('mouseenter', () => { btn.style.backgroundColor = '#000'; });
-      btn.addEventListener('mouseleave', () => { btn.style.backgroundColor = '#C4001A'; });
-      btn.addEventListener('mousedown',  () => { btn.style.transform = 'scale(0.98)'; });
-      btn.addEventListener('mouseup',    () => { btn.style.transform = 'scale(1)'; });
-      btn.onclick = () => { clearAuth(); window.location.href = basePath() + 'login.html'; };
+  const header = document.querySelector('.md-header__inner');
+  if (!header) return;
+
+  // Função para aplicar estilo e eventos (cria ou atualiza)
+  const styleLogoutBtn = (btn) => {
+    btn.id = 'dg-logout';
+    btn.innerHTML = '⇨ Sair';
+    btn.setAttribute('aria-label', 'Sair');
+
+    // ======== ESTILO CORRETO: RETÂNGULO COM CANTOS ARREDONDADOS ========
+    btn.style.backgroundColor = '#D40511';   // vermelho DHL
+    btn.style.color           = '#ffffff';
+    btn.style.padding         = '10px 28px'; // corpo do botão
+    btn.style.border          = 'none';
+    btn.style.borderRadius    = '6px';       // <-- cantos arredondados (sem "pílula")
+    btn.style.fontWeight      = '700';
+    btn.style.fontSize        = '15px';
+    btn.style.cursor          = 'pointer';
+    btn.style.textDecoration  = 'none';
+    btn.style.display         = 'inline-block';
+    btn.style.userSelect      = 'none';
+    btn.style.lineHeight      = '1.3';
+    btn.style.boxShadow       = '0 3px 6px rgba(0,0,0,0.15)';
+    btn.style.transition      = 'background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease';
+
+    // Espaçamento em relação à busca e à borda direita
+    btn.style.marginLeft      = '16px'; // afasta da barra de busca
+    btn.style.marginRight     = '32px'; // folga da borda direita
+
+    // Limpa handlers
+    btn.onmouseenter = null;
+    btn.onmouseleave = null;
+    btn.onmousedown  = null;
+    btn.onmouseup    = null;
+    btn.onclick      = null;
+
+    // Hover / active
+    btn.addEventListener('mouseenter', () => {
+      btn.style.backgroundColor = '#a00015';
+      btn.style.boxShadow = '0 5px 10px rgba(0,0,0,0.25)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.backgroundColor = '#D40511';
+      btn.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15)';
+    });
+    btn.addEventListener('mousedown', () => {
+      btn.style.transform = 'scale(0.98)';
+    });
+    btn.addEventListener('mouseup', () => {
+      btn.style.transform = 'scale(1)';
+    });
+
+    // Ação
+    btn.onclick = () => {
+      clearAuth();
+      window.location.href = basePath() + 'login.html';
     };
+  };
 
-    let a = document.getElementById('dg-logout');
-    if (!a) { a = document.createElement('a'); styleLogoutBtn(a); header.appendChild(a); }
-    else { styleLogoutBtn(a); }
+  // Se já existe, apenas reestiliza. Senão, cria.
+  let a = document.getElementById('dg-logout');
+  if (!a) {
+    a = document.createElement('a');
+    styleLogoutBtn(a);
+    header.appendChild(a);
+  } else {
+    styleLogoutBtn(a);
   }
+}
+
 
   /* ===== Esconde link GitHub no header ===== */
   function hideGitHubLink() {
