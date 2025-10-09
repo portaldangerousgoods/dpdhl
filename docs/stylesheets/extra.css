@@ -213,3 +213,13 @@ h2 {
   color: #D40511 !important;
   text-decoration: underline;
 }
+
+/* ===== Títulos principais (h1) ===== */
+h1 {
+  color: #D40511 !important;              /* vermelho DHL */
+  font-weight: 900 !important;            /* extra negrito */
+  text-shadow: 1px 1px 2px rgba(0,0,0,.25); /* leve sombra para destacar */
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
