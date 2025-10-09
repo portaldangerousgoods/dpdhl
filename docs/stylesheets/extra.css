@@ -1,3 +1,11 @@
+/* DHL — Fonte Delivery Light */
+@font-face {
+  font-family: 'Delivery';
+  src: url('Delivery_Lt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* ===== Fundo e Estrutura ===== */
 body {
   background: #ffffff;
