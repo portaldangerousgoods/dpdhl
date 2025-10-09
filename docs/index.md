@@ -1,7 +1,11 @@
-<div class="hero">
-  <h1>Bem-vindo ao Portal DG DHL</h1>
-  <p>Este é o centro oficial de informações para <strong>clientes e parceiros</strong> sobre o envio de <strong>mercadorias perigosas</strong> com a DHL Express.</p>
+<!-- Banner principal -->
+<div align="center">
+  <img src="images/hero.png" alt="Banner DHL" style="width:100%; border-radius:10px;">
 </div>
+
+# Bem-vindo ao Portal DG DHL
+
+Este é o centro oficial de informações para *clientes e parceiros* sobre o envio de *mercadorias perigosas* com a DHL Express.
 
 ---
 
