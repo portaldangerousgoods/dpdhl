@@ -239,3 +239,65 @@ h1 {
   color: #D40511 !important;        /* vermelho DHL no hover */
   text-decoration: underline !important; /* sublinha ao passar o mouse */
 }
+
+:root{
+  --dhl-postyellow: #FFCC00;
+  --dhl-red: #D40511;
+  --dhl-black: #000000;
+  --dhl-white: #FFFFFF;
+}
+
+/* Tipografia base DHL */
+html, body, .md-typeset {
+  font-family: 'Delivery', 'Aptos', Arial, sans-serif;
+}
+
+/* Headlines e subtítulos */
+.md-typeset h1, .md-typeset h2, .md-banner__title {
+  color: var(--dhl-red);
+  line-height: 1.0; /* ~100% dentro da faixa 90–110% */
+  letter-spacing: 0.2px;
+}
+.md-typeset h3, .md-typeset h4 {
+  color: var(--dhl-black);
+  line-height: 1.1;
+}
+
+/* Header sempre Postyellow sólido */
+.md-header, .md-banner {
+  background: var(--dhl-postyellow); /* sem gradiente */
+}
+
+/* Botão primário */
+.md-button--primary, .md-typeset .md-button--primary {
+  background: var(--dhl-red);
+  color: var(--dhl-white);
+  border: none;
+}
+.md-button--primary:hover {
+  filter: brightness(0.95);
+}
+
+/* Botão secundário */
+.md-button, .md-typeset .md-button {
+  border: 2px solid var(--dhl-red);
+  color: var(--dhl-red);
+  background: transparent;
+}
+.md-button:hover {
+  background: rgba(212,5,17,0.06);
+}
+
+/* Texto sobre Postyellow: sempre preto */
+.banner, .tile--yellow, .hero--yellow {
+  background: var(--dhl-postyellow);
+  color: var(--dhl-black);
+}
+
+/* Underline de estado para tabs/links ativos */
+.is-active, .tab--active {
+  text-decoration: underline;
+  text-decoration-color: var(--dhl-red);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
