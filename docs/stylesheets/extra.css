@@ -1,113 +1,196 @@
-/* ===== Header base ===== */
+/* ===== Fundo e Estrutura ===== */
+body {
+  background: #ffffff;
+  font-family: 'Delivery', sans-serif; /* fonte DHL */
+  margin: 0; /* não recua o body para não “encolher” o header amarelo */
+}
+
+/* Recuo somente no CONTEÚDO das páginas */
+.md-content__inner {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ===== Cabeçalho em amarelo DHL – ocupa 100% ===== */
 .md-header {
-  background-color: #FFCC00 !important; /* Amarelo DHL */
-  color: #000;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* ===== Logo ===== */
-.md-header__title img {
-  height: 38px !important;
-  margin-left: 20px;
-}
-
-/* ===== Barra de busca ===== */
-.md-header__inner .md-search {
-  position: absolute !important;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) !important;
-  width: 350px !important;
-  height: 40px !important;
-  z-index: 20;
-}
-
-.md-search__form {
-  border-radius: 6px !important;
-  overflow: hidden !important;
-}
-
-/* ===== Botão sair ===== */
-#dg-logout {
-  position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 10px 24px;
-  background: #D40511;
-  color: #fff;
-  border-radius: 6px;
+  background-color: #FFCC00;  /* Postyellow */
+  color: black;
   font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-#dg-logout:hover { background: #a00015; transform: scale(1.02); }
-
-/* ===== Dropdown da busca ===== */
-.dg-suggest {
-  position: absolute;
-  top: 100%;
-  left: 0;
   width: 100%;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  z-index: 9999;
 }
-.dg-suggest__item {
-  display: block;
-  padding: 10px 14px;
-  color: #000;
+.md-header__inner {
+  max-width: 100% !important;  /* impede limitações de largura */
+}
+
+/* ===== Links (arquivos para download) ===== */
+a, a:visited {
+  color: #666666 !important;
   text-decoration: none;
 }
-.dg-suggest__item:hover {
-  background-color: #f5f5f5;
+a:hover {
+  text-decoration: underline;
+  color: #666666 !important;
 }
 
-/* ===== Hero ===== */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 420px;
-  background-image: url("../hero.png");
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+/* ===== Ocultar menus laterais ===== */
+.md-sidebar--primary {
+  display: none !important;     /* esq */
+}
+.md-sidebar--secondary {
+  display: none !important;     /* dir (índice) */
+}
+.md-content {
+  margin-left: 0 !important;
 }
 
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.35);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: 2.4em;
-  margin: 0 0 10px 0;
+/* ===== Títulos padrão ===== */
+h2 {
+  color: #D40511;
   font-weight: bold;
 }
 
-.hero p {
-  font-size: 1.2em;
-  max-width: 700px;
+/* ===== Botão SAIR (topo) – visual aprovado ===== */
+#dg-logout {
+  background-color: #C4001A;
+  color: #ffffff !important;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  line-height: 1.2;
+
+  /* posição: empurra para a direita e deixa uma folga do canto */
+  margin-left: auto;      /* gruda à direita do header */
+  margin-right: 16px;     /* folga antes da borda direita */
+}
+#dg-logout:hover { background-color: #000000; color: #ffffff !important; }
+
+/* ===== HERO (foto de fundo + título grande em branco) ===== */
+.hero {
+  background-image:
+    url("../hero.png"),
+    url("/dpdhl/hero.png"),
+    url("/hero.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding: 110px 24px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 100%);
+}
+.md-content .hero h1,
+.md-content .hero p {
+  position: relative;
+  color: #fff !important;
+  margin: 0 auto;
+}
+.md-content .hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: .3px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.md-content .hero p {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  max-width: 920px;
 }
 
-/* Oculta o sumário lateral na página inicial */
-.md-content__inner:has(.hero) + .md-sidebar--secondary {
-  display: none !important;
+/* =========================
+   MENU SUPERIOR (faixa branca)
+   ========================= */
+#dg-topnav {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  z-index: 1001;
 }
+
+/* usa o mesmo recuo do conteúdo */
+#dg-topnav .dg-wrap {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 40px; /* alinha com o conteúdo */
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Links principais */
+#dg-topnav .dg-link,
+#dg-topnav .dg-drop > .dg-link {
+  font-family: 'Delivery', sans-serif;
+  font-size: 16px !important;
+  font-weight: normal !important; /* sem negrito por padrão */
+  color: #000 !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 58px;
+  border-bottom: 3px solid transparent;
+  transition: color .2s ease;
+}
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-drop > .dg-link:hover {
+  color: #D40511 !important;
+}
+
+/* Apenas a página ativa em negrito */
+#dg-topnav .dg-link.is-active,
+#dg-topnav .dg-drop > .dg-link.is-active {
+  font-weight: bold !important;
+  color: #000 !important;
+  border-color: #D40511;
+}
+
+/* Dropdown (Produtos) */
+#dg-topnav .dg-caret {
+  margin-left: 6px;
+  font-size: 14px;
+  color: inherit !important;
+}
+#dg-topnav .dg-panel {
+  position: absolute;
+  left: 0;
+  top: 58px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border-radius: 8px;
+  padding: 18px 20px;
+  min-width: 520px;
+  display: none;
+}
+#dg-topnav .dg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 8px 24px;
+}
+#dg-topnav .dg-panel a {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #000 !important;
+  text-decoration: none !important;
+  padding: 6px 4px;
+}
+#dg-topnav .dg-panel a:hover {
+  color: #D40511 !important;
+  text-decoration: underline;
+}
+#dg-topnav .open > .dg-panel { display: block; }
