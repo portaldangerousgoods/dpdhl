@@ -1,43 +1,31 @@
 site_name: Portal DG DHL
-site_url: https://portaldangerousgoods.github.io/dpdhl/
-repo_url: https://github.com/portaldangerousgoods/dpdhl
-repo_name: GitHub
-
 theme:
   name: material
-  language: pt-BR
-  logo: logo-dhl.png
-  font:
-    text: "Barlow"
-    code: "Fira Code"
+  language: pt
   palette:
-    - scheme: default
-      primary: yellow
-      accent: red
-  features:
-    - search.suggest
-    - search.highlight
+    primary: yellow
+    accent: red
 
-plugins:
-  - search:
-      lang: pt
-      
 nav:
   - Início: index.md
   - FAQ Técnico: faq.md
+  - Produtos:
+      - Baterias de Lítio: baterias.md
+      - Bebidas Alcoólicas: bebidas.md
+      - Gelo Seco: gelo-seco.md
+      - Perfumes: perfumes.md
+      - Produtos Biológicos: biologicos.md
+      - Cargas em Quantidades Excetuadas (EQ): eq.md
+      - Cargas Perigosas Totais (Full DG): full-dg.md
   - Aprovação de Conta: aprovacao.md
-  - Baterias de Lítio: baterias.md
-  - Bebidas Alcoólicas: bebidas.md
-  - Documentos exigidos: documentos.md
-  - Gelo Seco: gelo-seco.md
-  - Perfumes: perfumes.md
-  - Produtos Biológicos: biologicos.md
-  - Cargas em Quantidades Excetuadas (EQ): eq.md
-  - Cargas Perigosas Totais (Full DG): full-dg.md
-   
+  - Documentos Exigidos: documentos.md
+
+# 🔴 Use apenas estes dois (remova linhas antigas de extra.css/extra.js)
+extra_css:
+  - stylesheets/extra.v14.css
+
 extra_javascript:
   - javascripts/extra.v14.js
 
-extra_css:
-  - stylesheets/menu-lateral.css
-  - stylesheets/extra.v14.css
+plugins:
+  - search
