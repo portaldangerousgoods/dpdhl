@@ -91,3 +91,12 @@ h2{ color:#D40511; font-weight:bold; }
 /* ===== Ocultar sidebars (seu padrão) ===== */
 .md-sidebar--primary, .md-sidebar--secondary{ display:none !important; }
 .md-content{ margin-left:0 !important; }
+
+/* ===== HERO IMAGE (página inicial) ===== */
+.md-content__inner img[alt="Banner DHL"] {
+  display: block;
+  margin: 0 auto 32px auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
