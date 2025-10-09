@@ -1,5 +1,4 @@
 <div class="hero">
-  <img src="hero.png">
   <div class="overlay">
     <h1>Bem-vindo ao Portal DG DHL</h1>
     <p>Este é o centro oficial de informações para clientes e parceiros sobre o envio de mercadorias perigosas com a DHL Express.</p>
