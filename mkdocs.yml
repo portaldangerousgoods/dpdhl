@@ -1,10 +1,21 @@
 site_name: Portal DG DHL
+site_url: https://portaldangerousgoods.github.io/dpdhl/
+
 theme:
   name: material
-  language: pt
-  palette:
-    primary: yellow
-    accent: red
+  logo: images/logo-dhl.png
+  favicon: images/logo-dhl.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - extra.js
 
 nav:
   - Início: index.md
@@ -14,14 +25,7 @@ nav:
       - Bebidas Alcoólicas: bebidas.md
       - Gelo Seco: gelo-seco.md
       - Perfumes: perfumes.md
-      - Produtos Biológicos: biologicos.md
-      - Cargas em Quantidades Excetuadas (EQ): eq.md
-      - Cargas Perigosas Totais (Full DG): full-dg.md
+      - Biológicos: biologicos.md
+      - Cargas Totais (Full DG): full-dg.md
   - Aprovação de Conta: aprovacao.md
-  - Documentos Exigidos: documentos.md
-
-extra_css:
-  - stylesheets/extra.css
-
-extra_javascript:
-  - extra.js
+  - Documentos Exigidos: documentos.md 
