@@ -1,102 +1,105 @@
-/* ===== Base ===== */
-body {
-  background: #ffffff;
-  font-family: 'Delivery', sans-serif;
-  margin: 0;
+/* ===== Header base ===== */
+.md-header {
+  background-color: #FFCC00 !important; /* Amarelo DHL */
+  color: #000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Conteúdo com recuo igual ao seu padrão */
-.md-content__inner { padding-left: 40px; padding-right: 40px; }
-
-/* ===== HEADER: faixa amarela fina, logo com 1cm, busca central, Sair à direita ===== */
-.md-header{
-  background:#FFCC00;
-  height:66px !important; min-height:66px !important;
-  display:flex; align-items:center;
-  box-sizing:border-box; padding:0;
-}
-.md-header__inner{
-  position:relative; height:66px;
-  width:100%; display:flex; align-items:center; justify-content:space-between;
-  padding:0;
+/* ===== Logo ===== */
+.md-header__title img {
+  height: 38px !important;
+  margin-left: 20px;
 }
 
-/* Remove “Portal DG DHL” (texto) do cabeçalho */
-.md-header__title{ display:none !important; }
-
-/* Logo com 1 cm do canto esquerdo */
-.md-header__inner .md-logo{
-  margin-left:40px !important;    /* ~1 cm */
-  display:flex; align-items:center;
+/* ===== Barra de busca ===== */
+.md-header__inner .md-search {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  width: 350px !important;
+  height: 40px !important;
+  z-index: 20;
 }
 
-/* Esconde o bloco “GitHub” do cabeçalho (se aparecer) */
-.md-header__source{ display:none !important; }
-
-/* ===== BUSCA: centralizada e NÃO EXPANDE ===== */
-.md-header__inner .md-search{
-  position:absolute !important;
-  left:50% !important; top:50% !important;
-  transform:translate(-50%,-50%) !important;    /* centro perfeito */
-  width:360px !important; height:40px !important;
-  z-index:20;
+.md-search__form {
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 
-/* Caixa branca arredondada padrão (retângulo rounded corners) */
-.md-header__inner .md-search__form{
-  height:40px !important;
-  background:#fff !important;
-  border:1px solid #E6E6E6 !important;
-  border-radius:6px !important;
-  box-shadow:0 2px 6px rgba(0,0,0,.12) !important;
-  display:flex !important; align-items:center !important;
-  overflow:hidden;
+/* ===== Botão sair ===== */
+#dg-logout {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 24px;
+  background: #D40511;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.1s ease;
 }
-/* NÃO deixe o tema aumentar a largura quando ativa */
-.md-search--active .md-search__form{ width:360px !important; }
+#dg-logout:hover { background: #a00015; transform: scale(1.02); }
 
-/* Ícone e input alinhados */
-.md-header__inner .md-search__icon{
-  position:absolute; left:12px; top:50%; transform:translateY(-50%);
-  color:#000 !important;
+/* ===== Dropdown da busca ===== */
+.dg-suggest {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  z-index: 9999;
 }
-.md-header__inner .md-search__input{
-  height:40px !important; line-height:40px !important;
-  background:transparent !important; border:none !important; box-shadow:none !important;
-  color:#000 !important;
-  padding:0 12px 0 38px !important;     /* espaço p/ ícone */
-  font-size:15px !important;
-}
-.md-header__inner .md-search__input::placeholder{ color:rgba(0,0,0,.65); font-weight:600; }
-
-/* ===== BOTÃO SAIR — canto direito com ~1cm de respiro ===== */
-#dg-logout{
-  margin-right:40px !important;               /* ~1 cm */
-  background:#D40511; color:#fff !important;
-  padding:10px 26px; border:none; border-radius:6px;
-  font-weight:700; font-size:15px; line-height:1.3;
-  cursor:pointer; display:inline-block;
-  box-shadow:0 3px 6px rgba(0,0,0,.15);
-  transition:background-color .2s ease, transform .05s ease, box-shadow .2s ease;
-}
-#dg-logout:hover{ background:#a00015; transform:translateY(-1px); box-shadow:0 5px 10px rgba(0,0,0,.25); }
-
-/* ===== Links no conteúdo (como você tinha) ===== */
-a, a:visited{ color:#666666 !important; text-decoration:none; }
-a:hover{ color:#666666 !important; text-decoration:underline; }
-
-/* ===== Títulos padrão ===== */
-h2{ color:#D40511; font-weight:bold; }
-
-/* ===== Ocultar sidebars (seu padrão) ===== */
-.md-sidebar--primary, .md-sidebar--secondary{ display:none !important; }
-.md-content{ margin-left:0 !important; }
-
-/* ===== HERO IMAGE (página inicial) ===== */
-.md-content__inner img[alt="Banner DHL"] {
+.dg-suggest__item {
   display: block;
-  margin: 0 auto 32px auto;
-  max-width: 100%;
+  padding: 10px 14px;
+  color: #000;
+  text-decoration: none;
+}
+.dg-suggest__item:hover {
+  background-color: #f5f5f5;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.4em;
+  margin: 0 0 10px 0;
+}
+.hero p {
+  font-size: 1.2em;
+  max-width: 700px;
 }
