@@ -345,6 +345,32 @@ html, body, .md-typeset {
   box-shadow: 0 0 8px rgba(255, 204, 0, 0.45);
 }
 
+/* ===== Centralizar barra de pesquisa com botão SAIR ===== */
+.md-header__inner {
+  display: flex;
+  align-items: center; /* alinha todos os itens verticalmente */
+}
+
+/* Ajuste fino da altura e espaçamento da busca */
+.md-search {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Garante que o botão Sair e a busca fiquem na mesma linha */
+#dg-logout {
+  align-self: center;
+}
+
+/* Opcional: deixa a barra e o botão com espaçamento consistente */
+.md-search,
+#dg-logout {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 /* Remover sombra ou cor de fundo padrão da estrutura do MkDocs */
 .md-search__form {
   background: transparent !important;
