@@ -371,6 +371,45 @@ html, body, .md-typeset {
   margin-right: 8px;
 }
 
+/* ===== Ajuste fino: alinhamento da barra de pesquisa com botão SAIR ===== */
+
+/* Define altura fixa da barra igual ao botão */
+.md-search__form,
+.md-search__input {
+  height: 40px !important; /* mesma altura do botão Sair */
+  line-height: 40px !important;
+  border-radius: 8px !important; /* mantém o arredondamento */
+}
+
+/* Centraliza perfeitamente a lupa dentro da altura nova */
+.md-search__icon {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #000000 !important;
+  left: 14px !important;
+}
+
+/* Alinha verticalmente com o botão */
+.md-search {
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Garante que o botão e a barra fiquem na mesma linha */
+#dg-logout {
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Espaçamento lateral harmônico */
+.md-search,
+#dg-logout {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 /* Remover sombra ou cor de fundo padrão da estrutura do MkDocs */
 .md-search__form {
   background: transparent !important;
