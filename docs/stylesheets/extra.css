@@ -309,3 +309,47 @@ html, body, .md-typeset {
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
 }
+
+/* ===== Barra de pesquisa estilo DHL Brand Hub ===== */
+.md-search__input {
+  background-color: #ffffff !important;
+  border: 2px solid #FFCC00 !important; /* Postyellow */
+  border-radius: 9999px !important; /* bordas totalmente arredondadas */
+  color: #000000 !important; /* texto preto */
+  font-family: 'Delivery', 'Aptos', Arial, sans-serif;
+  font-size: 16px;
+  height: 42px;
+  padding: 0 42px 0 40px; /* espaço para o ícone */
+  box-shadow: none !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.md-search__input::placeholder {
+  color: #555555 !important; /* cinza neutro para placeholder */
+  opacity: 1;
+  font-weight: 400;
+}
+
+/* Ícone de busca preto */
+.md-search__icon {
+  color: #000000 !important;
+  left: 14px !important;
+  width: 20px;
+  height: 20px;
+}
+
+/* Realce em foco */
+.md-search__input:focus {
+  outline: none !important;
+  border-color: #FFCC00 !important;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.6);
+}
+
+/* Remover borda interna azul padrão */
+.md-search__form {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.md-header__inner {
+  background-color: #FFCC00; /* Postyellow sólido */
+}
