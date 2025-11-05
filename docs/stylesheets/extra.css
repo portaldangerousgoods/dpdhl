@@ -415,38 +415,3 @@ html, body, .md-typeset {
   background: transparent !important;
   box-shadow: none !important;
 }
-
-/* ===== Centralizar a barra de pesquisa no header ===== */
-.md-header__inner {
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;
-  position: relative;
-}
-
-/* Mantém o logo fixo à esquerda */
-.md-header__button.md-logo {
-  position: absolute;
-  left: 20px;
-}
-
-/* Mantém o botão SAIR fixo à direita */
-#dg-logout {
-  position: absolute;
-  right: 20px;
-}
-
-/* Ajusta largura e centralização da busca */
-.md-search {
-  width: 360px; /* você pode aumentar conforme quiser */
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-/* Garante que a busca fique perfeitamente centrada na altura */
-.md-search__form,
-.md-search__input {
-  height: 40px !important;
-  line-height: 40px !important;
-  border-radius: 8px !important;
-}
