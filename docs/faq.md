@@ -33,12 +33,12 @@ São produtos que **aparentemente não são perigosos**, mas contêm componentes
 
 ---
 
-## 5. O que é FISPQ/FDS/SDS?
+## 5. O que é FDS/SDS?
 
-FISPQ e FDS são documentos de segurança em português; SDS é o equivalente em inglês.  
+FDS é o documento de segurança em português; SDS é o equivalente em inglês.  
 Eles informam se o produto é perigoso e ajudam a equipe DG a decidir se pode ser transportado.
 
-➡️ Caso não possua esse documento, solicite ao fabricante e volte com a nossa equipe para análise!
+Caso não possua esse documento, solicite ao fabricante e volte com a nossa equipe para análise!
 
 ---
 
