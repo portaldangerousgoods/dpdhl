@@ -415,3 +415,33 @@ html, body, .md-typeset {
   background: transparent !important;
   box-shadow: none !important;
 }
+
+/* ===== Bloco texto + imagem lado a lado (documentos) ===== */
+.dg-side {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;   /* alinha topo do texto com topo da imagem */
+  margin: 16px 0 24px;
+}
+
+.dg-side__text {
+  flex: 1 1 0;               /* texto ocupa a maior parte */
+}
+
+.dg-side__img {
+  flex: 0 0 38%;             /* imagem ~38% da largura (ajuste se quiser 35–45%) */
+  max-width: 38%;
+  height: auto;
+  border-radius: 8px;        /* cantos suaves padrão DHL */
+  display: block;
+}
+
+/* Responsivo: empilha no mobile */
+@media (max-width: 900px) {
+  .dg-side {
+    flex-direction: column;
+  }
+  .dg-side__img {
+    max-width: 100%;
+  }
+}
