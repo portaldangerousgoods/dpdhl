@@ -32,9 +32,9 @@ Recomendamos a escola **Cross Racer**, reconhecida pela IATA e com experiência 
 
 Você também pode optar por qualquer outro centro de treinamento **oficialmente vinculado à IATA**.
 
-<p align="center">
-  <img src="certificado.png" alt="Certificado DG IATA" style="width:60%; border-radius:8px;">
-</p>
+<figure style="text-align:center;">
+  <img src="/dpdhl/certificado.png" alt="Certificado DG IATA" width="60%" style="border-radius:8px;">
+</figure>
 
 ---
 
