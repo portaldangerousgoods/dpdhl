@@ -420,22 +420,24 @@ html, body, .md-typeset {
 .dg-side {
   display: flex;
   gap: 24px;
-  align-items: center;          /* centraliza verticalmente texto e imagem */
+  align-items: center;          /* centraliza verticalmente imagem e texto */
   justify-content: space-between;
-  margin: 16px 0 24px;
+  margin: 8px 0 16px;           /* menos espaço acima/abaixo */
 }
 
 .dg-side__text {
-  flex: 1 1 0;                  /* texto ocupa o espaço principal */
+  flex: 1 1 0;
+  margin-top: 0 !important;     /* remove espaçamento entre título e texto */
 }
 
 .dg-side__img {
-  flex: 0 0 30%;                /* imagem menor: ocupa ~30% da largura */
-  max-width: 30%;
+  flex: 0 0 22%;                /* imagem menor (~22% da largura) */
+  max-width: 22%;
   height: auto;
-  border-radius: 8px;           /* cantos suaves padrão DHL */
+  border-radius: 8px;
   display: block;
-  object-fit: contain;          /* mantém proporção natural */
+  object-fit: contain;
+  margin-top: 0;                /* remove espaçamento acima */
 }
 
 /* ===== Responsivo (mobile) ===== */
@@ -446,5 +448,6 @@ html, body, .md-typeset {
   }
   .dg-side__img {
     max-width: 100%;
+    margin-top: 12px;
   }
 }
