@@ -32,7 +32,9 @@ Recomendamos a escola **Cross Racer**, reconhecida pela IATA e com experiência 
 
 Você também pode optar por qualquer outro centro de treinamento **oficialmente vinculado à IATA**.
 
-![Certificado de mercadorias perigosas](certificado.png)
+<p align="center">
+  <img src="certificado.png" alt="Certificado DG IATA" style="width:60%; border-radius:8px;">
+</p>
 
 ---
 
