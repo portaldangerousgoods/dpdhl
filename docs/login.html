@@ -41,34 +41,57 @@
       margin-bottom: 25px;
     }
 
+    /* ===== NOVO BLOCO: inputs e botão alinhados ===== */
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centraliza tudo */
+      gap: 12px;
+    }
+
     .login-container input {
-      display: block;
-      width: 100%;
+      width: 92%;               /* alinhado com o botão */
+      max-width: 340px;         /* largura fixa visualmente proporcional */
       padding: 12px;
-      margin: 12px 0;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 6px;
       text-align: center;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .login-container input:focus {
+      border-color: #FFCC00;
+      box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
+      outline: none;
+    }
+
+    .login-container input::placeholder {
+      color: #777;
+      font-weight: 400;
+      line-height: 1.5;
     }
 
     .login-container button {
+      width: 92%;
+      max-width: 340px;
       background: #FFCC00; /* DHL Yellow */
       color: black;
       font-weight: bold;
       border: none;
       padding: 12px;
-      width: 100%;
       cursor: pointer;
       border-radius: 6px;
       font-size: 16px;
-      margin-top: 10px;
+      transition: background 0.2s ease;
     }
 
     .login-container button:hover {
       background: #e6b800;
     }
 
+    /* ===== Mensagem de erro ===== */
     .error {
       color: red;
       display: none;
@@ -83,16 +106,19 @@
     }
   </style>
 </head>
+
 <body>
   <div class="login-container">
     <img src="logo-dhl.png" alt="Logo DHL">
     <h2>Portal Dangerous Goods 🔥</h2>
+
     <form id="dg-login-form">
       <input type="text" id="dg-account" maxlength="9" placeholder="Conta (9 dígitos)">
       <input type="password" id="dg-pass" placeholder="Senha">
       <button type="submit">Entrar</button>
       <p id="dg-login-error" class="error"></p>
     </form>
+
     <footer>Exclusivo para Clientes · DHL Express · Mercadorias Perigosas</footer>
   </div>
 
@@ -102,6 +128,7 @@
         const parts = location.pathname.split('/').filter(Boolean);
         return parts.length ? `/${parts[0]}/` : '/';
       }
+
       function setAuthOk() {
         const exp = Date.now() + 8 * 60 * 60 * 1000; // 8h
         localStorage.setItem('dg_auth', JSON.stringify({ ok: true, exp }));
