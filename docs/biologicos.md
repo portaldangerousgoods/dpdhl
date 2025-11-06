@@ -4,16 +4,24 @@ Veja os requisitos para envio de materiais biológicos com a DHL Express, garant
 
 ---
 
-## Classificação dos Materiais Biológicos
+<h2>Classificação dos Materiais Biológicos</h2>
 
-A DHL Express transporta materiais classificados como:
+<div class="dg-side">
+  <div class="dg-side__text">
+    <p>
+      A DHL Express transporta materiais classificados como:
+    </p>
 
-### Categoria B:
-- **UN3373**
+    <ul>
+      <li><strong>Categoria B:</strong> UN3373</li>
+      <li><strong>Categoria C:</strong> Risco Mínimo</li>
+      <li><strong>Material Isento</strong></li>
+    </ul>
+  </div>
 
-### Categoria C:
-- **Risco Mínimo**
-- **Material Isento**
+  <!-- Caminho da imagem -->
+  <img src="/dpdhl/bios.png" alt="Materiais Biológicos" class="dg-side__img">
+</div>
 
 ---
 
