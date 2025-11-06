@@ -32,7 +32,7 @@ Abaixo estão os principais documentos e orientações para cada caso:
     </p>
 
     <p><strong>👉 Guia interno de preenchimento:</strong><br>
-      <a href="DGD.pdf">DGD.pdf</a>
+      <a href="DGD.pdf">docs/DGD.pdf</a>
     </p>
   </div>
 
