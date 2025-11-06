@@ -469,3 +469,8 @@ html, body, .md-typeset {
   object-fit: contain;
   border-radius: 8px;
 }
+
+/* ===== Ajuste específico: imagem dos Biológicos maior ===== */
+.dg-side__img[alt="Materiais Biológicos"] {
+  max-width: 42% !important;  /* aumenta de ~30% para ~42% da largura */
+}
