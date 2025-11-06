@@ -21,8 +21,8 @@ Abaixo estão os principais documentos e orientações para cada caso:
   <div class="dg-side__text">
     <ul>
       <li>É o documento <strong>oficial e obrigatório</strong> para cargas perigosas que não se enquadram em exceções (ex.: <em>Excepted Quantities</em>).</li>
-      <li>Deve ser emitido em <strong>3 vias, em inglês, colorido e com o tracejado vermelho</strong>.</li>
-      <li>A DHL não preenche este documento — ele deve ser elaborado pelo <strong>remetente</strong>.</li>
+      <li>Deve ser emitido em <strong>4 vias, em inglês, colorido e com o tracejado vermelho</strong>.</li>
+      <li>A DHL não preenche este documento, ele deve ser elaborado pelo <strong>remetente</strong>.</li>
     </ul>
 
     <p><strong>👉 Modelos oficiais de Shipper's Declaration disponíveis diretamente no site da IATA:</strong><br>
