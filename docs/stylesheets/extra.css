@@ -451,3 +451,21 @@ html, body, .md-typeset {
     margin-top: 12px;
   }
 }
+
+/* 1) Remove o “vão” entre o H2 e o bloco lado a lado */
+.md-content h2 + .dg-side { 
+  margin-top: 0 !important;   /* encosta o texto no título */
+}
+
+/* 2) Deixa a imagem menor e garante que esta regra vença as anteriores */
+.md-content .dg-side {
+  align-items: center;         /* centraliza verticalmente texto x imagem */
+}
+
+.md-content .dg-side__img {
+  flex: 0 0 20% !important;    /* ~20% da largura (menor que 22%/30%) */
+  max-width: 20% !important;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
