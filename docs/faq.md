@@ -8,14 +8,7 @@ Artigos perigosos, abreviadamente DG (Dangerous Goods), são substâncias que, q
 
 ## 2. Quais são as mercadorias perigosas que a DHL Express não transporta?
 
-- Classe 1 (explosivos)  
-- Classe 2.3 (gases tóxicos)  
-- Classe 4.1 (auto-reativos controlados)  
-- Classe 5.2 (peróxidos que exigem controle de temperatura)  
-- Classe 6.1 (Grupo de Embalagem 1)  
-- Classe 6.2 (exceto UN 3373 e UN 3245)  
-- Classe 7 (radioativos)  
-- Classe 9 (UN 2212, baterias de lítio danificadas ou veículos com baterias danificadas)  
+![Mercadorias não transportadas](pergunta2.png) 
 
 ---
 
