@@ -474,3 +474,8 @@ html, body, .md-typeset {
 .dg-side__img[alt="Materiais Biológicos"] {
   max-width: 42% !important;  /* aumenta de ~30% para ~42% da largura */
 }
+
+/* ===== Ajuste específico: imagem das Baterias ===== */
+.dg-side__img[alt="Tipos de Baterias"] {
+  max-width: 45% !important; /* aumenta o tamanho da imagem */
+}
