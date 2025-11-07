@@ -544,3 +544,11 @@ html, body, .md-typeset {
     max-width: 480px;
   }
 }
+
+/* Ajuste específico para o manual IATA — mantém alinhado ao texto */
+.dg-float[alt="Manual IATA"] {
+  width: auto;              /* deixa a largura se ajustar automaticamente */
+  height: 300px;            /* altura fixa aproximada ao bloco de texto */
+  object-fit: contain;      /* mantém proporção */
+  margin-top: 8px;          /* alinha melhor com o texto */
+}
