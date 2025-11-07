@@ -499,3 +499,24 @@ html, body, .md-typeset {
   align-self: flex-start;        /* garante alinhamento no topo */
   object-fit: contain;           /* mantém proporção */
 }
+
+/* ===== Layout Embalagem: imagem acompanhando o texto ===== */
+.dg-inline {
+  display: flex;
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: flex-start;
+  gap: 24px;                 /* espaço entre texto e imagem */
+  flex-wrap: nowrap;         /* impede quebra de linha */
+  margin-bottom: 24px;
+}
+
+.dg-inline__text {
+  flex: 1;                   /* texto ocupa todo o espaço restante */
+}
+
+.dg-inline__img {
+  width: 30%;                /* imagem proporcional ao texto */
+  height: auto;
+  max-width: 300px;          /* limite visual */
+  object-fit: contain;
+}
