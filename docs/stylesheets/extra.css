@@ -484,3 +484,18 @@ html, body, .md-typeset {
 .dg-side__img[alt="Embalagem de Gelo Seco"] {
   max-width: 45% !important; /* ajuste fino: 35–50% conforme preferir */
 }
+
+/* ===== Compactar bloco "Embalagem": imagem menor e alinhada ao topo ===== */
+.dg-side--tight {
+  align-items: flex-start;       /* alinha imagem e texto pelo topo */
+  gap: 20px;                     /* reduz o espaço lateral */
+  margin-bottom: 12px;           /* aproxima da próxima seção */
+}
+
+.dg-side--tight .dg-side__img {
+  max-width: 30% !important;     /* define largura equilibrada */
+  max-height: 220px;             /* evita altura exagerada */
+  height: auto;
+  align-self: flex-start;        /* garante alinhamento no topo */
+  object-fit: contain;           /* mantém proporção */
+}
