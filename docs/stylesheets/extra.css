@@ -479,3 +479,8 @@ html, body, .md-typeset {
 .dg-side__img[alt="Tipos de Baterias"] {
   max-width: 45% !important; /* aumenta o tamanho da imagem */
 }
+
+/* Ajuste específico: imagem de Gelo Seco */
+.dg-side__img[alt="Embalagem de Gelo Seco"] {
+  max-width: 45% !important; /* ajuste fino: 35–50% conforme preferir */
+}
