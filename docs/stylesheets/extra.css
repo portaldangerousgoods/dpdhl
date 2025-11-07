@@ -520,3 +520,27 @@ html, body, .md-typeset {
   max-width: 300px;          /* limite visual */
   object-fit: contain;
 }
+
+/* ===== Imagem ao lado direito acompanhando todo o texto ===== */
+.dg-wrap-float::after { content: ""; display: table; clear: both; } /* clearfix */
+
+.dg-float {
+  float: right;
+  width: 34%;              /* ajuste fino: 30–40% */
+  max-width: 380px;
+  height: auto;
+  margin: 4px 0 16px 24px; /* espaço à esquerda/abaixo da imagem */
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Mobile: imagem abaixo do texto */
+@media (max-width: 900px) {
+  .dg-float {
+    float: none;
+    display: block;
+    margin: 12px auto;
+    width: 70%;
+    max-width: 480px;
+  }
+}
