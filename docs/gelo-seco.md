@@ -15,7 +15,7 @@ O gelo seco, também conhecido como dióxido de carbono (CO₂) no estado sólid
 
 <h3>Embalagem</h3>
 
-<div class="dg-side">
+<div class="dg-side dg-side--tight">
   <div class="dg-side__text">
     <ul>
       <li>A embalagem deve seguir a <strong>Instrução de Embalagem 954 da IATA</strong>.</li>
