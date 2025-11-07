@@ -12,14 +12,19 @@ O cliente (remetente) deve preparar a carga em conformidade, incluindo **documen
 
 ---
 
-## Requisitos básicos para Full DG
+<div class="dg-wrap-float">
+  <img src="/dpdhl/manual.png" alt="Manual IATA" class="dg-float">
 
-- **Conta aprovada** para o envio do produto (Shipper Account de Exportação do País de Origem).
-- **Rota validada** (nem todas as origens/destinos permitem o transporte de Full DG).
-- **Shipper’s Declaration**: é necessário preencher **4 cópias originais em inglês**, em cores, com o tracejado vermelho.
-- **Manual IATA obrigatório**: o cliente deve possuir acesso ao manual IATA vigente, pois todas as referências (instruções de embalagem, quantidades, exceções) só podem ser confirmadas diretamente no regulamento oficial.
-- **Embalagem**: deve estar de acordo com as instruções de embalagem aplicáveis (Packing Instructions), incluindo homologação quando exigida.
-- **Marcação e rotulagem**: obrigatórias conforme a classe de risco e PI aplicável.
+  <h2>Requisitos básicos para Full DG</h2>
+  <ul>
+    <li><strong>Conta aprovada</strong> para o envio do produto (Shipper Account de Exportação do País de Origem).</li>
+    <li><strong>Rota validada</strong> (nem todas as origens/destinos permitem o transporte de Full DG).</li>
+    <li><strong>Shipper’s Declaration</strong>: é necessário preencher <strong>4 cópias originais em inglês</strong>, em cores, com o tracejado vermelho.</li>
+    <li><strong>Manual IATA obrigatório</strong>: o cliente deve possuir acesso ao manual IATA vigente, pois todas as referências (instruções de embalagem, quantidades, exceções) só podem ser confirmadas diretamente no regulamento oficial.</li>
+    <li><strong>Embalagem</strong>: deve estar de acordo com as instruções de embalagem aplicáveis (Packing Instructions), incluindo homologação quando exigida.</li>
+    <li><strong>Marcação e rotulagem</strong>: obrigatórias conforme a classe de risco e PI aplicável.</li>
+  </ul>
+</div>
 
 ---
 
