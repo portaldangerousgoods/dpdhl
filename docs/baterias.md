@@ -18,16 +18,28 @@
 
 ---
 
-## Tipos de Bateria
+<h2>Tipos de Bateria</h2>
 
-1. **Lítio Íon (Li-ion / Li-poly)**  
-   Recarregáveis. Comuns em laptops, celulares, ferramentas, etc.
+<div class="dg-side">
+  <div class="dg-side__text">
 
-2. **Lítio Metal**  
-   Não recarregáveis. Maior vida útil. Comuns em câmeras, alarmes de fumaça, etc.
+  <ol>
+    <li><strong>Lítio Íon (Li-ion / Li-poly)</strong><br>
+    Recarregáveis. Comuns em laptops, celulares, ferramentas, etc.</li>
 
-3. **Sódio Íon**  
-   Recarregáveis. Usadas em veículos elétricos e armazenamento de energia em rede.
+    <li><strong>Lítio Metal</strong><br>
+    Não recarregáveis. Maior vida útil. Comuns em câmeras, alarmes de fumaça, etc.</li>
+
+    <li><strong>Sódio Íon</strong><br>
+    Recarregáveis. Usadas em veículos elétricos e armazenamento de energia em rede.</li>
+  </ol>
+
+  </div>
+
+  <!-- Imagem ao lado direito -->
+  <img src="/dpdhl/bats.png" alt="Tipos de Baterias" class="dg-side__img">
+</div>
+
 
 ---
 
