@@ -15,17 +15,17 @@ O gelo seco, também conhecido como dióxido de carbono (CO₂) no estado sólid
 
 <h3>Embalagem</h3>
 
-<div class="dg-side dg-side--tight">
-  <div class="dg-side__text">
+<div class="dg-inline">
+  <div class="dg-inline__text">
     <ul>
       <li>A embalagem deve seguir a <strong>Instrução de Embalagem 954 da IATA</strong>.</li>
       <li>A embalagem <strong>precisa permitir a liberação do gás</strong> (conforme item 5.0.2 da IATA).</li>
     </ul>
   </div>
 
-  <!-- Use caminho absoluto para evitar 404 no Pages -->
-  <img src="/dpdhl/gelinho.png" alt="Embalagem de Gelo Seco" class="dg-side__img">
+  <img src="/dpdhl/gelinho.png" alt="Embalagem de Gelo Seco" class="dg-inline__img">
 </div>
+
 
 <h3>Rotulagem obrigatória</h3>
 <p><strong>Marcações externas:</strong></p>
