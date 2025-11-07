@@ -13,32 +13,26 @@ O gelo seco, também conhecido como dióxido de carbono (CO₂) no estado sólid
 ### 🇧🇷 Envio Doméstico
 - Validar previamente a viabilidade do envio nacional com o seu contato DHL.
 
-<h3>Embalagem</h3>
+<div class="dg-wrap-float">
+  <img src="/dpdhl/gelinho.png" alt="Embalagem de Gelo Seco" class="dg-float">
 
-<div class="dg-inline">
-  <div class="dg-inline__text">
-    <ul>
-      <li>A embalagem deve seguir a <strong>Instrução de Embalagem 954 da IATA</strong>.</li>
-      <li>A embalagem <strong>precisa permitir a liberação do gás</strong> (conforme item 5.0.2 da IATA).</li>
-    </ul>
-  </div>
+  <h3>Embalagem</h3>
+  <ul>
+    <li>A embalagem deve seguir a <strong>Instrução de Embalagem 954 da IATA</strong>.</li>
+    <li>A embalagem <strong>precisa permitir a liberação do gás</strong> (conforme item 5.0.2 da IATA).</li>
+  </ul>
 
-  <img src="/dpdhl/gelinho.png" alt="Embalagem de Gelo Seco" class="dg-inline__img">
+  <h3>Rotulagem obrigatória</h3>
+  <p><strong>Marcações externas:</strong></p>
+  <ul>
+    <li><strong>UN 1845 / DRY ICE</strong></li>
+    <li><strong>Peso líquido (em kg) do gelo seco presente</strong></li>
+    <li><strong>Etiqueta Classe 9 - Diversos</strong></li>
+    <li><strong>Setas de orientação (posição vertical)</strong></li>
+  </ul>
+
+  <blockquote>O não cumprimento desses requisitos inviabiliza o transporte.</blockquote>
 </div>
-
-
-<h3>Rotulagem obrigatória</h3>
-<p><strong>Marcações externas:</strong></p>
-<ul>
-  <li><strong>UN 1845 / DRY ICE</strong></li>
-  <li><strong>Peso líquido (em kg) do gelo seco presente</strong></li>
-  <li><strong>Etiqueta Classe 9 - Diversos</strong></li>
-  <li><strong>Setas de orientação (posição vertical)</strong></li>
-</ul>
-
-<blockquote>
-  O não cumprimento desses requisitos inviabiliza o transporte.
-</blockquote>
 
 
 ---
