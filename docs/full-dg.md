@@ -16,7 +16,7 @@ O cliente (remetente) deve preparar a carga em conformidade, incluindo **documen
 
 - **Conta aprovada** para o envio do produto (Shipper Account de Exportação do País de Origem).
 - **Rota validada** (nem todas as origens/destinos permitem o transporte de Full DG).
-- **Shipper’s Declaration**: é necessário preencher **3 cópias originais em inglês**, em cores, com o tracejado vermelho.
+- **Shipper’s Declaration**: é necessário preencher **4 cópias originais em inglês**, em cores, com o tracejado vermelho.
 - **Manual IATA obrigatório**: o cliente deve possuir acesso ao manual IATA vigente, pois todas as referências (instruções de embalagem, quantidades, exceções) só podem ser confirmadas diretamente no regulamento oficial.
 - **Embalagem**: deve estar de acordo com as instruções de embalagem aplicáveis (Packing Instructions), incluindo homologação quando exigida.
 - **Marcação e rotulagem**: obrigatórias conforme a classe de risco e PI aplicável.
