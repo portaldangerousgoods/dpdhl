@@ -553,11 +553,13 @@ html, body, .md-typeset {
   margin-top: 8px;          /* alinha melhor com o texto */
 }
 
-/* Tamanho/altura do GIF lateral da home */
+/* Ajuste refinado — gif lateral da home */
 .dg-float[alt="Globo animado"] {
-  width: 32%;        /* 28–36% conforme preferir */
-  max-width: 420px;
-  height: 320px;     /* casa bem com a altura do bloco de texto */
+  width: 38%;            /* aumenta a proporção lateral */
+  max-width: 520px;      /* garante que cresça sem estourar */
+  height: 440px;         /* altura acompanha bem o bloco textual */
   object-fit: contain;
-  margin-top: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
+
