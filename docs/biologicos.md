@@ -76,10 +76,10 @@ com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa, des
 - **Manutenção do Gelo Seco ou Gelo em Gel** para garantir que a temperatura controlada se mantenha estável durante todo o transporte, evitando perda da cadeia térmica.
 
 ### Benefícios principais
-- **Notificações proativas** e acompanhamento contínuo  
-- **Processo operacional integrado**  
-- **Pré-liberação alfandegária**  
-- **Entrega expressa dedicada**
+
+<p align="left">
+  <img src="/dpdhl/bene.png" alt="Benefícios do serviço DHL Medical Express (WMX)" style="width:85%; max-width:900px; border-radius:8px; margin:16px 0;">
+</p>
 
 ### Como solicitar o serviço
 Se a sua empresa atua com **materiais biológicos, reagentes laboratoriais ou produtos farmacêuticos sensíveis**, 
