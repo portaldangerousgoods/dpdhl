@@ -57,6 +57,8 @@ Veja os requisitos para envio de materiais biológicos com a DHL Express, garant
 - [Declaração de Risco Mínimo (DOCX)](Min.docx)
 - [Declaração UN3373 (DOCX)](UN3373.docx)
 
+---
+
 ## <span style="color:#D40511;">Serviço Premium: DHL Medical Express (WMX)</span>
 
 A **DHL Medical Express (WMX)** é um serviço **premium de transporte internacional especializado em materiais médicos e biológicos**, 
@@ -82,5 +84,3 @@ com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa — 
 ### Como solicitar o serviço
 Se a sua empresa atua com **materiais biológicos, reagentes laboratoriais ou produtos farmacêuticos sensíveis**, 
 entre em contato com seu **contato comercial DHL Express** para solicitar a ativação do serviço **WMX**.
-
-**DHL Medical Express (WMX)** — o transporte mais confiável para a indústria **Life Sciences**.
