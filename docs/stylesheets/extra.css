@@ -563,3 +563,9 @@ html, body, .md-typeset {
   margin-bottom: 12px;
 }
 
+/* Destaque em vermelho para o título WMX */
+h2 span[style*="#D40511"],
+h3 span[style*="#D40511"] {
+  color: #D40511 !important;
+  font-weight: 700;
+}
