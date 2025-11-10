@@ -83,4 +83,4 @@ com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa, des
 
 ### Como solicitar o serviço
 Se a sua empresa atua com **materiais biológicos, reagentes laboratoriais ou produtos farmacêuticos sensíveis**, 
-entre em contato com seu **contato comercial DHL Express** para solicitar a ativação do serviço **WMX**.
+entre em contato com o **responsável comercial DHL Express pela sua conta** para solicitar a ativação do serviço **WMX**.
