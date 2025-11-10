@@ -66,7 +66,7 @@ atuando como a **solução ideal para o envio de amostras classificadas como UN3
 quando é necessária **entrega expressa com controle rigoroso de temperatura** e rastreabilidade global.
 
 Projetado para **garantir velocidade, segurança e integridade térmica**, o WMX é conduzido por equipes dedicadas de **Life Sciences**, 
-com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa — desde a coleta até a entrega final.
+com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa, desde a coleta até a entrega final.
 
 ### Por que escolher o WMX
 - **Entrega prioritária** com janelas estendidas de coleta e voos rápidos.  
