@@ -26,11 +26,11 @@ Garantir que nossos clientes tenham mais **autonomia e acesso rápido às inform
   <hr/>
 
   <h2><strong>Comece por aqui:</strong></h2>
-  <ul>
-    <li><a href="aprovacao.md">Como aprovar uma conta</a></li>
-    <li><a href="documentos.md">Documentos exigidos</a></li>
-    <li><a href="faq.md">FAQ Técnico</a></li>
-  </ul>
+<ul>
+  <li><a href="/dpdhl/aprovacao/">Como aprovar uma conta</a></li>
+  <li><a href="/dpdhl/documentos/">Documentos exigidos</a></li>
+  <li><a href="/dpdhl/faq/">FAQ Técnico</a></li>
+</ul>
 
   <hr/>
 
