@@ -65,15 +65,13 @@ A **DHL Medical Express (WMX)** é um serviço **premium de transporte internaci
 atuando como a **solução ideal para o envio de amostras classificadas como UN3373, Risco Mínimo ou Material Isento**, 
 quando é necessária **entrega expressa com controle rigoroso de temperatura** e rastreabilidade global.
 
-Projetado para **garantir velocidade, segurança e integridade térmica**, o WMX é conduzido por equipes dedicadas de **Life Sciences**, 
-com rastreamento 24/7 e suporte personalizado em todas as etapas da remessa, desde a coleta até a entrega final.
+Projetado para **garantir velocidade, segurança e integridade térmica**, o WMX é conduzido por equipes dedicadas de **Life Sciences**, com suporte personalizado em todas as etapas da remessa, desde a coleta até a entrega final.
 
 ### Por que escolher o WMX
 - **Entrega prioritária** com janelas estendidas de coleta e voos rápidos.  
-- **Monitoramento completo**, 24h por dia, 7 dias por semana.  
 - **Equipe dedicada** de especialistas em Life Science.  
 - **Conformidade total** com normas IATA, alfandegárias e de qualidade.  
-- **Manutenção do Gelo Seco ou Gelo em Gel** para garantir que a temperatura controlada se mantenha estável durante todo o transporte, evitando perda da cadeia térmica.
+- **Manutenção do Gelo Seco ou Gelo em Gel** para garantir que a temperatura se mantenha estável durante todo o transporte, evitando perda da cadeia térmica.
 
 ### Benefícios principais
 
