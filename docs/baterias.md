@@ -147,7 +147,7 @@ Até **duas baterias acopladas em uma caixa** (e até duas caixas por AWB): a re
 
 ## Exigências DHL 
 
-- **Aprovação da conta** obrigatória e **rota precisa ser permitida**.  
+- **Aprovação da conta** obrigatória (para baterias soltas, somente uma Shipper Account de exportação do país de origem será aceita) e **rota precisa ser permitida**.  
  [processo de aprovação e validação de rota](https://portaldangerousgoods.github.io/dpdhl/aprovacao/)
 
 
