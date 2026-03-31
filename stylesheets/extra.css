@@ -1,0 +1,571 @@
+/* DHL — Fonte Delivery Light */
+@font-face {
+  font-family: 'Delivery';
+  src: url('/dpdhl/Delivery_Lt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* ===== Fundo e Estrutura ===== */
+body {
+  background: #ffffff;
+  font-family: 'Delivery', sans-serif; /* fonte DHL */
+  margin: 0; /* não recua o body para não “encolher” o header amarelo */
+}
+
+/* Recuo somente no CONTEÚDO das páginas */
+.md-content__inner {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ===== Cabeçalho em amarelo DHL – ocupa 100% ===== */
+.md-header {
+  background-color: #FFCC00;  /* Postyellow */
+  color: black;
+  font-weight: 600;
+  width: 100%;
+}
+.md-header__inner {
+  max-width: 100% !important;  /* impede limitações de largura */
+}
+
+/* ===== Links (arquivos para download) ===== */
+a, a:visited {
+  color: #666666 !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #666666 !important;
+}
+
+/* ===== Ocultar menus laterais ===== */
+.md-sidebar--primary {
+  display: none !important;     /* esq */
+}
+.md-sidebar--secondary {
+  display: none !important;     /* dir (índice) */
+}
+.md-content {
+  margin-left: 0 !important;
+}
+
+/* ===== Títulos padrão ===== */
+h2 {
+  color: #D40511;
+  font-weight: bold;
+}
+
+/* ===== Botão SAIR (topo) – visual aprovado ===== */
+#dg-logout {
+  background-color: #C4001A;
+  color: #ffffff !important;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  line-height: 1.2;
+
+  /* posição: empurra para a direita e deixa uma folga do canto */
+  margin-left: auto;      /* gruda à direita do header */
+  margin-right: 16px;     /* folga antes da borda direita */
+}
+#dg-logout:hover { background-color: #000000; color: #ffffff !important; }
+
+/* ===== HERO (foto de fundo + título grande em branco) ===== */
+.hero {
+  background-image:
+    url("../hero.png"),
+    url("/dpdhl/hero.png"),
+    url("/hero.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding: 110px 24px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 100%);
+}
+.md-content .hero h1,
+.md-content .hero p {
+  position: relative;
+  color: #fff !important;
+  margin: 0 auto;
+}
+.md-content .hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: .3px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.md-content .hero p {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  max-width: 920px;
+}
+
+/* =========================
+   MENU SUPERIOR (faixa branca)
+   ========================= */
+#dg-topnav {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  z-index: 1001;
+}
+
+/* usa o mesmo recuo do conteúdo */
+#dg-topnav .dg-wrap {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 40px; /* alinha com o conteúdo */
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Links principais */
+#dg-topnav .dg-link,
+#dg-topnav .dg-drop > .dg-link {
+  font-family: 'Delivery', sans-serif;
+  font-size: 16px !important;
+  font-weight: normal !important; /* sem negrito por padrão */
+  color: #000 !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 58px;
+  border-bottom: 3px solid transparent;
+  transition: color .2s ease;
+}
+#dg-topnav .dg-link:hover,
+#dg-topnav .dg-drop > .dg-link:hover {
+  color: #D40511 !important;
+}
+
+/* Apenas a página ativa em negrito */
+#dg-topnav .dg-link.is-active,
+#dg-topnav .dg-drop > .dg-link.is-active {
+  font-weight: bold !important;
+  color: #000 !important;
+  border-color: #D40511;
+}
+
+/* ===== Dropdown de Produtos — abre só no clique ===== */
+#dg-topnav, #dg-topnav .dg-wrap { position: relative; overflow: visible; }
+#dg-topnav .dg-drop { position: relative; }
+
+/* Painel fechado por padrão (sem display:none para evitar conflito) */
+#dg-topnav .dg-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 18px 20px;
+  min-width: 520px;
+  z-index: 1200;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* Abre SOMENTE quando .open está na .dg-drop */
+#dg-topnav .dg-drop.open > .dg-panel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* NÃO usa mais :hover para abrir (evita conflito) */
+#dg-topnav .dg-drop:hover > .dg-panel {
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+}
+
+/* Grid e links internos */
+#dg-topnav .dg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 8px 24px;
+}
+#dg-topnav .dg-panel a {
+  display: block;
+  padding: 6px 8px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
+#dg-topnav .dg-panel a:hover {
+  color: #D40511 !important;
+  text-decoration: underline;
+}
+
+/* ===== Títulos principais (h1) ===== */
+h1 {
+  color: #D40511 !important;              /* vermelho DHL */
+  font-weight: 900 !important;            /* extra negrito */
+  text-shadow: 1px 1px 2px rgba(0,0,0,.25); /* leve sombra para destacar */
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* ===== Estilo dos links no conteúdo ===== */
+.md-content a,
+.md-typeset a,
+.md-content__inner a {
+  color: #000000 !important;        /* preto padrão */
+  text-decoration: none !important; /* sem sublinhado */
+  font-weight: 400;                 /* texto normal */
+}
+
+.md-content a:hover,
+.md-typeset a:hover,
+.md-content__inner a:hover {
+  color: #D40511 !important;        /* vermelho DHL no hover */
+  text-decoration: underline !important; /* sublinha ao passar o mouse */
+}
+
+:root{
+  --dhl-postyellow: #FFCC00;
+  --dhl-red: #D40511;
+  --dhl-black: #000000;
+  --dhl-white: #FFFFFF;
+}
+
+/* Tipografia base DHL */
+html, body, .md-typeset {
+  font-family: 'Delivery', 'Aptos', Arial, sans-serif;
+}
+
+/* Headlines e subtítulos */
+.md-typeset h1, .md-typeset h2, .md-banner__title {
+  color: var(--dhl-red);
+  line-height: 1.0; /* ~100% dentro da faixa 90–110% */
+  letter-spacing: 0.2px;
+}
+.md-typeset h3, .md-typeset h4 {
+  color: var(--dhl-black);
+  line-height: 1.1;
+}
+
+/* Header sempre Postyellow sólido */
+.md-header, .md-banner {
+  background: var(--dhl-postyellow); /* sem gradiente */
+}
+
+/* Botão primário */
+.md-button--primary, .md-typeset .md-button--primary {
+  background: var(--dhl-red);
+  color: var(--dhl-white);
+  border: none;
+}
+.md-button--primary:hover {
+  filter: brightness(0.95);
+}
+
+/* Botão secundário */
+.md-button, .md-typeset .md-button {
+  border: 2px solid var(--dhl-red);
+  color: var(--dhl-red);
+  background: transparent;
+}
+.md-button:hover {
+  background: rgba(212,5,17,0.06);
+}
+
+/* Texto sobre Postyellow: sempre preto */
+.banner, .tile--yellow, .hero--yellow {
+  background: var(--dhl-postyellow);
+  color: var(--dhl-black);
+}
+
+/* Underline de estado para tabs/links ativos */
+.is-active, .tab--active {
+  text-decoration: underline;
+  text-decoration-color: var(--dhl-red);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Barra de pesquisa estilo DHL Brand Hub (cantos arredondados) ===== */
+.md-search__input {
+  background-color: #ffffff !important;
+  border: 2px solid #FFCC00 !important; /* Postyellow */
+  border-radius: 8px !important; /* cantos arredondados suaves */
+  color: #000000 !important;
+  font-family: 'Delivery', 'Aptos', Arial, sans-serif;
+  font-size: 16px;
+  height: 44px;
+  padding: 0 44px 0 40px; /* espaço para o ícone */
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-search__input::placeholder {
+  color: #666666 !important; /* cinza neutro */
+  opacity: 1;
+  font-weight: 400;
+}
+
+/* Ícone da lupa preto e alinhado */
+.md-search__icon {
+  color: #000000 !important;
+  left: 14px !important;
+  width: 20px;
+  height: 20px;
+}
+
+/* Efeito ao focar (borda e brilho suave amarelo) */
+.md-search__input:focus {
+  outline: none !important;
+  border-color: #FFCC00 !important;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.45);
+}
+
+/* ===== Centralizar barra de pesquisa com botão SAIR ===== */
+.md-header__inner {
+  display: flex;
+  align-items: center; /* alinha todos os itens verticalmente */
+}
+
+/* Ajuste fino da altura e espaçamento da busca */
+.md-search {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Garante que o botão Sair e a busca fiquem na mesma linha */
+#dg-logout {
+  align-self: center;
+}
+
+/* Opcional: deixa a barra e o botão com espaçamento consistente */
+.md-search,
+#dg-logout {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* ===== Ajuste fino: alinhamento da barra de pesquisa com botão SAIR ===== */
+
+/* Define altura fixa da barra igual ao botão */
+.md-search__form,
+.md-search__input {
+  height: 40px !important; /* mesma altura do botão Sair */
+  line-height: 40px !important;
+  border-radius: 8px !important; /* mantém o arredondamento */
+}
+
+/* Centraliza perfeitamente a lupa dentro da altura nova */
+.md-search__icon {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #000000 !important;
+  left: 14px !important;
+}
+
+/* Alinha verticalmente com o botão */
+.md-search {
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Garante que o botão e a barra fiquem na mesma linha */
+#dg-logout {
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Espaçamento lateral harmônico */
+.md-search,
+#dg-logout {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Remover sombra ou cor de fundo padrão da estrutura do MkDocs */
+.md-search__form {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ===== Bloco texto + imagem lado a lado (documentos) ===== */
+.dg-side {
+  display: flex;
+  gap: 24px;
+  align-items: center;          /* centraliza verticalmente imagem e texto */
+  justify-content: space-between;
+  margin: 8px 0 16px;           /* menos espaço acima/abaixo */
+}
+
+.dg-side__text {
+  flex: 1 1 0;
+  margin-top: 0 !important;     /* remove espaçamento entre título e texto */
+}
+
+.dg-side__img {
+  flex: 0 0 22%;                /* imagem menor (~22% da largura) */
+  max-width: 22%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
+  margin-top: 0;                /* remove espaçamento acima */
+}
+
+/* ===== Responsivo (mobile) ===== */
+@media (max-width: 900px) {
+  .dg-side {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dg-side__img {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+}
+
+/* 1) Remove o “vão” entre o H2 e o bloco lado a lado */
+.md-content h2 + .dg-side { 
+  margin-top: 0 !important;   /* encosta o texto no título */
+}
+
+/* 2) Deixa a imagem menor e garante que esta regra vença as anteriores */
+.md-content .dg-side {
+  align-items: center;         /* centraliza verticalmente texto x imagem */
+}
+
+.md-content .dg-side__img {
+  flex: 0 0 20% !important;    /* ~20% da largura (menor que 22%/30%) */
+  max-width: 20% !important;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ===== Ajuste específico: imagem dos Biológicos maior ===== */
+.dg-side__img[alt="Materiais Biológicos"] {
+  max-width: 42% !important;  /* aumenta de ~30% para ~42% da largura */
+}
+
+/* ===== Ajuste específico: imagem das Baterias ===== */
+.dg-side__img[alt="Tipos de Baterias"] {
+  max-width: 45% !important; /* aumenta o tamanho da imagem */
+}
+
+/* Ajuste específico: imagem de Gelo Seco */
+.dg-side__img[alt="Embalagem de Gelo Seco"] {
+  max-width: 45% !important; /* ajuste fino: 35–50% conforme preferir */
+}
+
+/* ===== Compactar bloco "Embalagem": imagem menor e alinhada ao topo ===== */
+.dg-side--tight {
+  align-items: flex-start;       /* alinha imagem e texto pelo topo */
+  gap: 20px;                     /* reduz o espaço lateral */
+  margin-bottom: 12px;           /* aproxima da próxima seção */
+}
+
+.dg-side--tight .dg-side__img {
+  max-width: 30% !important;     /* define largura equilibrada */
+  max-height: 220px;             /* evita altura exagerada */
+  height: auto;
+  align-self: flex-start;        /* garante alinhamento no topo */
+  object-fit: contain;           /* mantém proporção */
+}
+
+/* ===== Layout Embalagem: imagem acompanhando o texto ===== */
+.dg-inline {
+  display: flex;
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: flex-start;
+  gap: 24px;                 /* espaço entre texto e imagem */
+  flex-wrap: nowrap;         /* impede quebra de linha */
+  margin-bottom: 24px;
+}
+
+.dg-inline__text {
+  flex: 1;                   /* texto ocupa todo o espaço restante */
+}
+
+.dg-inline__img {
+  width: 30%;                /* imagem proporcional ao texto */
+  height: auto;
+  max-width: 300px;          /* limite visual */
+  object-fit: contain;
+}
+
+/* ===== Imagem ao lado direito acompanhando todo o texto ===== */
+.dg-wrap-float::after { content: ""; display: table; clear: both; } /* clearfix */
+
+.dg-float {
+  float: right;
+  width: 34%;              /* ajuste fino: 30–40% */
+  max-width: 380px;
+  height: auto;
+  margin: 4px 0 16px 24px; /* espaço à esquerda/abaixo da imagem */
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Mobile: imagem abaixo do texto */
+@media (max-width: 900px) {
+  .dg-float {
+    float: none;
+    display: block;
+    margin: 12px auto;
+    width: 70%;
+    max-width: 480px;
+  }
+}
+
+/* Ajuste específico para o manual IATA — mantém alinhado ao texto */
+.dg-float[alt="Manual IATA"] {
+  width: auto;              /* deixa a largura se ajustar automaticamente */
+  height: 300px;            /* altura fixa aproximada ao bloco de texto */
+  object-fit: contain;      /* mantém proporção */
+  margin-top: 8px;          /* alinha melhor com o texto */
+}
+
+/* Ajuste refinado — gif lateral da home */
+.dg-float[alt="Globo animado"] {
+  width: 38%;            /* aumenta a proporção lateral */
+  max-width: 520px;      /* garante que cresça sem estourar */
+  height: 440px;         /* altura acompanha bem o bloco textual */
+  object-fit: contain;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* Destaque em vermelho para o título WMX */
+h2 span[style*="#D40511"],
+h3 span[style*="#D40511"] {
+  color: #D40511 !important;
+  font-weight: 700;
+}

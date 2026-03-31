@@ -1,0 +1,21 @@
+/* Deixa a lateral inteira com fundo cinza #F1F3F4 */ 
+.md-sidebar--primary {
+  background-color: #F1F3F4;
+  height: 100%;
+}
+
+/* Remove o fundo branco do título que estava cortando */
+.md-sidebar__scrollwrap {
+  background-color: transparent;
+}
+
+/* Cor padrão dos links na barra lateral: vermelho DHL */
+.md-sidebar--primary .md-nav__link {
+  color: #D40511 !important;
+}
+
+/* Cor do link ativo (página atual): preto */
+.md-sidebar--primary .md-nav__link--active {
+  color: #111 !important;
+  font-weight: bold;
+}
